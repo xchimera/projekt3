@@ -12,7 +12,7 @@ namespace Database
 {
     class Personale
     {
-        private string sql = @"Data Source= linux1.tietgen.dk;Initial Catalog=gruppe10;Integrated Security=SSPI";
+        private string sql = @"Data Source= linux1.tietgen.dk;Initial Catalog=gruppe10;User Id=gruppe10;Password=cehEk2busP";
         private string sql_proc;
         SqlCommand cmd;
         SqlConnection conn;
@@ -25,7 +25,7 @@ namespace Database
             cmd.CommandType = CommandType.StoredProcedure;
         }
 
-        public Medarbejder FindPersonale(string navn)
+        public List<Medarbejder> FindPersonale(string navn)
         {
             long cpr_nummer;
             string dbnavn;
@@ -41,15 +41,21 @@ namespace Database
             cmd.Parameters.Clear();
             cmd.CommandText = "FindPersonaleNavn";
 
+            SqlParameter par = new SqlParameter("@navn", SqlDbType.NVarChar);
+            par.Value = navn;
+            cmd.Parameters.Add(par);
+
             try
             {
                 conn.Open();
                 reader = cmd.ExecuteReader();
 
-                while(reader.Read())
+
+
+                while (reader.Read())
                 {
                     cpr_nummer = (long)reader["cpr_ID"];
-                    dbnavn = (string)reader["navn"];
+                    dbnavn = (string)reader["@navn"];
                     adresse = (string)reader["adresse"];
                     postnr = (int)reader["Postnr_FID"];
                     tlf = (long)reader["tlf"];
@@ -57,14 +63,23 @@ namespace Database
 
                     Medarbejder medarbejder = new Medarbejder(cpr_nummer, dbnavn, adresse, postnr, tlf, afdeling);
 
+                    medarbejdere.Add(medarbejder);
+                }
+                conn.Close();
+            }
+            catch (SqlException e)
+            {
+                if (conn.State == ConnectionState.Open)
+                {
+                    conn.Close();
+                }
+                throw e;
+            }
 
-
-
-
-
-
-            return null;
+            return medarbejdere;
         }
+
+     
 
         public Medarbejder FindPersonale(long cpr_nummer)
         {
