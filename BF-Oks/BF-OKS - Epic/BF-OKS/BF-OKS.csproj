@@ -53,6 +53,7 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Fravær.cs" />
     <Compile Include="Medarbejder.cs" />
     <Compile Include="MedarbejderCollection.cs" />
     <Compile Include="Program.cs" />
