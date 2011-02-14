@@ -17,11 +17,11 @@ namespace Database
         }
 
 
-        public BF_OKS.Medarbejder FindPersonale(string navn)
+        public Medarbejder FindPersonale(string navn)
         {
+            Medarbejder medarbejder = personale.FindPersonale(navn);
 
-
-            return null;
+            return medarbejder;
         }
     }
 }
