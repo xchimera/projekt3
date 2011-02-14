@@ -25,7 +25,7 @@ namespace Database
             cmd.CommandType = CommandType.StoredProcedure;
         }
 
-        public List<Medarbejder> FindPersonale(string navn)
+        public /*List<Medarbejder>*/ Medarbejder FindPersonale(string navn)
         {
             long cpr_nummer;
             string dbnavn;
@@ -44,24 +44,25 @@ namespace Database
             SqlParameter par = new SqlParameter("@navn", SqlDbType.NVarChar);
             par.Value = navn;
             cmd.Parameters.Add(par);
+            Medarbejder medarbejder = null;
 
             try
             {
                 conn.Open();
                 reader = cmd.ExecuteReader();
-
+                
 
 
                 while (reader.Read())
                 {
                     cpr_nummer = (long)reader["cpr_ID"];
-                    dbnavn = (string)reader["@navn"];
+                    dbnavn = (string)reader["navn"];
                     adresse = (string)reader["adresse"];
                     postnr = (int)reader["Postnr_FID"];
                     tlf = (long)reader["tlf"];
-                    afdeling = (int)reader["afd"];
+                    afdeling = (int)reader["afd_FID"];
 
-                    Medarbejder medarbejder = new Medarbejder(cpr_nummer, dbnavn, adresse, postnr, tlf, afdeling);
+                    medarbejder = new Medarbejder(cpr_nummer, dbnavn, adresse, postnr, tlf, afdeling);
 
                     medarbejdere.Add(medarbejder);
                 }
@@ -76,7 +77,7 @@ namespace Database
                 throw e;
             }
 
-            return medarbejdere;
+            return medarbejder;
         }
 
      
