@@ -14,14 +14,15 @@ namespace Database
     {
         private string sql = @"Data Source= linux1.tietgen.dk;Initial Catalog=gruppe10;Integrated Security=SSPI";
         private string sql_proc;
-        SqlCommand com;
+        SqlCommand cmd;
         SqlConnection conn;
 
         public Personale()
         {
-            com = new SqlCommand();
+            cmd = new SqlCommand();
             conn = new SqlConnection(sql);
-            com.Connection = conn;
+            cmd.Connection = conn;
+            cmd.CommandType = CommandType.StoredProcedure;
         }
 
         public Medarbejder FindPersonale(string navn)
@@ -33,9 +34,28 @@ namespace Database
             long tlf;
             int afdeling;
 
+            SqlDataReader reader;
+
+
             List<Medarbejder> medarbejdere = new List<Medarbejder>();
-            com.Parameters.Clear();
-            com.CommandText = "FindPersonaleNavn";
+            cmd.Parameters.Clear();
+            cmd.CommandText = "FindPersonaleNavn";
+
+            try
+            {
+                conn.Open();
+                reader = cmd.ExecuteReader();
+
+                while(reader.Read())
+                {
+                    cpr_nummer = (long)reader["cpr_ID"];
+                    dbnavn = (string)reader["navn"];
+                    adresse = (string)reader["adresse"];
+                    postnr = (int)reader["Postnr_FID"];
+                    tlf = (long)reader["tlf"];
+                    afdeling = (int)reader["afd"];
+
+                    Medarbejder medarbejder = new Medarbejder(cpr_nummer, dbnavn, adresse, postnr, tlf, afdeling);
 
 
 
