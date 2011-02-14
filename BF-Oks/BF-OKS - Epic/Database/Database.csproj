@@ -45,9 +45,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BF-OKS\BF-OKS.csproj">
-      <Project>{D4E9E347-8B5D-4C43-BA86-0F61754FF19D}</Project>
-      <Name>BF-OKS</Name>
+    <ProjectReference Include="..\Model\Model.csproj">
+      <Project>{818F9096-DFF1-4894-9BB6-1DBDF0328BED}</Project>
+      <Name>Model</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
