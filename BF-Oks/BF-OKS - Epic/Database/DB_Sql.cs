@@ -9,6 +9,19 @@ namespace Database
 {
     public class DB_Sql
     {
-        
+        Personale personale;
+
+        public DB_Sql()
+        {
+            personale = new Personale();
+        }
+
+
+        public BF_OKS.Medarbejder FindPersonale(string navn)
+        {
+
+
+            return null;
+        }
     }
 }
