@@ -7,7 +7,7 @@ namespace BF_OKS
 {
     public class Medarbejder
     {
-        string cpr_nummer;
+        int cpr_nummer;
         string navn;
         string adresse;
         int postnr;
@@ -17,7 +17,7 @@ namespace BF_OKS
         private List<Fravær> fravære;
 
 
-        public Medarbejder(string cpr_nummer, string navn, string adresse, int postnr, long tlf, int afdelingsid)
+        public Medarbejder(int cpr_nummer, string navn, string adresse, int postnr, long tlf, int afdelingsid)
         {
             this.cpr_nummer = cpr_nummer;
             this.navn = navn;
