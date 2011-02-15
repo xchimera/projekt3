@@ -25,6 +25,7 @@ namespace Database
             cmd.CommandType = CommandType.StoredProcedure;
         }
 
+        #region query
         public List<Medarbejder> /*Medarbejder*/ FindPersonale(string navn)
         {
             long cpr_nummer;
@@ -131,6 +132,68 @@ namespace Database
             return medarbejder;
         }
 
+
+
+        public List<Fravær> FindFravær(long cpr_nummer, DateTime dato_fra, DateTime dato_til)
+        {
+            string type;
+            DateTime dato_start;
+            DateTime dato_slut;
+            List<Fravær> fravære = new List<Fravær>();
+            Fravær fravær;
+
+            SqlDataReader reader;
+
+            cmd.Parameters.Clear();
+            cmd.CommandText = "FindSyg";
+
+            SqlParameter par;
+
+            par = new SqlParameter("@cpr", SqlDbType.BigInt);
+            par.Value = cpr_nummer;
+            cmd.Parameters.Add(par);
+
+            par = new SqlParameter("@dato_fra", SqlDbType.Date);
+            par.Value = dato_fra;
+            cmd.Parameters.Add(par);
+
+            par = new SqlParameter("@dato_til", SqlDbType.Date);
+            par.Value = dato_til;
+            cmd.Parameters.Add(par);
+
+            try
+            {
+                conn.Open();
+                reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    type = (string)reader["type"];
+                    dato_start = (DateTime)reader["dato_fra"];
+                    dato_slut = (DateTime)reader["dato_til"];
+
+                    fravær = new Fravær(type, dato_start, dato_slut);
+                    fravære.Add(fravær);
+                }
+                conn.Close();
+            }
+            catch (SqlException e)
+            {
+                if (conn.State == ConnectionState.Open)
+                {
+                    conn.Close();
+                }
+                throw (e);
+            }
+            return fravære;
+        }
+
+
+
+        #endregion
+
+        #region nonquery
+
         public string OpretFravær(string cpr_nummer, string type, DateTime dato_fra, DateTime dato_til)
         {
             string sqlfejl =null;
@@ -182,58 +245,9 @@ namespace Database
 
         }
 
-        public List<Fravær> FindFravær(long cpr_nummer, DateTime dato_fra, DateTime dato_til)
-        {
-            string type;
-            DateTime dato_start;
-            DateTime dato_slut;
-            List<Fravær> fravære = new List<Fravær>();
-            Fravær fravær;             
 
-            SqlDataReader reader;
+        #endregion
 
-            cmd.Parameters.Clear();
-            cmd.CommandText = "FindSyg";
 
-            SqlParameter par;
-
-            par = new SqlParameter("@cpr", SqlDbType.BigInt);
-            par.Value = cpr_nummer;
-            cmd.Parameters.Add(par);
-
-            par = new SqlParameter("@dato_fra", SqlDbType.Date);
-            par.Value = dato_fra;
-            cmd.Parameters.Add(par);
-
-            par = new SqlParameter("@dato_til", SqlDbType.Date);
-            par.Value = dato_til;
-            cmd.Parameters.Add(par);
-
-            try
-            {
-                conn.Open();
-                reader = cmd.ExecuteReader();
-
-                while (reader.Read())
-                {
-                    type = (string)reader["type"];
-                    dato_start = (DateTime)reader["dato_fra"];
-                    dato_slut = (DateTime)reader["dato_til"];
-
-                    fravær = new Fravær(type, dato_start, dato_slut);
-                    fravære.Add(fravær);
-                }
-                conn.Close();
-            }
-            catch (SqlException e)
-            {
-                if (conn.State == ConnectionState.Open)
-                {
-                    conn.Close();
-                }
-                throw (e);
-            }
-            return fravære;           
-        }        
     }
 }
