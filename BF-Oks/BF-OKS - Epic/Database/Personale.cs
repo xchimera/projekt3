@@ -289,7 +289,7 @@ namespace Database
             return sqlfejl;
         }
 
-        public int OpretBy(int postnr, string distrikt)
+        public string OpretBy(int postnr, string distrikt)
         {
             string sqlfejl = null;
 
@@ -298,8 +298,99 @@ namespace Database
 
             SqlParameter par;
 
-            par = new SqlParameter("@postnr", SqlDbType
+            par = new SqlParameter("@postnr", SqlDbType.Int);
+            par.Value = postnr;
+            cmd.Parameters.Add(par);
+
+            par = new SqlParameter("@distrikt", SqlDbType.NVarChar);
+            par.Value = distrikt;
+            cmd.Parameters.Add(par);
+
+            try
+            {
+                conn.Open();
+                cmd.ExecuteNonQuery();
+                conn.Close();
+            }
+
+            catch (SqlException e)
+            {
+                if (e.Number == 2627)
+                {
+                    sqlfejl = "Districkt findes allerede";
+                }
+                else
+                {
+                    sqlfejl = "Der skete en fejl under opretningen af Districkt" + e.Number; 
+                }
+
+                if (conn.State == ConnectionState.Open)
+                {
+                    conn.Close();
+                }
+            }
+            return sqlfejl;
         }
+
+        public string OpretMedarbejder(int cpr, string navn, string adresse, int postnr, long tlf, int afd)
+        {
+            string sqlfejl = null;
+
+            cmd.CommandText = "OpretMedarbejder";
+            cmd.Parameters.Clear();
+
+            SqlParameter par;
+
+            par = new SqlParameter("@cpr",SqlDbType.NVarChar);
+            par.Value = cpr;
+            cmd.Parameters.Add(par);
+
+            par = new SqlParameter("@navn", SqlDbType.NVarChar);
+            par.Value = navn;
+            cmd.Parameters.Add(par);
+
+            par = new SqlParameter("@adresse",SqlDbType.NVarChar);
+            par.Value = adresse;
+            cmd.Parameters.Add(par);
+
+            par = new SqlParameter("@postnr", SqlDbType.Int);
+            par.Value = postnr;
+            cmd.Parameters.Add(par);
+
+            par = new SqlParameter("@tlf", SqlDbType.BigInt);
+            par.Value = tlf;
+            cmd.Parameters.Add(par);
+
+            par = new SqlParameter("@afd", SqlDbType.Int);
+            par.Value = afd;
+            cmd.Parameters.Add(par);
+
+            try
+            {
+                conn.Open();
+                cmd.ExecuteNonQuery();
+                conn.Close();
+            }
+            catch (SqlException e)
+            {
+                if (e.Number == 2627)
+                {
+                    sqlfejl = "Medarbejder findes allerede i katoteket";
+                }
+                else
+                {
+                    sqlfejl = "Der er sket en fejl under oprettelsen af Medarbejder" + e.Number;
+                }
+                if (conn.State == ConnectionState.Open)
+                {
+                    conn.Close();
+                }
+            }
+            return sqlfejl;
+        }
+
+
+
             
         
 
