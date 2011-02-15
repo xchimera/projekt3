@@ -5,7 +5,7 @@ using System.Text;
 
 namespace BF_OKS
 {
-    class Fravær
+    public class Fravær
     {
         private string type;
         private DateTime dato_fra;
