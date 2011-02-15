@@ -202,7 +202,9 @@ namespace Database
 
             cmd.Parameters.Clear();
 
-            SqlParameter par = new SqlParameter("@cpr_ID", SqlDbType.BigInt);
+            SqlParameter par;
+ 
+            par = new SqlParameter("@cpr_ID", SqlDbType.BigInt);
             par.Value = cpr_nummer;
             cmd.Parameters.Add(par);
 
@@ -244,6 +246,62 @@ namespace Database
             return sqlfejl;
 
         }
+
+        public string OpretAfdeling(string afdeling, int afd)
+        {
+            string sqlfejl = null;
+
+            cmd.CommandText = "OpretAfdeling";
+            cmd.Parameters.Clear();
+
+            SqlParameter par;
+
+            par = new SqlParameter("@afdeling", SqlDbType.NVarChar);
+            par.Value = afdeling;
+            cmd.Parameters.Add(par);
+
+            par = new SqlParameter("@afd", SqlDbType.NVarChar);
+            par.Value = afd;
+            cmd.Parameters.Add(par);
+
+            try
+            {
+                conn.Open();
+                cmd.ExecuteNonQuery();
+                conn.Close();
+            }
+
+            catch (SqlException e)
+            {
+                if (e.Number == 2627)
+                {
+                    sqlfejl = "Afdelingen findes allerede";
+                }
+                else
+                {
+                    sqlfejl = "Der skete en fejl under oprettelsen af afdelingen:" + e.Number;
+                }
+                if (conn.State == ConnectionState.Open)
+                {
+                    conn.Close();
+                }
+            }
+            return sqlfejl;
+        }
+
+        public int OpretBy(int postnr, string distrikt)
+        {
+            string sqlfejl = null;
+
+            cmd.CommandText = "OpretBy";
+            cmd.Parameters.Clear();
+
+            SqlParameter par;
+
+            par = new SqlParameter("@postnr", SqlDbType
+        }
+            
+        
 
 
         #endregion
