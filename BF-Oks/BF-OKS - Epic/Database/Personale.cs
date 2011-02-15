@@ -389,6 +389,46 @@ namespace Database
             return sqlfejl;
         }
 
+        public string OpretNyhed(string nyhed, DateTime dato)
+        {
+            string sqlfejl = null;
+
+            cmd.CommandText = "OpretNyhed";
+            cmd.Parameters.Clear();
+
+            SqlParameter par;
+
+            par = new SqlParameter("@nyhed", SqlDbType.NVarChar);
+            par.Value = nyhed;
+            cmd.Parameters.Clear();
+
+            try
+            {               
+                conn.Open();
+                cmd.ExecuteNonQuery();
+                conn.Close();
+            }
+
+            catch (SqlException e)
+            {
+                if (e.Number == 2627)
+                {
+                    sqlfejl = "FEJL";
+                }
+                else
+                {
+                    sqlfejl = "Der sket en fejl ved oprettelse af nyheden" + e.Number;
+                }
+                if (conn.State == ConnectionState.Open)
+                {
+                    conn.Close();
+                }
+            }
+            return sqlfejl;            
+
+        }
+
+
 
 
             
