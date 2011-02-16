@@ -46,10 +46,35 @@ namespace WindowsFormsApplication1
         {
             tabControl1.SelectTab(3);
         }
-
-        private void tabRegistrer_Fravær_Click(object sender, EventArgs e)
+                
+        private void btnRegistrerFravær_Click(object sender, EventArgs e)
         {
+            DateTime start_dato;
+            DateTime slut_dato;
 
+            start_dato = DateTime.Parse(txtStartDato.Text);
+            slut_dato = DateTime.Parse(txtSlutDato.Text);
+
+        }
+
+        private void btnOpret_Click(object sender, EventArgs e)
+        {
+            // Attributter
+            string navn;
+            string adresse;
+            string by;
+            int postnr;
+            long telefon;
+            long cprnr;
+            int afdeling;
+         
+            navn = txtFornavn.Text;
+            adresse = txtAdresse.Text;
+            by = txtBy.Text;
+            postnr = int.Parse(txtPostnr.Text);
+            telefon = long.Parse(txtTelefon.Text);
+            cprnr = long.Parse(txtCPR.Text);
+            afdeling = int.Parse(txtAfdeling.Text);            
         }
     }
 }
