@@ -2,7 +2,7 @@
 
 namespace BF_OKS
 {
-    internal class MedarbejderCollection
+    public class MedarbejderCollection
     {
         private readonly List<Medarbejder> medarbejderer;
 
