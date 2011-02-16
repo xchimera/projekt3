@@ -12,6 +12,7 @@ namespace Database
 {
     class DBFacade
     {
+        #region constructor og globale variabler
         private string sql = @"Data Source= linux1.tietgen.dk;Initial Catalog=gruppe10;User Id=gruppe10;Password=cehEk2busP";
         private string sql_proc;
         SqlCommand cmd;
@@ -27,6 +28,8 @@ namespace Database
             cmd.CommandType = CommandType.StoredProcedure;
             personalesystem = new Personalesystem();
         }
+
+        #endregion
 
         #region query
         //public List<Medarbejder> /*Medarbejder*/ FindPersonale(string navn)
@@ -435,7 +438,7 @@ namespace Database
 
         #endregion
 
-
+        #region Load
 
         public void LoadMedarbejdere()
         {
@@ -509,11 +512,21 @@ namespace Database
                     note = (string)reader["note"];
                     type = (int)reader["type"];
 
+                    personalesystem.OpretFravær(cpr_nummer, dato_fra, dato_til, note, type);
                 }
+                conn.Close();
+            }
+            catch(SqlException e)
+            {
+                if(conn.State == ConnectionState.Open)
+                {
+                    conn.Close();
+                }
+                throw(e);
             }
         }
 
-
+        #endregion
 
 
 
