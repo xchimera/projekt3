@@ -26,7 +26,8 @@ namespace Database
         }
 
         #region query
-        public List<Medarbejder> /*Medarbejder*/ FindPersonale(string navn)
+        /*
+        public List<Medarbejder> FindPersonale(string navn)
         {
             long cpr_nummer;
             string dbnavn;
@@ -189,11 +190,11 @@ namespace Database
         }
 
 
-
+        */
         #endregion
 
         #region nonquery
-
+        /*
         public string OpretFravær(string cpr_nummer, string type, DateTime dato_fra, DateTime dato_til)
         {
             string sqlfejl =null;
@@ -434,7 +435,7 @@ namespace Database
             
         
 
-
+        */
         #endregion
 
 
