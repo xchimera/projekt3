@@ -29,8 +29,8 @@ namespace BF_OKS
 
         public void OpretFravær(string type, DateTime dato_fra, DateTime dato_til)
         {
-            fravær = new Fravær(type, dato_fra, dato_til);
-            fravære.Add(fravær);
+            Fravær fravær = new Fravær(type, dato_fra, dato_til);
+            listFravær.Add(fravær);
         }
 
 
@@ -74,8 +74,8 @@ namespace BF_OKS
 
         internal Fravær Fravær
         {
-            get { return fravær; }
-            set { fravær = value; }
+            get { return Fravær; }
+            set { Fravær = value; }
         }
     }
 }
