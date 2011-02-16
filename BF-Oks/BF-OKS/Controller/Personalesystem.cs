@@ -17,11 +17,11 @@ namespace Database
         }
 
 
-        public Medarbejder FindPersonale(string navn)
-        {
-            Medarbejder medarbejder = personale.FindPersonale(navn);
+        //public Medarbejder FindPersonale(string navn)
+        //{
+        //    Medarbejder medarbejder = personale.FindPersonale(navn);
 
-            return medarbejder;
-        }
+        //    return medarbejder;
+        //}
     }
 }
