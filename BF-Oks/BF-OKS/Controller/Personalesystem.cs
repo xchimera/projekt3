@@ -9,19 +9,17 @@ namespace Database
 {
     public class Personalesystem
     {
-        DBFacade personale;
+        DBFacade DBfac;
+        
 
         public Personalesystem()
         {
-            personale = new DBFacade();
+            //TODO: Kode, hvis der er noget?
         }
 
+        public void TilføjMedarbejder(string navn, long cpr_nummer, string adresse, int postnr, long tlf, int afdelingsid)
+        {
 
-        //public Medarbejder FindPersonale(string navn)
-        //{
-        //    Medarbejder medarbejder = personale.FindPersonale(navn);
-
-        //    return medarbejder;
-        //}
+        }
     }
 }

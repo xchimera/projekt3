@@ -5,7 +5,7 @@ using System.Text;
 
 namespace BF_OKS
 {
-    class MedarbejderCollection
+    public class MedarbejderCollection
     {
     }
 }
