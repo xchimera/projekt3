@@ -4,7 +4,7 @@ namespace BF_OKS
 {
     public class MedarbejderCollection
     {
-        private readonly List<Medarbejder> medarbejderer;
+        private List<Medarbejder> medarbejderer;
 
         public MedarbejderCollection()
         {
