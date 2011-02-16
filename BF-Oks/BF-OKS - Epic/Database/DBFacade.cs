@@ -10,14 +10,14 @@ using System.Data;
 
 namespace Database
 {
-    class Personale
+    class DBFacade
     {
         private string sql = @"Data Source= linux1.tietgen.dk;Initial Catalog=gruppe10;User Id=gruppe10;Password=cehEk2busP";
         private string sql_proc;
         SqlCommand cmd;
         SqlConnection conn;
 
-        public Personale()
+        public DBFacade()
         {
             cmd = new SqlCommand();
             conn = new SqlConnection(sql);

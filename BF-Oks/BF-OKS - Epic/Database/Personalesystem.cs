@@ -7,13 +7,13 @@ using System.Data;
 
 namespace Database
 {
-    public class DB_Sql
+    public class Personalesystem
     {
-        Personale personale;
+        DBFacade personale;
 
-        public DB_Sql()
+        public Personalesystem()
         {
-            personale = new Personale();
+            personale = new DBFacade();
         }
 
 
