@@ -54,7 +54,7 @@ namespace Database
         //    {
         //        conn.Open();
         //        reader = cmd.ExecuteReader();
-                
+
 
 
         //        while (reader.Read())
@@ -84,7 +84,7 @@ namespace Database
         //    return medarbejdere;
         //}
 
-     
+
 
         //public Medarbejder FindPersonale(long cpr_nummer)
         //{
@@ -206,7 +206,7 @@ namespace Database
         //    cmd.Parameters.Clear();
 
         //    SqlParameter par;
- 
+
         //    par = new SqlParameter("@cpr_ID", SqlDbType.BigInt);
         //    par.Value = cpr_nummer;
         //    cmd.Parameters.Add(par);
@@ -464,6 +464,50 @@ namespace Database
                     postnr = (int)reader["Postnr_FID"];
                     tlf = (long)reader["tlf"];
                     afdelingsid = (int)reader["afd_FID"];
+
+                    personalesystem.TilføjMedarbejder(navn, cpr_nummer, adresse, postnr, tlf, afdelingsid);
+
+                }
+
+                conn.Close();
+            }
+            catch (SqlException e)
+            {
+                if (conn.State == ConnectionState.Open)
+                {
+                    conn.Close();
+                }
+                throw (e);
+            }
+
+        }
+
+        public void LoadFravær()
+        {
+            long cpr_nummer;
+            DateTime dato_fra;
+            DateTime dato_til;
+            string note;
+            int type;
+
+            SqlDataReader reader;
+
+            cmd.Parameters.Clear();
+            cmd.CommandText = "FindAlleFravær";
+
+
+            try
+            {
+                conn.Open();
+                reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    cpr_nummer = (long)reader["cpr_FID"];
+                    dato_fra = (DateTime)reader["dato_fra"];
+                    dato_til = (DateTime)reader["dato_til"];
+                    note = (string)reader["note"];
+                    type = (int)reader["type"];
 
                 }
             }
