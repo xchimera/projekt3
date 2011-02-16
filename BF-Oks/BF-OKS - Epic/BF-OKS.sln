@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BF-OKS", "BF-OKS\BF-OKS.csproj", "{D4E9E347-8B5D-4C43-BA86-0F61754FF19D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Database", "Database\Database.csproj", "{5BB8621D-35A6-4900-9C8B-15DD10B3E91B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Controller", "Database\Controller.csproj", "{5BB8621D-35A6-4900-9C8B-15DD10B3E91B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Model", "Model\Model.csproj", "{818F9096-DFF1-4894-9BB6-1DBDF0328BED}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BF-OKS GUI", "..\..\..\..\Desktop\Projects3\BF-OKS\WindowsFormsApplication1\BF-OKS GUI.csproj", "{88A0686D-9763-4195-A4B1-343C8574F1C2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GUI", "..\..\..\..\Desktop\Projects3\BF-OKS\WindowsFormsApplication1\GUI.csproj", "{88A0686D-9763-4195-A4B1-343C8574F1C2}"
 EndProject
 Global
 	GlobalSection(SubversionScc) = preSolution
