@@ -40,8 +40,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DB_Sql.cs" />
-    <Compile Include="Personale.cs" />
+    <Compile Include="Personalesystem.cs" />
+    <Compile Include="DBFacade.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
