@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System;
 
 namespace BF_OKS
 {
@@ -11,12 +12,16 @@ namespace BF_OKS
             medarbejderer = new List<Medarbejder>();
         }
 
-        public Medarbejder OpretMedarbejder(long cpr_nummer, string navn, string adresse, int postnr, long tlf,
+        public void OpretMedarbejder(long cpr_nummer, string navn, string adresse, int postnr, long tlf,
                                             int afdelingsid)
         {
             var medarbejder = new Medarbejder(cpr_nummer, navn, adresse, postnr, tlf, afdelingsid); // skab medarbejder
             medarbejderer.Add(medarbejder); // smid medarbejder  i liste
-            return medarbejder;
+        }
+
+        public void OpretFravær(long cpr_nummer, DateTime dato_fra, DateTime dato_til, string note, int )
+        {
+
         }
 
         public Medarbejder FindMedarbejder(long cpr_nummer)
