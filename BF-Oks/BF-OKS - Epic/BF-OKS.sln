@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Database", "Database\Databa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Model", "Model\Model.csproj", "{818F9096-DFF1-4894-9BB6-1DBDF0328BED}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BF-OKS GUI", "..\..\..\..\Desktop\Projects3\BF-OKS\WindowsFormsApplication1\BF-OKS GUI.csproj", "{88A0686D-9763-4195-A4B1-343C8574F1C2}"
+EndProject
 Global
 	GlobalSection(SubversionScc) = preSolution
 		Svn-Managed = True
@@ -51,6 +53,16 @@ Global
 		{818F9096-DFF1-4894-9BB6-1DBDF0328BED}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{818F9096-DFF1-4894-9BB6-1DBDF0328BED}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{818F9096-DFF1-4894-9BB6-1DBDF0328BED}.Release|x86.ActiveCfg = Release|Any CPU
+		{88A0686D-9763-4195-A4B1-343C8574F1C2}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{88A0686D-9763-4195-A4B1-343C8574F1C2}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{88A0686D-9763-4195-A4B1-343C8574F1C2}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{88A0686D-9763-4195-A4B1-343C8574F1C2}.Debug|x86.ActiveCfg = Debug|x86
+		{88A0686D-9763-4195-A4B1-343C8574F1C2}.Debug|x86.Build.0 = Debug|x86
+		{88A0686D-9763-4195-A4B1-343C8574F1C2}.Release|Any CPU.ActiveCfg = Release|x86
+		{88A0686D-9763-4195-A4B1-343C8574F1C2}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{88A0686D-9763-4195-A4B1-343C8574F1C2}.Release|Mixed Platforms.Build.0 = Release|x86
+		{88A0686D-9763-4195-A4B1-343C8574F1C2}.Release|x86.ActiveCfg = Release|x86
+		{88A0686D-9763-4195-A4B1-343C8574F1C2}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
