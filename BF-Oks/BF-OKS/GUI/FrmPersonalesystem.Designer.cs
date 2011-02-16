@@ -71,22 +71,16 @@
             this.btnSlet = new System.Windows.Forms.Button();
             this.btnOpret = new System.Windows.Forms.Button();
             this.txtCPR = new System.Windows.Forms.TextBox();
-            this.txtMobil = new System.Windows.Forms.TextBox();
+            this.txtAfdeling = new System.Windows.Forms.TextBox();
             this.txtTelefon = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.txtBy = new System.Windows.Forms.TextBox();
             this.txtPostnr = new System.Windows.Forms.TextBox();
             this.txtAdresse = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.txtEfternavn = new System.Windows.Forms.TextBox();
-            this.txtMellemnavn = new System.Windows.Forms.TextBox();
             this.txtFornavn = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.listView3 = new System.Windows.Forms.ListView();
             this.columnHeader19 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -112,6 +106,8 @@
             this.btnKartotek = new System.Windows.Forms.Button();
             this.btnKalender = new System.Windows.Forms.Button();
             this.btnRFravær = new System.Windows.Forms.Button();
+            this.txtBy = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabRegistrer_Fravær.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -127,7 +123,7 @@
             this.tabControl1.Controls.Add(this.tabKartotek);
             this.tabControl1.Controls.Add(this.tabRediger_Katotek);
             this.tabControl1.Controls.Add(this.tabPage3);
-            this.tabControl1.Location = new System.Drawing.Point(165, -21);
+            this.tabControl1.Location = new System.Drawing.Point(165, 3);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(917, 603);
@@ -226,6 +222,7 @@
             this.btnRegistrerFravær.TabIndex = 24;
             this.btnRegistrerFravær.Text = "Registrer fravær";
             this.btnRegistrerFravær.UseVisualStyleBackColor = true;
+            this.btnRegistrerFravær.Click += new System.EventHandler(this.btnRegistrerFravær_Click);
             // 
             // txtSlutDato
             // 
@@ -447,26 +444,22 @@
             // tabRediger_Katotek
             // 
             this.tabRediger_Katotek.BackColor = System.Drawing.Color.Gainsboro;
+            this.tabRediger_Katotek.Controls.Add(this.txtBy);
+            this.tabRediger_Katotek.Controls.Add(this.label6);
             this.tabRediger_Katotek.Controls.Add(this.btnRediger);
             this.tabRediger_Katotek.Controls.Add(this.btnSlet);
             this.tabRediger_Katotek.Controls.Add(this.btnOpret);
             this.tabRediger_Katotek.Controls.Add(this.txtCPR);
-            this.tabRediger_Katotek.Controls.Add(this.txtMobil);
+            this.tabRediger_Katotek.Controls.Add(this.txtAfdeling);
             this.tabRediger_Katotek.Controls.Add(this.txtTelefon);
             this.tabRediger_Katotek.Controls.Add(this.label11);
             this.tabRediger_Katotek.Controls.Add(this.label12);
             this.tabRediger_Katotek.Controls.Add(this.label13);
-            this.tabRediger_Katotek.Controls.Add(this.txtBy);
             this.tabRediger_Katotek.Controls.Add(this.txtPostnr);
             this.tabRediger_Katotek.Controls.Add(this.txtAdresse);
-            this.tabRediger_Katotek.Controls.Add(this.label8);
             this.tabRediger_Katotek.Controls.Add(this.label9);
             this.tabRediger_Katotek.Controls.Add(this.label10);
-            this.tabRediger_Katotek.Controls.Add(this.txtEfternavn);
-            this.tabRediger_Katotek.Controls.Add(this.txtMellemnavn);
             this.tabRediger_Katotek.Controls.Add(this.txtFornavn);
-            this.tabRediger_Katotek.Controls.Add(this.label7);
-            this.tabRediger_Katotek.Controls.Add(this.label6);
             this.tabRediger_Katotek.Controls.Add(this.label5);
             this.tabRediger_Katotek.Controls.Add(this.listView3);
             this.tabRediger_Katotek.Location = new System.Drawing.Point(4, 22);
@@ -505,24 +498,25 @@
             this.btnOpret.TabIndex = 50;
             this.btnOpret.Text = "Opret";
             this.btnOpret.UseVisualStyleBackColor = true;
+            this.btnOpret.Click += new System.EventHandler(this.btnOpret_Click);
             // 
             // txtCPR
             // 
-            this.txtCPR.Location = new System.Drawing.Point(636, 93);
+            this.txtCPR.Location = new System.Drawing.Point(402, 63);
             this.txtCPR.Name = "txtCPR";
             this.txtCPR.Size = new System.Drawing.Size(100, 20);
             this.txtCPR.TabIndex = 49;
             // 
-            // txtMobil
+            // txtAfdeling
             // 
-            this.txtMobil.Location = new System.Drawing.Point(636, 65);
-            this.txtMobil.Name = "txtMobil";
-            this.txtMobil.Size = new System.Drawing.Size(100, 20);
-            this.txtMobil.TabIndex = 48;
+            this.txtAfdeling.Location = new System.Drawing.Point(643, 35);
+            this.txtAfdeling.Name = "txtAfdeling";
+            this.txtAfdeling.Size = new System.Drawing.Size(100, 20);
+            this.txtAfdeling.TabIndex = 48;
             // 
             // txtTelefon
             // 
-            this.txtTelefon.Location = new System.Drawing.Point(636, 36);
+            this.txtTelefon.Location = new System.Drawing.Point(402, 94);
             this.txtTelefon.Name = "txtTelefon";
             this.txtTelefon.Size = new System.Drawing.Size(100, 20);
             this.txtTelefon.TabIndex = 47;
@@ -531,7 +525,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(555, 91);
+            this.label11.Location = new System.Drawing.Point(321, 66);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(57, 17);
             this.label11.TabIndex = 46;
@@ -541,58 +535,41 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(555, 63);
+            this.label12.Location = new System.Drawing.Point(562, 33);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(62, 17);
+            this.label12.Size = new System.Drawing.Size(59, 17);
             this.label12.TabIndex = 45;
-            this.label12.Text = "Mobil nr.";
+            this.label12.Text = "Afdeling";
             // 
             // label13
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(555, 35);
+            this.label13.Location = new System.Drawing.Point(321, 93);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(77, 17);
             this.label13.TabIndex = 44;
             this.label13.Text = "Telefon nr.";
             // 
-            // txtBy
-            // 
-            this.txtBy.Location = new System.Drawing.Point(394, 93);
-            this.txtBy.Name = "txtBy";
-            this.txtBy.Size = new System.Drawing.Size(100, 20);
-            this.txtBy.TabIndex = 43;
-            // 
             // txtPostnr
             // 
-            this.txtPostnr.Location = new System.Drawing.Point(394, 65);
+            this.txtPostnr.Location = new System.Drawing.Point(151, 93);
             this.txtPostnr.Name = "txtPostnr";
             this.txtPostnr.Size = new System.Drawing.Size(100, 20);
             this.txtPostnr.TabIndex = 42;
             // 
             // txtAdresse
             // 
-            this.txtAdresse.Location = new System.Drawing.Point(394, 36);
+            this.txtAdresse.Location = new System.Drawing.Point(151, 64);
             this.txtAdresse.Name = "txtAdresse";
             this.txtAdresse.Size = new System.Drawing.Size(100, 20);
             this.txtAdresse.TabIndex = 41;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(313, 91);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(24, 17);
-            this.label8.TabIndex = 40;
-            this.label8.Text = "By";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(313, 63);
+            this.label9.Location = new System.Drawing.Point(50, 91);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(57, 17);
             this.label9.TabIndex = 39;
@@ -602,25 +579,11 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(313, 35);
+            this.label10.Location = new System.Drawing.Point(50, 63);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(60, 17);
             this.label10.TabIndex = 38;
             this.label10.Text = "Adresse";
-            // 
-            // txtEfternavn
-            // 
-            this.txtEfternavn.Location = new System.Drawing.Point(151, 92);
-            this.txtEfternavn.Name = "txtEfternavn";
-            this.txtEfternavn.Size = new System.Drawing.Size(100, 20);
-            this.txtEfternavn.TabIndex = 37;
-            // 
-            // txtMellemnavn
-            // 
-            this.txtMellemnavn.Location = new System.Drawing.Point(151, 64);
-            this.txtMellemnavn.Name = "txtMellemnavn";
-            this.txtMellemnavn.Size = new System.Drawing.Size(100, 20);
-            this.txtMellemnavn.TabIndex = 36;
             // 
             // txtFornavn
             // 
@@ -628,26 +591,6 @@
             this.txtFornavn.Name = "txtFornavn";
             this.txtFornavn.Size = new System.Drawing.Size(100, 20);
             this.txtFornavn.TabIndex = 35;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(50, 92);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(69, 17);
-            this.label7.TabIndex = 34;
-            this.label7.Text = "Efternavn";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(50, 64);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(83, 17);
-            this.label6.TabIndex = 33;
-            this.label6.Text = "Mellemnavn";
             // 
             // label5
             // 
@@ -861,6 +804,23 @@
             this.btnRFravær.UseVisualStyleBackColor = true;
             this.btnRFravær.Click += new System.EventHandler(this.btnRFravær_Click);
             // 
+            // txtBy
+            // 
+            this.txtBy.Location = new System.Drawing.Point(402, 33);
+            this.txtBy.Name = "txtBy";
+            this.txtBy.Size = new System.Drawing.Size(100, 20);
+            this.txtBy.TabIndex = 55;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(321, 36);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(24, 17);
+            this.label6.TabIndex = 54;
+            this.label6.Text = "By";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -925,22 +885,16 @@
         private System.Windows.Forms.Button btnSlet;
         private System.Windows.Forms.Button btnOpret;
         private System.Windows.Forms.TextBox txtCPR;
-        private System.Windows.Forms.TextBox txtMobil;
+        private System.Windows.Forms.TextBox txtAfdeling;
         private System.Windows.Forms.TextBox txtTelefon;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox txtBy;
         private System.Windows.Forms.TextBox txtPostnr;
         private System.Windows.Forms.TextBox txtAdresse;
-        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox txtEfternavn;
-        private System.Windows.Forms.TextBox txtMellemnavn;
         private System.Windows.Forms.TextBox txtFornavn;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnRediger;
         private System.Windows.Forms.Label label14;
@@ -974,6 +928,8 @@
         private System.Windows.Forms.ColumnHeader columnHeader18;
         private System.Windows.Forms.TextBox txtSøgKartotek;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox txtBy;
+        private System.Windows.Forms.Label label6;
     }
 }
 
