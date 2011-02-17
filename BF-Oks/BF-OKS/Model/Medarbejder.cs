@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace BF_OKS
+namespace Model
 {
     public class Medarbejder
     {

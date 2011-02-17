@@ -2,13 +2,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using BF_OKS;
 using System.Data.SqlClient;
 using System.Data.SqlTypes;
 using System.Data;
 
+using Model;
 
-namespace Database
+
+namespace Controller
 {
     class DBFacade
     {

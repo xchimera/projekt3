@@ -1,4 +1,4 @@
-﻿namespace WindowsFormsApplication1
+﻿namespace GUI
 {
     partial class Form1
     {
@@ -67,6 +67,8 @@
             this.label4 = new System.Windows.Forms.Label();
             this.btnVisFraværMedarbejder = new System.Windows.Forms.Button();
             this.tabRediger_Katotek = new System.Windows.Forms.TabPage();
+            this.txtBy = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.btnRediger = new System.Windows.Forms.Button();
             this.btnSlet = new System.Windows.Forms.Button();
             this.btnOpret = new System.Windows.Forms.Button();
@@ -106,8 +108,6 @@
             this.btnKartotek = new System.Windows.Forms.Button();
             this.btnKalender = new System.Windows.Forms.Button();
             this.btnRFravær = new System.Windows.Forms.Button();
-            this.txtBy = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabRegistrer_Fravær.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -469,6 +469,23 @@
             this.tabRediger_Katotek.TabIndex = 3;
             this.tabRediger_Katotek.Text = "Rediger Katotek";
             // 
+            // txtBy
+            // 
+            this.txtBy.Location = new System.Drawing.Point(402, 33);
+            this.txtBy.Name = "txtBy";
+            this.txtBy.Size = new System.Drawing.Size(100, 20);
+            this.txtBy.TabIndex = 55;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(321, 36);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(24, 17);
+            this.label6.TabIndex = 54;
+            this.label6.Text = "By";
+            // 
             // btnRediger
             // 
             this.btnRediger.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -803,23 +820,6 @@
             this.btnRFravær.Text = "Registrer Fravær";
             this.btnRFravær.UseVisualStyleBackColor = true;
             this.btnRFravær.Click += new System.EventHandler(this.btnRFravær_Click);
-            // 
-            // txtBy
-            // 
-            this.txtBy.Location = new System.Drawing.Point(402, 33);
-            this.txtBy.Name = "txtBy";
-            this.txtBy.Size = new System.Drawing.Size(100, 20);
-            this.txtBy.TabIndex = 55;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(321, 36);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(24, 17);
-            this.label6.TabIndex = 54;
-            this.label6.Text = "By";
             // 
             // Form1
             // 

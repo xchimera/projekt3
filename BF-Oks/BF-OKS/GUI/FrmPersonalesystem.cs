@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace WindowsFormsApplication1
+namespace GUI
 {
     public partial class Form1 : Form
     {
@@ -75,6 +75,11 @@ namespace WindowsFormsApplication1
             telefon = long.Parse(txtTelefon.Text);
             cprnr = long.Parse(txtCPR.Text);
             afdeling = int.Parse(txtAfdeling.Text);            
+        }
+
+        private void tabRegistrer_Fravær_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
