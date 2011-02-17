@@ -7,5 +7,7 @@ namespace Interfaces
 {
     public interface IFraværData
     {
+        public int Type { get; }
+
     }
 }
