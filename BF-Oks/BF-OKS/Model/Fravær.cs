@@ -9,15 +9,17 @@ namespace Model
 {
     public class Fravær : IFraværData
     {
-        private int type;
-        private DateTime dato_fra;
-        private DateTime dato_til;
+        private int Type { get; set; }
+        private DateTime Dato_fra { get; set; }
+        private DateTime Dato_til { get; set; }
+
+
 
         public Fravær(int type, DateTime dato_fra, DateTime dato_til)
         {
-            this.type = type;
-            this.dato_fra = dato_fra;
-            this.dato_til = dato_til;
+            this.Type = type;
+            this.Dato_fra = dato_fra;
+            this.Dato_til = dato_til;
         }
     }
 }
