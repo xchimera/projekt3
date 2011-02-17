@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Interfaces
 {
-    public class IFraværData
+    public interface IFraværData
     {
     }
 }

@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using BF_OKS;
 using System.Data.SqlClient;
 using System.Data.SqlTypes;
 using System.Data;
 
-namespace Database
+using Model;
+
+namespace Controller
 {
     public class Personalesystem
     {

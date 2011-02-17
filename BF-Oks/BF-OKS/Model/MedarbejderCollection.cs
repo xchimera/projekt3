@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System;
 
-namespace BF_OKS
+namespace Model
 {
     public class MedarbejderCollection
     {
