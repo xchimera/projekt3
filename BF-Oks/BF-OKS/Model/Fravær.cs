@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using BF_OKS;
 
 namespace BF_OKS
 {
-    public class Fravær
+    public class Fravær : 
     {
         private int type;
         private DateTime dato_fra;
