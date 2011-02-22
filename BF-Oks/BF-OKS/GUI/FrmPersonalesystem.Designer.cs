@@ -641,7 +641,7 @@
             // columnHeader19
             // 
             this.columnHeader19.Text = "Fornavn";
-            this.columnHeader19.Width = 94;
+            this.columnHeader19.Width = 95;
             // 
             // columnHeader20
             // 
