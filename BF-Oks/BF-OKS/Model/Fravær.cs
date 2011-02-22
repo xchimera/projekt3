@@ -9,9 +9,9 @@ namespace Model
 {
     public class Fravær : IFraværData
     {
-        private int Type { get; set; }
-        private DateTime Dato_fra { get; set; }
-        private DateTime Dato_til { get; set; }
+        public int Type { get; set; }
+        public DateTime Dato_fra { get; set; }
+        public DateTime Dato_til { get; set; }
 
 
 
