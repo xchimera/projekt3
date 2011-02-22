@@ -21,18 +21,24 @@ namespace Controller
 
         Personalesystem personalesystem;
 
-        public DBFacade()
+        public DBFacade(Personalesystem personalesystem)
         {
             cmd = new SqlCommand();
             conn = new SqlConnection(sql);
             cmd.Connection = conn;
             cmd.CommandType = CommandType.StoredProcedure;
-            personalesystem = new Personalesystem();
+            this.personalesystem = personalesystem;
+            //personalesystem = new Personalesystem();
         }
 
         #endregion
 
         #region query
+
+
+
+
+        #region comment
         //public List<Medarbejder> /*Medarbejder*/ FindPersonale(string navn)
         //{
         //    long cpr_nummer;
@@ -196,63 +202,162 @@ namespace Controller
         //}
 
 
-
+        #endregion
         #endregion
 
         #region nonquery
 
-        //public string OpretFravær(string cpr_nummer, string type, DateTime dato_fra, DateTime dato_til)
-        //{
-        //    string sqlfejl =null;
+        public string OpretNyhed(string nyhed)
+        {
+            string sqlfejl = null;
+            cmd.CommandText = "OpretNyhed";
+            cmd.Parameters.Clear();
+            DateTime dagsdato = DateTime.Now;
 
-        //    cmd.CommandText = "OpretFravær";
+            SqlParameter par = new SqlParameter("@nyhed", SqlDbType.NVarChar);
+            par.Value = nyhed;
+            cmd.Parameters.Add(par);
 
-        //    cmd.Parameters.Clear();
+            par = new SqlParameter("@dato", SqlDbType.Date);
+            par.Value = dagsdato;
+            cmd.Parameters.Add(par);
 
-        //    SqlParameter par;
+            try
+            {
+                conn.Open();
+                cmd.ExecuteNonQuery();
+                conn.Close();
+            }
+            catch (SqlException e)
+            {
+                if (e.Number == 2627)
+                {
+                    sqlfejl = "nyheden findes allerede";
+                }
+                else
+                {
+                    sqlfejl = "nyheden kunne ikke oprettes " + e.Number;
+                }
+                if (conn.State == ConnectionState.Open)
+                {
+                    conn.Close();
+                }
+            }
 
-        //    par = new SqlParameter("@cpr_ID", SqlDbType.BigInt);
-        //    par.Value = cpr_nummer;
-        //    cmd.Parameters.Add(par);
+            return sqlfejl;
+        }
+        public string OpretMedarbejder(long cpr, string navn, string adresse, int postnr, long tlf, int afd)
+        {
+            string sqlfejl = null;
 
-        //    par = new SqlParameter("@type", SqlDbType.NVarChar);
-        //    par.Value = type;
-        //    cmd.Parameters.Add(type);
+            cmd.CommandText = "OpretMedarbejder";
+            cmd.Parameters.Clear();
 
-        //    par = new SqlParameter("@dato_fra", SqlDbType.Date);
-        //    par.Value = dato_fra;
-        //    cmd.Parameters.Add(dato_fra);
+            SqlParameter par;
 
-        //    par = new SqlParameter("@dato_til", SqlDbType.Date);
-        //    par.Value = dato_til;
-        //    cmd.Parameters.Add(dato_til);
+            par = new SqlParameter("@cpr", SqlDbType.BigInt);
+            par.Value = cpr;
+            cmd.Parameters.Add(par);
 
-        //    try
-        //    {
-        //        conn.Open();
-        //        cmd.ExecuteNonQuery();
-        //        conn.Close();
-        //    }
+            par = new SqlParameter("@navn", SqlDbType.NVarChar);
+            par.Value = navn;
+            cmd.Parameters.Add(par);
 
-        //    catch (SqlException e)
-        //    {
-        //        if (e.Number == 2627)
-        //        {
-        //            sqlfejl = "Fraværet findes allerede";
-        //        }
-        //        else
-        //        {
-        //            sqlfejl = "Fraværet kunne ikke oprettes" + e.Number;
-        //        }
-        //        if (conn.State == ConnectionState.Open)
-        //        {
-        //            conn.Close();
-        //        }
-        //    }
+            par = new SqlParameter("@adresse", SqlDbType.NVarChar);
+            par.Value = adresse;
+            cmd.Parameters.Add(par);
 
-        //    return sqlfejl;
+            par = new SqlParameter("@postnr", SqlDbType.Int);
+            par.Value = postnr;
+            cmd.Parameters.Add(par);
 
-        //}
+            par = new SqlParameter("@tlf", SqlDbType.BigInt);
+            par.Value = tlf;
+            cmd.Parameters.Add(par);
+
+            par = new SqlParameter("@afd", SqlDbType.Int);
+            par.Value = afd;
+            cmd.Parameters.Add(par);
+
+            try
+            {
+                conn.Open();
+                cmd.ExecuteNonQuery();
+                conn.Close();
+            }
+            catch (SqlException e)
+            {
+                if (e.Number == 2627)
+                {
+                    sqlfejl = "Medarbejder findes allerede i katoteket";
+                }
+                else
+                {
+                    sqlfejl = "Der er sket en fejl under oprettelsen af Medarbejder" + e.Number;
+                }
+                if (conn.State == ConnectionState.Open)
+                {
+                    conn.Close();
+                }
+            }
+            return sqlfejl;
+        }
+
+
+        public string OpretFravær(long cpr_nummer, string type, DateTime dato_fra, DateTime dato_til)
+        {
+            string sqlfejl = null;
+
+            cmd.CommandText = "OpretFravær";
+
+            cmd.Parameters.Clear();
+
+            SqlParameter par;
+
+            par = new SqlParameter("@cpr_ID", SqlDbType.BigInt);
+            par.Value = cpr_nummer;
+            cmd.Parameters.Add(par);
+
+            par = new SqlParameter("@type", SqlDbType.NVarChar);
+            par.Value = type;
+            cmd.Parameters.Add(type);
+
+            par = new SqlParameter("@dato_fra", SqlDbType.Date);
+            par.Value = dato_fra;
+            cmd.Parameters.Add(dato_fra);
+
+            par = new SqlParameter("@dato_til", SqlDbType.Date);
+            par.Value = dato_til;
+            cmd.Parameters.Add(dato_til);
+
+            try
+            {
+                conn.Open();
+                cmd.ExecuteNonQuery();
+                conn.Close();
+            }
+
+            catch (SqlException e)
+            {
+                if (e.Number == 2627)
+                {
+                    sqlfejl = "Fraværet findes allerede";
+                }
+                else
+                {
+                    sqlfejl = "Fraværet kunne ikke oprettes" + e.Number;
+                }
+                if (conn.State == ConnectionState.Open)
+                {
+                    conn.Close();
+                }
+            }
+
+            return sqlfejl;
+
+        }
+
+        #region comment
 
         //public string OpretAfdeling(string afdeling, int afd)
         //{
@@ -339,62 +444,7 @@ namespace Controller
         //    return sqlfejl;
         //}
 
-        //public string OpretMedarbejder(int cpr, string navn, string adresse, int postnr, long tlf, int afd)
-        //{
-        //    string sqlfejl = null;
 
-        //    cmd.CommandText = "OpretMedarbejder";
-        //    cmd.Parameters.Clear();
-
-        //    SqlParameter par;
-
-        //    par = new SqlParameter("@cpr",SqlDbType.NVarChar);
-        //    par.Value = cpr;
-        //    cmd.Parameters.Add(par);
-
-        //    par = new SqlParameter("@navn", SqlDbType.NVarChar);
-        //    par.Value = navn;
-        //    cmd.Parameters.Add(par);
-
-        //    par = new SqlParameter("@adresse",SqlDbType.NVarChar);
-        //    par.Value = adresse;
-        //    cmd.Parameters.Add(par);
-
-        //    par = new SqlParameter("@postnr", SqlDbType.Int);
-        //    par.Value = postnr;
-        //    cmd.Parameters.Add(par);
-
-        //    par = new SqlParameter("@tlf", SqlDbType.BigInt);
-        //    par.Value = tlf;
-        //    cmd.Parameters.Add(par);
-
-        //    par = new SqlParameter("@afd", SqlDbType.Int);
-        //    par.Value = afd;
-        //    cmd.Parameters.Add(par);
-
-        //    try
-        //    {
-        //        conn.Open();
-        //        cmd.ExecuteNonQuery();
-        //        conn.Close();
-        //    }
-        //    catch (SqlException e)
-        //    {
-        //        if (e.Number == 2627)
-        //        {
-        //            sqlfejl = "Medarbejder findes allerede i katoteket";
-        //        }
-        //        else
-        //        {
-        //            sqlfejl = "Der er sket en fejl under oprettelsen af Medarbejder" + e.Number;
-        //        }
-        //        if (conn.State == ConnectionState.Open)
-        //        {
-        //            conn.Close();
-        //        }
-        //    }
-        //    return sqlfejl;
-        //}
 
         //public string OpretNyhed(string nyhed, DateTime dato)
         //{
@@ -435,6 +485,7 @@ namespace Controller
 
         //}
 
+        #endregion
 
 
         #endregion
@@ -474,6 +525,7 @@ namespace Controller
                 }
 
                 conn.Close();
+                LoadFravær();
             }
             catch (SqlException e)
             {

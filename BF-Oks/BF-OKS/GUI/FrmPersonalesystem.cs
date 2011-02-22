@@ -6,15 +6,18 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using Controller;
 
 namespace GUI
 {
     public partial class Form1 : Form
     {
-        //TODO: Bind GUI sammen med system
+        Personalesystem personalesystem;
+        
         public Form1()
         {
             InitializeComponent();
+            personalesystem = new Personalesystem();
         }
 
         private void button7_Click(object sender, EventArgs e)
@@ -67,14 +70,31 @@ namespace GUI
             long telefon;
             long cprnr;
             int afdeling;
-         
-            navn = txtFornavn.Text;
-            adresse = txtAdresse.Text;
-            by = txtBy.Text;
-            postnr = int.Parse(txtPostnr.Text);
-            telefon = long.Parse(txtTelefon.Text);
-            cprnr = long.Parse(txtCPR.Text);
-            afdeling = int.Parse(txtAfdeling.Text);            
+
+            try
+            {
+                navn = txtFornavn.Text;
+                adresse = txtAdresse.Text;
+                by = txtBy.Text;
+                postnr = int.Parse(txtPostnr.Text);
+                telefon = long.Parse(txtTelefon.Text);
+                cprnr = long.Parse(txtCPR.Text);
+                afdeling = int.Parse(txtAfdeling.Text);
+                if (personalesystem.OpretMedarbejder(navn, cprnr, adresse, postnr, telefon, afdeling))
+                {
+                    MessageBox.Show("Medarbejder oprettet");
+                }
+                else
+                {
+                    MessageBox.Show("Kunne ikke oprette medarbejder, tjek om medarbejderen findes");
+                }
+                
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Indtast venligst alle værdier, og venligst rigtigt");
+            }
+           
         }
 
         private void tabRegistrer_Fravær_Click(object sender, EventArgs e)
