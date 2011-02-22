@@ -55,8 +55,18 @@ namespace GUI
             DateTime start_dato;
             DateTime slut_dato;
 
-            start_dato = DateTime.Parse(txtStartDato.Text);
-            slut_dato = DateTime.Parse(txtSlutDato.Text);
+            try
+            {
+                start_dato = DateTime.Parse(txtStartDato.Text);
+                slut_dato = DateTime.Parse(txtSlutDato.Text);
+                //TODO: hvordan finder vi cpr nummeret?
+                personalesystem.OpretFravær(1234567890, start_dato, slut_dato, "note 1", "s");
+
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Indtast venligst rigtige værdier");
+            }
 
         }
 

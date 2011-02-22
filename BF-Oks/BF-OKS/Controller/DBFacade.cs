@@ -304,7 +304,7 @@ namespace Controller
         }
 
 
-        public string OpretFravær(long cpr_nummer, string type, DateTime dato_fra, DateTime dato_til)
+        public string OpretFravær(long cpr_nummer, string note, string type, DateTime dato_fra, DateTime dato_til)
         {
             string sqlfejl = null;
 
@@ -314,21 +314,25 @@ namespace Controller
 
             SqlParameter par;
 
-            par = new SqlParameter("@cpr_ID", SqlDbType.BigInt);
+            par = new SqlParameter("@cpr", SqlDbType.BigInt);
             par.Value = cpr_nummer;
             cmd.Parameters.Add(par);
 
             par = new SqlParameter("@type", SqlDbType.NVarChar);
             par.Value = type;
-            cmd.Parameters.Add(type);
+            cmd.Parameters.Add(par);
 
             par = new SqlParameter("@dato_fra", SqlDbType.Date);
             par.Value = dato_fra;
-            cmd.Parameters.Add(dato_fra);
+            cmd.Parameters.Add(par);
 
             par = new SqlParameter("@dato_til", SqlDbType.Date);
             par.Value = dato_til;
-            cmd.Parameters.Add(dato_til);
+            cmd.Parameters.Add(par);
+
+            par = new SqlParameter("@note", SqlDbType.NVarChar);
+            par.Value = note;
+            cmd.Parameters.Add(par);
 
             try
             {
@@ -544,7 +548,7 @@ namespace Controller
             DateTime dato_fra;
             DateTime dato_til;
             string note;
-            int type;
+            string type;
 
             SqlDataReader reader;
 
@@ -563,9 +567,9 @@ namespace Controller
                     dato_fra = (DateTime)reader["dato_fra"];
                     dato_til = (DateTime)reader["dato_til"];
                     note = (string)reader["note"];
-                    type = (int)reader["type"];
+                    type = (string)reader["type"];
 
-                    personalesystem.OpretFravær(cpr_nummer, dato_fra, dato_til, note, type);
+                    personalesystem.TilføjFravær(cpr_nummer, dato_fra, dato_til, note, type);
                 }
                 conn.Close();
             }

@@ -19,13 +19,13 @@ namespace Model
             ListMedarbejdere.Add(medarbejder); // smid medarbejder  i liste
         }
 
-        public void OpretFravær(long cpr_nummer, DateTime dato_fra, DateTime dato_til, string note, int type)
+        public void OpretFravær(long cpr_nummer, DateTime dato_fra, DateTime dato_til, string note, string type)
         {
             foreach (Medarbejder MedArb in ListMedarbejdere)
 	        {
                 if (MedArb.Cpr_nummer == cpr_nummer)
 	            {
-                    MedArb.OpretFravær(type, dato_fra, dato_til);
+                    MedArb.OpretFravær(type, note, dato_fra, dato_til);
                     break;
 	            }
 	        }
