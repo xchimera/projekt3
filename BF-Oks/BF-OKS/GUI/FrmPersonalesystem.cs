@@ -151,6 +151,7 @@ namespace GUI
                     medarbejdere.SubItems.Add(medarbejderData.Afdelingsid.ToString());
 
                     lstMedarbKato.Items.Add(medarbejdere);
+                    lstFravær.Items.Add(medarbejdere);
                 }
                 // referencer: Interfaces
                 // oprettet ienumerator i conrtroller og medarbejdercollection
