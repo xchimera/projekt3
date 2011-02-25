@@ -40,12 +40,13 @@ namespace Controller
         {
             medarbejdercollection.OpretMedarbejder(cpr_nummer, navn, adresse, postnr, tlf, afdelingsid);
         }
-
+        
 
         // Tilføjer et objekt af fravær til en valgt medarbejder
         public void TilføjFravær(long cpr_nummer, DateTime dato_fra, DateTime dato_til, string note, string type)
         {
             medarbejdercollection.OpretFravær(cpr_nummer, dato_fra, dato_til, note, type);
+            
         }
 
         public bool OpretFravær(long cpr_nummer, DateTime dato_fra, DateTime dato_til, string note, string type)
