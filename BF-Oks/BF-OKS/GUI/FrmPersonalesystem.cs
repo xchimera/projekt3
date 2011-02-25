@@ -21,8 +21,8 @@ namespace GUI
         {
             InitializeComponent();
             personalesystem = new Personalesystem();
-            string[] row1 = { "s1", "s2", "s3", "s4", "s5", "s6", "s7", "s8" };
-            lstFravær.Items.Add("Column1Text").SubItems.AddRange(row1);
+            //string[] row1 = { "s1", "s2", "s3", "s4", "s5", "s6", "s7", "s8" };
+            //lstFravær.Items.Add("Column1Text").SubItems.AddRange(row1);
         }
 
         private void button7_Click(object sender, EventArgs e)
@@ -128,6 +128,7 @@ namespace GUI
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            try
             {
                 IMedarbejderData medarbejderData;
                 IEnumerator medarbiterator = personalesystem.GetMedarbejderIterator();
@@ -140,67 +141,33 @@ namespace GUI
 
                 while (medarbiterator.MoveNext())   // så længe der er medarbejderer
                 {
-
-                    medarbejderData = (IMedarbejderData)medarbiterator.Current;   // læs aktuel/current medarbejder
+                    //medarbejderData = (IMedarbejderData)medarbiterator.Current;   // læs aktuel/current medarbejder
+                    Medarbejder medarbejder = (Medarbejder)medarbiterator.Current;
                     ListViewItem medarbejdere = new ListViewItem();
-                    medarbejdere.Text = medarbejderData.Cpr_nummer.ToString();
-                    medarbejdere.SubItems.Add(medarbejderData.Navn);
-                    medarbejdere.SubItems.Add(medarbejderData.Adresse);
-                    medarbejdere.SubItems.Add(medarbejderData.Postnr.ToString());
-                    medarbejdere.SubItems.Add(medarbejderData.By);
-                    medarbejdere.SubItems.Add(medarbejderData.Tlf.ToString());
-                    medarbejdere.SubItems.Add(medarbejderData.Afdelingsid.ToString());
+                    medarbejdere.Text = medarbejder.Cpr_nummer.ToString();
+                    medarbejdere.SubItems.Add(medarbejder.Navn);
+
+                    medarbejdere.SubItems.Add(medarbejder.Adresse);
+                    medarbejdere.SubItems.Add(medarbejder.Postnr.ToString());
+                    medarbejdere.SubItems.Add(medarbejder.By);
+                    medarbejdere.SubItems.Add(medarbejder.Tlf.ToString());
+                    medarbejdere.SubItems.Add(medarbejder.Afdelingsid.ToString());
 
                     lstMedarbKato.Items.Add(medarbejdere);
-                    lstFravær.Items.Add(medarbejdere);
                 }
                 // referencer: Interfaces
                 // oprettet ienumerator i conrtroller og medarbejdercollection
                 // tilføjet BY i medarbeder og BY i IMedarbejderData
                 // gjort IMmedarbejderData til Public
-                // omdøbt lstView1 til lstFravær
-            }
-        }
+                // omdøbt lstView1 til lstFravær skulle nok ikke v
 
-        private void test_Click_1(object sender, EventArgs e)
-        {
+            }
+            catch (Exception)
             {
-                Medarbejder medarbejderData;
-                IEnumerator medarbiterator = personalesystem.GetMedarbejderIterator();
-                if (medarbiterator == null)
-                {
-                    MessageBox.Show("Medarbejderlisten kunne desværre ikke vises", "Systemfejl", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-                medarbiterator.Reset();   // Sæt iterator til at pege før første element
 
-                while (medarbiterator.MoveNext())   // så længe der er medarbejderer
-                {
-
-                    medarbejderData = medarbiterator.Current as Medarbejder;   // læs aktuel/current medarbejder
-                    ListViewItem medarbejdere = new ListViewItem();
-                    medarbejdere.Text = medarbejderData.Cpr_nummer.ToString();
-                    medarbejdere.SubItems.Add(medarbejderData.Navn);
-                    medarbejdere.SubItems.Add(medarbejderData.Adresse);
-                    medarbejdere.SubItems.Add(medarbejderData.Postnr.ToString());
-                    medarbejdere.SubItems.Add(medarbejderData.By);
-                    medarbejdere.SubItems.Add(medarbejderData.Tlf.ToString());
-                    medarbejdere.SubItems.Add(medarbejderData.Afdelingsid.ToString());
-
-                    lstMedarbKato.Items.Add(medarbejdere);
-                    lstFravær.Items.Add(medarbejdere);
-                }
-                // referencer: Interfaces
-                // oprettet ienumerator i conrtroller og medarbejdercollection
-                // tilføjet BY i medarbeder og BY i IMedarbejderData
-                // gjort IMmedarbejderData til Public
-                // omdøbt lstView1 til lstFravær
             }
-
-
         }
 
 
     }
-
 }
