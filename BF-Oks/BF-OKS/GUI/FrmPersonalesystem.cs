@@ -18,6 +18,8 @@ namespace GUI
         {
             InitializeComponent();
             personalesystem = new Personalesystem();
+            string[] row1 = { "s1", "s2", "s3", "s4", "s5", "s6", "s7", "s8" };
+            listView1.Items.Add("Column1Text").SubItems.AddRange(row1);
         }
 
         private void button7_Click(object sender, EventArgs e)
@@ -54,13 +56,27 @@ namespace GUI
         {
             DateTime start_dato;
             DateTime slut_dato;
-
+            long cprnummer;
+            string type = null;
             try
             {
                 start_dato = DateTime.Parse(txtStartDato.Text);
                 slut_dato = DateTime.Parse(txtSlutDato.Text);
-                //TODO: hvordan finder vi cpr nummeret?
-                personalesystem.OpretFravær(1234567890, start_dato, slut_dato, "note 1", "s");
+                ListViewItem lvitm = listView1.SelectedItems["CPR"];
+                cprnummer = long.Parse(lvitm.Text.ToString());
+                if (rdbSyg.Checked)
+                {
+                    type = "syg";
+                }
+                else if (rdbFri.Checked)
+                {
+                    type = "fri";
+                }
+                else if (rdbFerie.Checked)
+                {
+                    type = "ferie";
+                }
+                personalesystem.OpretFravær(cprnummer, start_dato, slut_dato, txtFraværNote.Text, type);
 
             }
             catch (Exception)
