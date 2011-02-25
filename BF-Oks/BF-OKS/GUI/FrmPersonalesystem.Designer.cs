@@ -108,6 +108,7 @@
             this.btnKartotek = new System.Windows.Forms.Button();
             this.btnKalender = new System.Windows.Forms.Button();
             this.btnRFravær = new System.Windows.Forms.Button();
+            this.test = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabRegistrer_Fravær.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -132,6 +133,7 @@
             // tabRegistrer_Fravær
             // 
             this.tabRegistrer_Fravær.BackColor = System.Drawing.Color.Gainsboro;
+            this.tabRegistrer_Fravær.Controls.Add(this.test);
             this.tabRegistrer_Fravær.Controls.Add(this.btnFraværNote);
             this.tabRegistrer_Fravær.Controls.Add(this.txtFraværNote);
             this.tabRegistrer_Fravær.Controls.Add(this.lstFravær);
@@ -830,6 +832,15 @@
             this.btnRFravær.UseVisualStyleBackColor = true;
             this.btnRFravær.Click += new System.EventHandler(this.btnRFravær_Click);
             // 
+            // test
+            // 
+            this.test.Location = new System.Drawing.Point(268, 31);
+            this.test.Name = "test";
+            this.test.Size = new System.Drawing.Size(75, 23);
+            this.test.TabIndex = 37;
+            this.test.Text = "button1";
+            this.test.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -940,6 +951,7 @@
         private System.Windows.Forms.ColumnHeader By;
         private System.Windows.Forms.Label btnFraværNote;
         private System.Windows.Forms.TextBox txtFraværNote;
+        private System.Windows.Forms.Button test;
     }
 }
 
