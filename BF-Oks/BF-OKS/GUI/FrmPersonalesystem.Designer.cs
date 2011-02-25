@@ -55,13 +55,10 @@
             this.tabKartotek = new System.Windows.Forms.TabPage();
             this.lstMedarbKato = new System.Windows.Forms.ListView();
             this.columnHeader10 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader11 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader12 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader13 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader14 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader15 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader16 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader17 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader18 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.txtSøgKartotek = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -84,15 +81,12 @@
             this.label10 = new System.Windows.Forms.Label();
             this.txtFornavn = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.listView3 = new System.Windows.Forms.ListView();
+            this.lstRediger = new System.Windows.Forms.ListView();
             this.columnHeader19 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader20 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader21 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader22 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader23 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader24 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader25 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader26 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader27 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.label14 = new System.Windows.Forms.Label();
@@ -108,6 +102,8 @@
             this.btnKartotek = new System.Windows.Forms.Button();
             this.btnKalender = new System.Windows.Forms.Button();
             this.btnRFravær = new System.Windows.Forms.Button();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabControl1.SuspendLayout();
             this.tabRegistrer_Fravær.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -360,15 +356,14 @@
             // lstMedarbKato
             // 
             this.lstMedarbKato.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
             this.columnHeader10,
-            this.columnHeader11,
-            this.columnHeader12,
             this.columnHeader13,
             this.columnHeader14,
             this.columnHeader15,
             this.columnHeader16,
-            this.columnHeader17,
             this.columnHeader18});
+            this.lstMedarbKato.FullRowSelect = true;
             this.lstMedarbKato.Location = new System.Drawing.Point(46, 89);
             this.lstMedarbKato.Name = "lstMedarbKato";
             this.lstMedarbKato.Size = new System.Drawing.Size(817, 352);
@@ -378,23 +373,13 @@
             // 
             // columnHeader10
             // 
-            this.columnHeader10.Text = "Fornavn";
-            this.columnHeader10.Width = 94;
-            // 
-            // columnHeader11
-            // 
-            this.columnHeader11.Text = "Mellemnavn";
-            this.columnHeader11.Width = 100;
-            // 
-            // columnHeader12
-            // 
-            this.columnHeader12.Text = "Efternavn";
-            this.columnHeader12.Width = 89;
+            this.columnHeader10.Text = "Navn";
+            this.columnHeader10.Width = 120;
             // 
             // columnHeader13
             // 
             this.columnHeader13.Text = "Adresse";
-            this.columnHeader13.Width = 86;
+            this.columnHeader13.Width = 120;
             // 
             // columnHeader14
             // 
@@ -404,22 +389,17 @@
             // columnHeader15
             // 
             this.columnHeader15.Text = "By";
-            this.columnHeader15.Width = 79;
+            this.columnHeader15.Width = 120;
             // 
             // columnHeader16
             // 
             this.columnHeader16.Text = "Telefon nr.";
             this.columnHeader16.Width = 88;
             // 
-            // columnHeader17
-            // 
-            this.columnHeader17.Text = "Mobil nr.";
-            this.columnHeader17.Width = 79;
-            // 
             // columnHeader18
             // 
             this.columnHeader18.Text = "Afdeling nr.";
-            this.columnHeader18.Width = 131;
+            this.columnHeader18.Width = 70;
             // 
             // txtSøgKartotek
             // 
@@ -470,7 +450,7 @@
             this.tabRediger_Katotek.Controls.Add(this.label10);
             this.tabRediger_Katotek.Controls.Add(this.txtFornavn);
             this.tabRediger_Katotek.Controls.Add(this.label5);
-            this.tabRediger_Katotek.Controls.Add(this.listView3);
+            this.tabRediger_Katotek.Controls.Add(this.lstRediger);
             this.tabRediger_Katotek.Location = new System.Drawing.Point(4, 22);
             this.tabRediger_Katotek.Name = "tabRediger_Katotek";
             this.tabRediger_Katotek.Padding = new System.Windows.Forms.Padding(3);
@@ -628,44 +608,33 @@
             this.label5.TabIndex = 32;
             this.label5.Text = "Fornavn";
             // 
-            // listView3
+            // lstRediger
             // 
-            this.listView3.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.lstRediger.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader2,
             this.columnHeader19,
-            this.columnHeader20,
-            this.columnHeader21,
             this.columnHeader22,
             this.columnHeader23,
             this.columnHeader24,
             this.columnHeader25,
-            this.columnHeader26,
             this.columnHeader27});
-            this.listView3.Location = new System.Drawing.Point(53, 191);
-            this.listView3.Name = "listView3";
-            this.listView3.Size = new System.Drawing.Size(817, 303);
-            this.listView3.TabIndex = 31;
-            this.listView3.UseCompatibleStateImageBehavior = false;
-            this.listView3.View = System.Windows.Forms.View.Details;
+            this.lstRediger.FullRowSelect = true;
+            this.lstRediger.Location = new System.Drawing.Point(53, 191);
+            this.lstRediger.Name = "lstRediger";
+            this.lstRediger.Size = new System.Drawing.Size(817, 303);
+            this.lstRediger.TabIndex = 31;
+            this.lstRediger.UseCompatibleStateImageBehavior = false;
+            this.lstRediger.View = System.Windows.Forms.View.Details;
             // 
             // columnHeader19
             // 
-            this.columnHeader19.Text = "Fornavn";
+            this.columnHeader19.Text = "Navn";
             this.columnHeader19.Width = 95;
-            // 
-            // columnHeader20
-            // 
-            this.columnHeader20.Text = "Mellemnavn";
-            this.columnHeader20.Width = 100;
-            // 
-            // columnHeader21
-            // 
-            this.columnHeader21.Text = "Efternavn";
-            this.columnHeader21.Width = 89;
             // 
             // columnHeader22
             // 
             this.columnHeader22.Text = "Adresse";
-            this.columnHeader22.Width = 86;
+            this.columnHeader22.Width = 120;
             // 
             // columnHeader23
             // 
@@ -675,22 +644,17 @@
             // columnHeader24
             // 
             this.columnHeader24.Text = "By";
-            this.columnHeader24.Width = 79;
+            this.columnHeader24.Width = 120;
             // 
             // columnHeader25
             // 
             this.columnHeader25.Text = "Telefon nr.";
             this.columnHeader25.Width = 88;
             // 
-            // columnHeader26
-            // 
-            this.columnHeader26.Text = "Mobil nr.";
-            this.columnHeader26.Width = 79;
-            // 
             // columnHeader27
             // 
             this.columnHeader27.Text = "Afdeling nr.";
-            this.columnHeader27.Width = 131;
+            this.columnHeader27.Width = 70;
             // 
             // tabPage3
             // 
@@ -830,6 +794,16 @@
             this.btnRFravær.UseVisualStyleBackColor = true;
             this.btnRFravær.Click += new System.EventHandler(this.btnRFravær_Click);
             // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "CPR";
+            this.columnHeader1.Width = 100;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "CPR";
+            this.columnHeader2.Width = 100;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -877,15 +851,12 @@
         private System.Windows.Forms.TabPage tabKartotek;
         private System.Windows.Forms.Button btnVisFraværMedarbejder;
         private System.Windows.Forms.TabPage tabRediger_Katotek;
-        private System.Windows.Forms.ListView listView3;
+        private System.Windows.Forms.ListView lstRediger;
         private System.Windows.Forms.ColumnHeader columnHeader19;
-        private System.Windows.Forms.ColumnHeader columnHeader20;
-        private System.Windows.Forms.ColumnHeader columnHeader21;
         private System.Windows.Forms.ColumnHeader columnHeader22;
         private System.Windows.Forms.ColumnHeader columnHeader23;
         private System.Windows.Forms.ColumnHeader columnHeader24;
         private System.Windows.Forms.ColumnHeader columnHeader25;
-        private System.Windows.Forms.ColumnHeader columnHeader26;
         private System.Windows.Forms.ColumnHeader columnHeader27;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.Button btnRedigerKartotek;
@@ -924,13 +895,10 @@
         private System.Windows.Forms.ColumnHeader Afdeling;
         private System.Windows.Forms.ListView lstMedarbKato;
         private System.Windows.Forms.ColumnHeader columnHeader10;
-        private System.Windows.Forms.ColumnHeader columnHeader11;
-        private System.Windows.Forms.ColumnHeader columnHeader12;
         private System.Windows.Forms.ColumnHeader columnHeader13;
         private System.Windows.Forms.ColumnHeader columnHeader14;
         private System.Windows.Forms.ColumnHeader columnHeader15;
         private System.Windows.Forms.ColumnHeader columnHeader16;
-        private System.Windows.Forms.ColumnHeader columnHeader17;
         private System.Windows.Forms.ColumnHeader columnHeader18;
         private System.Windows.Forms.TextBox txtSøgKartotek;
         private System.Windows.Forms.Label label4;
@@ -940,6 +908,8 @@
         private System.Windows.Forms.ColumnHeader By;
         private System.Windows.Forms.Label btnFraværNote;
         private System.Windows.Forms.TextBox txtFraværNote;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.ColumnHeader columnHeader2;
     }
 }
 
