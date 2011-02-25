@@ -157,10 +157,8 @@ namespace GUI
                 // oprettet ienumerator i conrtroller og medarbejdercollection
                 // tilføjet BY i medarbeder og BY i IMedarbejderData
                 // gjort IMmedarbejderData til Public
-                // omdøbt lstView1 til lstFravær skulle nok ikke v
+                // omdøbt lstView1 til lstFravær
             }
         }
-
-
     }
 }
