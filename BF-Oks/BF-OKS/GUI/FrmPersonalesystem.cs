@@ -65,7 +65,7 @@ namespace GUI
             {
                 start_dato = DateTime.Parse(txtStartDato.Text);
                 slut_dato = DateTime.Parse(txtSlutDato.Text);
-                ListViewItem lvitm = lstFravær.SelectedItems["CPR"];
+                ListViewItem lvitm = lstFravær.SelectedItems[0];
                 cprnummer = long.Parse(lvitm.Text.ToString());
                 if (rdbSyg.Checked)
                 {
@@ -153,13 +153,25 @@ namespace GUI
                     medarbejdere.SubItems.Add(medarbejder.Tlf.ToString());
                     medarbejdere.SubItems.Add(medarbejder.Afdelingsid.ToString());
 
-                    lstMedarbKato.Items.Add(medarbejdere);
+                    //lstMedarbKato.Items.Add(medarbejdere);
+                    lstFravær.Items.Add(medarbejdere);
+                    //lstRediger.Items.Add(medarbejdere);
                 }
 
-            }
-            catch (Exception)
-            {
+                medarbiterator.Reset();   // Sæt iterator til at pege før første element
 
+              
+
+                // referencer: Interfaces
+                // oprettet ienumerator i conrtroller og medarbejdercollection
+                // tilføjet BY i medarbeder og BY i IMedarbejderData
+                // gjort IMmedarbejderData til Public
+                // omdøbt lstView1 til lstFravær skulle nok ikke v
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
             }
         }
 
