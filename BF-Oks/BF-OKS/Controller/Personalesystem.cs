@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Data.SqlTypes;
@@ -60,6 +61,11 @@ namespace Controller
         public string OpretNyhed(string nyhed)
         {
             return dbfacade.OpretNyhed(nyhed);
+        }
+
+        public IEnumerator GetMedarbejderIterator()
+        {
+            return medarbejdercollection.GetMedarbejderIterator();
         }
     }
 }

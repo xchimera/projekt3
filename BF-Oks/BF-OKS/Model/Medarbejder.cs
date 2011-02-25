@@ -11,6 +11,7 @@ namespace Model
         string navn;
         string adresse;
         int postnr;
+        string by;
         long tlf;
         int afdelingsid;
         private List<Fravær> listFravær;        
@@ -76,6 +77,12 @@ namespace Model
         {
             get { return Fravær; }
             set { Fravær = value; }
+        }
+
+        public string By
+        {
+            get { return by; }
+            set { by = value; }
         }
     }
 }

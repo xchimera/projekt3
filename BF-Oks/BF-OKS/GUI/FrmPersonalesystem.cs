@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,19 +8,21 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using Controller;
+using Model;
+using Interfaces;
 
 namespace GUI
 {
     public partial class Form1 : Form
     {
         Personalesystem personalesystem;
-        
+
         public Form1()
         {
             InitializeComponent();
             personalesystem = new Personalesystem();
             string[] row1 = { "s1", "s2", "s3", "s4", "s5", "s6", "s7", "s8" };
-            listView1.Items.Add("Column1Text").SubItems.AddRange(row1);
+            lstFravær.Items.Add("Column1Text").SubItems.AddRange(row1);
         }
 
         private void button7_Click(object sender, EventArgs e)
@@ -51,7 +54,7 @@ namespace GUI
         {
             tabControl1.SelectTab(3);
         }
-                
+
         private void btnRegistrerFravær_Click(object sender, EventArgs e)
         {
             DateTime start_dato;
@@ -62,7 +65,7 @@ namespace GUI
             {
                 start_dato = DateTime.Parse(txtStartDato.Text);
                 slut_dato = DateTime.Parse(txtSlutDato.Text);
-                ListViewItem lvitm = listView1.SelectedItems["CPR"];
+                ListViewItem lvitm = lstFravær.SelectedItems["CPR"];
                 cprnummer = long.Parse(lvitm.Text.ToString());
                 if (rdbSyg.Checked)
                 {
@@ -114,18 +117,49 @@ namespace GUI
                 {
                     MessageBox.Show("Kunne ikke oprette medarbejder, tjek om medarbejderen findes");
                 }
-                
+
             }
             catch (Exception)
             {
                 MessageBox.Show("Indtast venligst alle værdier, og venligst rigtigt");
             }
-           
+
         }
 
-        private void tabRegistrer_Fravær_Click(object sender, EventArgs e)
+        private void Form1_Load(object sender, EventArgs e)
         {
+            {
+                IMedarbejderData medarbejderData;
+                IEnumerator medarbiterator = personalesystem.GetMedarbejderIterator();
+                if (medarbiterator == null)
+                {
+                    MessageBox.Show("Medarbejderlisten kunne desværre ikke vises", "Systemfejl", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                medarbiterator.Reset();   // Sæt iterator til at pege før første element
 
+                while (medarbiterator.MoveNext())   // så længe der er medarbejderer
+                {
+                    medarbejderData = (IMedarbejderData)medarbiterator.Current;   // læs aktuel/current medarbejder
+                    ListViewItem medarbejdere = new ListViewItem();
+                    medarbejdere.Text = medarbejderData.Cpr_nummer.ToString();
+                    medarbejdere.SubItems.Add(medarbejderData.Navn);
+                    medarbejdere.SubItems.Add(medarbejderData.Adresse);
+                    medarbejdere.SubItems.Add(medarbejderData.Postnr.ToString());
+                    medarbejdere.SubItems.Add(medarbejderData.By);
+                    medarbejdere.SubItems.Add(medarbejderData.Tlf.ToString());
+                    medarbejdere.SubItems.Add(medarbejderData.Afdelingsid.ToString());
+
+                    lstMedarbKato.Items.Add(medarbejdere);
+                }
+                // referencer: Interfaces
+                // oprettet ienumerator i conrtroller og medarbejdercollection
+                // tilføjet BY i medarbeder og BY i IMedarbejderData
+                // gjort IMmedarbejderData til Public
+                // omdøbt lstView1 til lstFravær skulle nok ikke v
+            }
         }
+
+
     }
 }
