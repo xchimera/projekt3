@@ -140,6 +140,7 @@ namespace GUI
 
                 while (medarbiterator.MoveNext())   // så længe der er medarbejderer
                 {
+
                     medarbejderData = (IMedarbejderData)medarbiterator.Current;   // læs aktuel/current medarbejder
                     ListViewItem medarbejdere = new ListViewItem();
                     medarbejdere.Text = medarbejderData.Cpr_nummer.ToString();
@@ -160,5 +161,43 @@ namespace GUI
                 // omdøbt lstView1 til lstFravær
             }
         }
+
+        //private void test_Click(object sender, EventArgs e)
+        //{
+        //    {
+        //        IMedarbejderData medarbejderData;
+        //        IEnumerator medarbiterator = personalesystem.GetMedarbejderIterator();
+        //        if (medarbiterator == null)
+        //        {
+        //            MessageBox.Show("Medarbejderlisten kunne desværre ikke vises", "Systemfejl", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        //            return;
+        //        }
+        //        medarbiterator.Reset();   // Sæt iterator til at pege før første element
+
+        //        while (medarbiterator.MoveNext())   // så længe der er medarbejderer
+        //        {
+
+        //            medarbejderData = (IMedarbejderData)medarbiterator.Current;   // læs aktuel/current medarbejder
+        //            ListViewItem medarbejdere = new ListViewItem();
+        //            medarbejdere.Text = medarbejderData.Cpr_nummer.ToString();
+        //            medarbejdere.SubItems.Add(medarbejderData.Navn);
+        //            medarbejdere.SubItems.Add(medarbejderData.Adresse);
+        //            medarbejdere.SubItems.Add(medarbejderData.Postnr.ToString());
+        //            medarbejdere.SubItems.Add(medarbejderData.By);
+        //            medarbejdere.SubItems.Add(medarbejderData.Tlf.ToString());
+        //            medarbejdere.SubItems.Add(medarbejderData.Afdelingsid.ToString());
+
+        //            lstMedarbKato.Items.Add(medarbejdere);
+        //            lstFravær.Items.Add(medarbejdere);
+        //        }
+        //        // referencer: Interfaces
+        //        // oprettet ienumerator i conrtroller og medarbejdercollection
+        //        // tilføjet BY i medarbeder og BY i IMedarbejderData
+        //        // gjort IMmedarbejderData til Public
+        //        // omdøbt lstView1 til lstFravær
+        //    }
+
+
+        }
     }
-}
+
