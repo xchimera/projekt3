@@ -834,12 +834,13 @@
             // 
             // test
             // 
-            this.test.Location = new System.Drawing.Point(268, 31);
+            this.test.Location = new System.Drawing.Point(250, 31);
             this.test.Name = "test";
             this.test.Size = new System.Drawing.Size(75, 23);
             this.test.TabIndex = 37;
             this.test.Text = "button1";
             this.test.UseVisualStyleBackColor = true;
+            this.test.Click += new System.EventHandler(this.test_Click_1);
             // 
             // Form1
             // 
