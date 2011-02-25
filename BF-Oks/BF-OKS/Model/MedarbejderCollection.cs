@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
 using System;
 
 namespace Model
@@ -41,6 +42,11 @@ namespace Model
                 cpr_nummerIdx = ListMedarbejdere[i].Cpr_nummer;
             }
             return ListMedarbejdere[i];
+        }
+
+        public IEnumerator GetMedarbejderIterator()
+        {
+            return ListMedarbejdere.GetEnumerator();
         }
     }
 }

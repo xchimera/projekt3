@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Interfaces
 {
-    interface IMedarbejderData
+    public interface IMedarbejderData
     {
         long Cpr_nummer { get; }
         string Navn { get; }
@@ -13,6 +13,7 @@ namespace Interfaces
         int Postnr { get; }
         long Tlf { get; }
         int Afdelingsid { get; }
+        string By { get; }
 
     }
 }
