@@ -40,7 +40,7 @@
             this.columnHeader30 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabKalender = new System.Windows.Forms.TabPage();
             this.tabRegistrer_Fravær = new System.Windows.Forms.TabPage();
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.lstFravær = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -59,6 +59,7 @@
             this.Tlf = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Afdeling = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabPage3.SuspendLayout();
             this.tabRegistrer_Fravær.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -171,7 +172,7 @@
             // tabRegistrer_Fravær
             // 
             this.tabRegistrer_Fravær.BackColor = System.Drawing.Color.Gainsboro;
-            this.tabRegistrer_Fravær.Controls.Add(this.listView1);
+            this.tabRegistrer_Fravær.Controls.Add(this.lstFravær);
             this.tabRegistrer_Fravær.Controls.Add(this.btnVisFravær);
             this.tabRegistrer_Fravær.Controls.Add(this.btnOpretMedarbejder);
             this.tabRegistrer_Fravær.Controls.Add(this.btnRedigerMedarbejder);
@@ -186,19 +187,20 @@
             this.tabRegistrer_Fravær.TabIndex = 0;
             this.tabRegistrer_Fravær.Text = "Registrer Fravær";
             // 
-            // listView1
+            // lstFravær
             // 
-            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.lstFravær.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
             this.columnHeader2,
-            this.columnHeader3});
-            this.listView1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.listView1.Location = new System.Drawing.Point(3, 416);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(1067, 136);
-            this.listView1.TabIndex = 64;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.View = System.Windows.Forms.View.Details;
+            this.columnHeader3,
+            this.columnHeader4});
+            this.lstFravær.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.lstFravær.Location = new System.Drawing.Point(3, 416);
+            this.lstFravær.Name = "lstFravær";
+            this.lstFravær.Size = new System.Drawing.Size(1067, 136);
+            this.lstFravær.TabIndex = 64;
+            this.lstFravær.UseCompatibleStateImageBehavior = false;
+            this.lstFravær.View = System.Windows.Forms.View.Details;
             // 
             // columnHeader1
             // 
@@ -382,11 +384,12 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnRedigerMedarbejder;
         private System.Windows.Forms.Button btnOpretMedarbejder;
-        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ListView lstFravær;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.Button btnVisFravær;
+        private System.Windows.Forms.ColumnHeader columnHeader4;
     }
 }
 

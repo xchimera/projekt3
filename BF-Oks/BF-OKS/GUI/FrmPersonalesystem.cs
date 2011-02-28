@@ -196,27 +196,7 @@ namespace GUI
                     //lstRediger.Items.Add(medarbejdere);
                 }
 
-                medarbiterator.Reset();   // Sæt iterator til at pege før første element
-
-                while (medarbiterator.MoveNext())   // så længe der er medarbejderer
-                {
-                    //medarbejderData = (IMedarbejderData)medarbiterator.Current;   // læs aktuel/current medarbejder
-                    Medarbejder medarbejder = (Medarbejder)medarbiterator.Current;
-                    ListViewItem medarbejdere = new ListViewItem();
-                    medarbejdere.Text = medarbejder.Cpr_nummer.ToString();
-                    medarbejdere.SubItems.Add(medarbejder.Navn);
-
-                    medarbejdere.SubItems.Add(medarbejder.Adresse);
-                    medarbejdere.SubItems.Add(medarbejder.Postnr.ToString());
-                    medarbejdere.SubItems.Add(medarbejder.By);
-                    medarbejdere.SubItems.Add(medarbejder.Tlf.ToString());
-                    medarbejdere.SubItems.Add(medarbejder.Afdelingsid.ToString());
-
-                    //lstMedarbKato.Items.Add(medarbejdere);
-                    //lstFravær.Items.Add(medarbejdere);
-                    //lstRediger.Items.Add(medarbejdere);
-                }
-              
+                medarbiterator.Reset();   // Sæt iterator til at pege før første element       
 
                 // referencer: Interfaces
                 // oprettet ienumerator i conrtroller og medarbejdercollection
@@ -319,15 +299,36 @@ namespace GUI
 
         private void lstKartotek_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //ListViewItem lvitm = lstKartotek.SelectedItems[0];
-            //long cprnummer = long.Parse(lvitm.Text.ToString());
+            if (lstFravær.SelectedItems.Count > 0)
+            {
+                ListViewItem lvitm = lstKartotek.SelectedItems[0];
+                long cprnummer = long.Parse(lvitm.Text.ToString());
 
-            //IFraværData ifraværdata;
-            //IEnumerator fraværiterator = personalesystem.GetFraværIterator(cprnummer);
+                IFraværData ifraværdata;
+                IEnumerator fraværiterator = personalesystem.GetFraværIterator(cprnummer);
 
-            //fraværiterator.Reset();
-            //lstKartotek.Items.Clear();
+                fraværiterator.Reset();
+                lstFravær.Items.Clear();
+
+                while (fraværiterator.MoveNext())
+                {
+                    ifraværdata = (IFraværData)fraværiterator.Current;
+                    ListViewItem fravære = new ListViewItem();
+                    fravære.Text = ifraværdata.Dato_fra.ToString();
+                    fravære.SubItems.Add(ifraværdata.Dato_til.ToString());
+                    fravære.SubItems.Add(ifraværdata.Type.ToString());
+                    fravære.SubItems.Add(ifraværdata.Note.ToString());
+
+                    lstFravær.Items.Add(fravære);
+                }
+
+                fraværiterator.Reset();
+            }
         }
+
+
+
+
 
         private void txtSøg_TextChanged(object sender, EventArgs e)
         {
