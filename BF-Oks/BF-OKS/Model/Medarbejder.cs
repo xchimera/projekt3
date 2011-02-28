@@ -6,7 +6,7 @@ using System.Text;
 
 namespace Model
 {
-    public class Medarbejder
+    public class Medarbejder : Interfaces.IMedarbejderData
     {
         long cpr_nummer;
         string navn;

@@ -25,6 +25,37 @@ namespace GUI
             //lstFravær.Items.Add("Column1Text").SubItems.AddRange(row1);
         }
 
+        private void OpdaterListView()
+        {
+            IMedarbejderData medarbejderdata;
+            IEnumerator medarbejderiterator = personalesystem.GetMedarbejderIterator();
+
+            if (medarbejderiterator == null)
+            {
+                MessageBox.Show("Medarbejderlisten kunne desværre ikke vises", "Systemfejl", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            medarbejderiterator.Reset();
+            lstKartotek.Items.Clear();
+
+            while (medarbejderiterator.MoveNext())
+            {
+                medarbejderdata = (IMedarbejderData)medarbejderiterator.Current;
+                ListViewItem medarbejdere = new ListViewItem();
+
+                medarbejdere.Text = medarbejderdata.Cpr_nummer.ToString();
+                medarbejdere.SubItems.Add(medarbejderdata.Navn);
+                medarbejdere.SubItems.Add(medarbejderdata.Adresse);
+                medarbejdere.SubItems.Add(medarbejderdata.Postnr.ToString());
+                medarbejdere.SubItems.Add(medarbejderdata.By);
+                medarbejdere.SubItems.Add(medarbejderdata.Tlf.ToString());
+                medarbejdere.SubItems.Add(medarbejderdata.Afdelingsid.ToString());
+
+                lstKartotek.Items.Add(medarbejdere);
+            }
+            medarbejderiterator.Reset();
+        }
+
         private void button7_Click(object sender, EventArgs e)
         {
             //TODO: Fjern knap
@@ -297,6 +328,47 @@ namespace GUI
             //fraværiterator.Reset();
             //lstKartotek.Items.Clear();
         }
+
+        private void txtSøg_TextChanged(object sender, EventArgs e)
+        {
+            IMedarbejderData medarbejderdata;
+            IEnumerator medarbejderiterator = personalesystem.GetMedarbejderIterator();
+            if (txtSøg.Text == "")
+            {
+                OpdaterListView();
+                return;
+            }
+
+            medarbejderiterator.Reset();
+            lstKartotek.Items.Clear();
+
+            while (medarbejderiterator.MoveNext())
+            {                
+                medarbejderdata = (IMedarbejderData)medarbejderiterator.Current;
+                string info;
+                info = Convert.ToString(txtSøg.Text);
+
+                if (medarbejderdata.Navn == info || Convert.ToString(medarbejderdata.Cpr_nummer) == info || Convert.ToString(medarbejderdata.Postnr) == info 
+                        || Convert.ToString(medarbejderdata.By) == info || Convert.ToString(medarbejderdata.Tlf) == info || Convert.ToString(medarbejderdata.Afdelingsid) == info)
+                {
+                
+                ListViewItem medarbejdere = new ListViewItem();
+
+                medarbejdere.Text = medarbejderdata.Cpr_nummer.ToString();
+                medarbejdere.SubItems.Add(medarbejderdata.Navn);
+                medarbejdere.SubItems.Add(medarbejderdata.Adresse);
+                medarbejdere.SubItems.Add(medarbejderdata.Postnr.ToString());
+                medarbejdere.SubItems.Add(medarbejderdata.By);
+                medarbejdere.SubItems.Add(medarbejderdata.Tlf.ToString());
+                medarbejdere.SubItems.Add(medarbejderdata.Afdelingsid.ToString());
+
+                lstKartotek.Items.Add(medarbejdere);
+                }
+            }
+            medarbejderiterator.Reset();
+        }
+
+        
 
 
     }

@@ -40,10 +40,15 @@
             this.columnHeader30 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabKalender = new System.Windows.Forms.TabPage();
             this.tabRegistrer_Fravær = new System.Windows.Forms.TabPage();
+            this.listView1 = new System.Windows.Forms.ListView();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.btnVisFravær = new System.Windows.Forms.Button();
             this.btnOpretMedarbejder = new System.Windows.Forms.Button();
             this.btnRedigerMedarbejder = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtSøg = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.lstKartotek = new System.Windows.Forms.ListView();
             this.CPR = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -54,11 +59,6 @@
             this.Tlf = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Afdeling = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.btnVisFravær = new System.Windows.Forms.Button();
-            this.listView1 = new System.Windows.Forms.ListView();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabPage3.SuspendLayout();
             this.tabRegistrer_Fravær.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -176,7 +176,7 @@
             this.tabRegistrer_Fravær.Controls.Add(this.btnOpretMedarbejder);
             this.tabRegistrer_Fravær.Controls.Add(this.btnRedigerMedarbejder);
             this.tabRegistrer_Fravær.Controls.Add(this.button1);
-            this.tabRegistrer_Fravær.Controls.Add(this.textBox1);
+            this.tabRegistrer_Fravær.Controls.Add(this.txtSøg);
             this.tabRegistrer_Fravær.Controls.Add(this.label4);
             this.tabRegistrer_Fravær.Controls.Add(this.lstKartotek);
             this.tabRegistrer_Fravær.Location = new System.Drawing.Point(4, 22);
@@ -185,6 +185,41 @@
             this.tabRegistrer_Fravær.Size = new System.Drawing.Size(1073, 555);
             this.tabRegistrer_Fravær.TabIndex = 0;
             this.tabRegistrer_Fravær.Text = "Registrer Fravær";
+            // 
+            // listView1
+            // 
+            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
+            this.columnHeader2,
+            this.columnHeader3});
+            this.listView1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.listView1.Location = new System.Drawing.Point(3, 416);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(1067, 136);
+            this.listView1.TabIndex = 64;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listView1.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Width = 146;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Width = 146;
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Width = 146;
+            // 
+            // btnVisFravær
+            // 
+            this.btnVisFravær.Location = new System.Drawing.Point(278, 376);
+            this.btnVisFravær.Name = "btnVisFravær";
+            this.btnVisFravær.Size = new System.Drawing.Size(75, 23);
+            this.btnVisFravær.TabIndex = 63;
+            this.btnVisFravær.Text = "Vis fravær";
+            this.btnVisFravær.UseVisualStyleBackColor = true;
             // 
             // btnOpretMedarbejder
             // 
@@ -216,13 +251,14 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // textBox1
+            // txtSøg
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(73, 10);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(134, 20);
-            this.textBox1.TabIndex = 59;
+            this.txtSøg.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSøg.Location = new System.Drawing.Point(73, 10);
+            this.txtSøg.Name = "txtSøg";
+            this.txtSøg.Size = new System.Drawing.Size(134, 20);
+            this.txtSøg.TabIndex = 59;
+            this.txtSøg.TextChanged += new System.EventHandler(this.txtSøg_TextChanged);
             // 
             // label4
             // 
@@ -300,41 +336,6 @@
             this.tabControl1.Size = new System.Drawing.Size(1081, 581);
             this.tabControl1.TabIndex = 9;
             // 
-            // btnVisFravær
-            // 
-            this.btnVisFravær.Location = new System.Drawing.Point(278, 376);
-            this.btnVisFravær.Name = "btnVisFravær";
-            this.btnVisFravær.Size = new System.Drawing.Size(75, 23);
-            this.btnVisFravær.TabIndex = 63;
-            this.btnVisFravær.Text = "Vis fravær";
-            this.btnVisFravær.UseVisualStyleBackColor = true;
-            // 
-            // listView1
-            // 
-            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1,
-            this.columnHeader2,
-            this.columnHeader3});
-            this.listView1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.listView1.Location = new System.Drawing.Point(3, 416);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(1067, 136);
-            this.listView1.TabIndex = 64;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.View = System.Windows.Forms.View.Details;
-            // 
-            // columnHeader1
-            // 
-            this.columnHeader1.Width = 146;
-            // 
-            // columnHeader2
-            // 
-            this.columnHeader2.Width = 146;
-            // 
-            // columnHeader3
-            // 
-            this.columnHeader3.Width = 146;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -376,7 +377,7 @@
         private System.Windows.Forms.ColumnHeader Tlf;
         private System.Windows.Forms.ColumnHeader Afdeling;
         private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtSøg;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnRedigerMedarbejder;
