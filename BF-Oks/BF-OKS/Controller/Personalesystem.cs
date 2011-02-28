@@ -23,7 +23,21 @@ namespace Controller
 
         }
 
-        
+        public bool RedigerMedarbejder(long cpr, string navn, string adresse, int postnr, long tlf, int afd)
+        {
+            if (dbfacade.RedigerMedarbejder(cpr, navn, adresse, postnr, tlf, afd) == null)
+            {
+                //TODO kald til rediger medarbejder
+
+                return true;
+            }
+            return false;
+        }
+
+        public Medarbejder FindMedarbejder(long cpr_nummer)
+        {
+            return medarbejdercollection.FindMedarbejder(cpr_nummer);
+        }
 
         // Tilføjer medarbejder til systemet
         public bool OpretMedarbejder(string navn, long cpr_nummer, string adresse, int postnr, long tlf, int afdelingsid)
@@ -63,6 +77,26 @@ namespace Controller
         {
             return dbfacade.OpretNyhed(nyhed);
         }
+
+
+        public bool SletMedarbejder(long cpr_nummer)
+        {
+            if (dbfacade.SletMedarbejder(cpr_nummer) == null)
+            {
+                return true;
+            }
+            return false;
+        }
+
+        public bool SletNyhed()
+        {
+            if (dbfacade.SletNyhed() != null)
+            {
+                return true;
+            }
+            return false;
+        }
+
 
         public IEnumerator GetMedarbejderIterator()
         {
