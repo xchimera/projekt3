@@ -109,6 +109,17 @@ namespace GUI
                 telefon = long.Parse(txtTelefon.Text);
                 cprnr = long.Parse(txtCPR.Text);
                 afdeling = int.Parse(txtAfdeling.Text);
+
+                IMedarbejderData medarbejderdata;
+                IEnumerator medarbiterator = personalesystem.GetMedarbejderIterator();
+                medarbiterator.Reset();
+
+                while (medarbiterator.MoveNext())
+                {
+                    medarbejderdata = (IMedarbejderData)medarbiterator.Current;
+
+                }
+
                 if (personalesystem.OpretMedarbejder(navn, cprnr, adresse, postnr, telefon, afdeling))
                 {
                     MessageBox.Show("Medarbejder oprettet");
@@ -143,6 +154,7 @@ namespace GUI
                 {
                     //medarbejderData = (IMedarbejderData)medarbiterator.Current;   // læs aktuel/current medarbejder
                     Medarbejder medarbejder = (Medarbejder)medarbiterator.Current;
+                    
                     ListViewItem medarbejdere = new ListViewItem();
                     medarbejdere.Text = medarbejder.Cpr_nummer.ToString();
                     medarbejdere.SubItems.Add(medarbejder.Navn);
@@ -154,6 +166,7 @@ namespace GUI
                     medarbejdere.SubItems.Add(medarbejder.Afdelingsid.ToString());
 
                     //lstMedarbKato.Items.Add(medarbejdere);
+                   
                     lstFravær.Items.Add(medarbejdere);
                     //lstRediger.Items.Add(medarbejdere);
                 }
@@ -173,6 +186,48 @@ namespace GUI
             {
                 MessageBox.Show(ex.ToString());
             }
+        }
+
+        private void txtSøgRegistrerFravær_TextChanged(object sender, EventArgs e)
+        {
+            
+                IMedarbejderData medarbejderdata;
+                IEnumerator medarbiterator = personalesystem.GetMedarbejderIterator();
+                if (txtSøg.Text =="")
+                {
+                }
+
+                medarbiterator.Reset();
+                lstRediger.Items.Clear();
+
+                while (medarbiterator.MoveNext())
+                {
+                    medarbejderdata = (IMedarbejderData)medarbiterator.Current;
+                    string info;
+                    info = Convert.ToString(txtSøg.Text);
+
+                    if (medarbejderdata.Navn == info || medarbejderdata.Adresse == info || Convert.ToString(medarbejderdata.Postnr) == info || medarbejderdata.Adresse == info 
+                        || medarbejderdata.By == info || Convert.ToString(medarbejderdata.Cpr_nummer) == info || Convert.ToString(medarbejderdata.Tlf) == info);
+                    
+                    {
+                        ListViewItem medarbejdere = new ListViewItem();
+                        medarbejdere.Text = medarbejderdata.Cpr_nummer.ToString();
+                        medarbejdere.SubItems.Add(medarbejderdata.Navn);
+                        medarbejdere.SubItems.Add(medarbejderdata.Adresse);
+                        medarbejdere.SubItems.Add(medarbejderdata.Postnr.ToString());
+                        medarbejdere.SubItems.Add(medarbejderdata.By);
+                        medarbejdere.SubItems.Add(medarbejderdata.Tlf.ToString());
+                        medarbejdere.SubItems.Add(medarbejderdata.Afdelingsid.ToString());
+                                                
+                        lstRediger.Items.Add(medarbejdere);
+
+                    }
+
+
+
+                        
+                    
+                }
         }
 
 
