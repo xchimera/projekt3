@@ -20,6 +20,16 @@ namespace Model
             ListMedarbejdere.Add(medarbejder); // smid medarbejder  i liste
         }
 
+        public void RedigerMedarbejder(long cpr_nummer, string navn, string adresse, int postnr, long tlf, int afdelingsid)
+        {
+            Medarbejder medarbejder = FindMedarbejder(cpr_nummer);
+            medarbejder.Navn = navn;
+            medarbejder.Adresse = adresse;
+            medarbejder.Postnr = postnr;
+            medarbejder.Tlf = tlf;
+            medarbejder.Afdelingsid = afdelingsid;
+        }
+
         public void OpretFravær(long cpr_nummer, DateTime dato_fra, DateTime dato_til, string note, string type)
         {
             foreach (Medarbejder MedArb in ListMedarbejdere)
