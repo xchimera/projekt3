@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections;
 using System.Linq;
 using System.Text;
 
@@ -32,6 +33,11 @@ namespace Model
         {
             Fravær fravær = new Fravær(type, note, dato_fra, dato_til);
             listFravær.Add(fravær);
+        }
+
+        public IEnumerator GetFravær()
+        {
+            return listFravær.GetEnumerator();
         }
 
 
