@@ -57,83 +57,77 @@ namespace GUI
 
         private void btnRegistrerFravær_Click(object sender, EventArgs e)
         {
-            DateTime start_dato;
-            DateTime slut_dato;
-            long cprnummer;
-            string type = null;
-            try
-            {
-                start_dato = DateTime.Parse(txtStartDato.Text);
-                slut_dato = DateTime.Parse(txtSlutDato.Text);
-                ListViewItem lvitm = lstFravær.SelectedItems[0];
-                cprnummer = long.Parse(lvitm.Text.ToString());
-                if (rdbSyg.Checked)
-                {
-                    type = "syg";
-                }
-                else if (rdbFri.Checked)
-                {
-                    type = "fri";
-                }
-                else if (rdbFerie.Checked)
-                {
-                    type = "ferie";
-                }
-                personalesystem.OpretFravær(cprnummer, start_dato, slut_dato, txtFraværNote.Text, type);
+            //DateTime start_dato;
+            //DateTime slut_dato;
+            //long cprnummer;
+            //string type = null;
+            //try
+            //{
+            //    start_dato = DateTime.Parse(txtStartDato.Text);
+            //    slut_dato = DateTime.Parse(txtSlutDato.Text);
+            //    ListViewItem lvitm = lstFravær.SelectedItems[0];
+            //    cprnummer = long.Parse(lvitm.Text.ToString());
+            //    if (rdbSyg.Checked)
+            //    {
+            //        type = "syg";
+            //    }
+            //    else if (rdbFri.Checked)
+            //    {
+            //        type = "fri";
+            //    }
+            //    else if (rdbFerie.Checked)
+            //    {
+            //        type = "ferie";
+            //    }
+            //    personalesystem.OpretFravær(cprnummer, start_dato, slut_dato, txtFraværNote.Text, type);
 
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Indtast venligst rigtige værdier");
-            }
+            //}
+            //catch (Exception)
+            //{
+            //    MessageBox.Show("Indtast venligst rigtige værdier");
+            //}
 
         }
 
         private void btnOpret_Click(object sender, EventArgs e)
         {
-            // Attributter
-            string navn;
-            string adresse;
-            string by;
-            int postnr;
-            long telefon;
-            long cprnr;
-            int afdeling;
+            //// Attributter
+            //string navn;
+            //string adresse;
+            //string by;
+            //int postnr;
+            //long telefon;
+            //long cprnr;
+            //int afdeling;
 
-            try
-            {
-                navn = txtFornavn.Text;
-                adresse = txtAdresse.Text;
-                by = txtBy.Text;
-                postnr = int.Parse(txtPostnr.Text);
-                telefon = long.Parse(txtTelefon.Text);
-                cprnr = long.Parse(txtCPR.Text);
-                afdeling = int.Parse(txtAfdeling.Text);
+            //try
+            //{
+            //    navn = txtFornavn.Text;
+            //    adresse = txtAdresse.Text;
+            //    by = txtBy.Text;
+            //    postnr = int.Parse(txtPostnr.Text);
+            //    telefon = long.Parse(txtTelefon.Text);
+            //    cprnr = long.Parse(txtCPR.Text);
+            //    afdeling = int.Parse(txtAfdeling.Text);
 
-                IMedarbejderData medarbejderdata;
-                IEnumerator medarbiterator = personalesystem.GetMedarbejderIterator();
-                medarbiterator.Reset();
 
-                while (medarbiterator.MoveNext())
-                {
-                    medarbejderdata = (IMedarbejderData)medarbiterator.Current;
 
-                }
+           
 
-                if (personalesystem.OpretMedarbejder(navn, cprnr, adresse, postnr, telefon, afdeling))
-                {
-                    MessageBox.Show("Medarbejder oprettet");
-                }
-                else
-                {
-                    MessageBox.Show("Kunne ikke oprette medarbejder, tjek om medarbejderen findes");
-                }
+            //    if (personalesystem.OpretMedarbejder(navn, cprnr, adresse, postnr, telefon, afdeling))
+            //    {
+            //        MessageBox.Show("Medarbejder oprettet");
+            //    }
+            //    else
+            //    {
+            //        MessageBox.Show("Kunne ikke oprette medarbejder, tjek om medarbejderen findes");
+            //    }
 
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Indtast venligst alle værdier, og venligst rigtigt");
-            }
+            //}
+            //catch (Exception)
+            //{
+            //    MessageBox.Show("Indtast venligst alle værdier, og venligst rigtigt");
+            //}
 
         }
 
@@ -167,12 +161,30 @@ namespace GUI
 
                     //lstMedarbKato.Items.Add(medarbejdere);
                    
-                    lstFravær.Items.Add(medarbejdere);
+                    lstKartotek.Items.Add(medarbejdere);
                     //lstRediger.Items.Add(medarbejdere);
                 }
 
                 medarbiterator.Reset();   // Sæt iterator til at pege før første element
 
+                while (medarbiterator.MoveNext())   // så længe der er medarbejderer
+                {
+                    //medarbejderData = (IMedarbejderData)medarbiterator.Current;   // læs aktuel/current medarbejder
+                    Medarbejder medarbejder = (Medarbejder)medarbiterator.Current;
+                    ListViewItem medarbejdere = new ListViewItem();
+                    medarbejdere.Text = medarbejder.Cpr_nummer.ToString();
+                    medarbejdere.SubItems.Add(medarbejder.Navn);
+
+                    medarbejdere.SubItems.Add(medarbejder.Adresse);
+                    medarbejdere.SubItems.Add(medarbejder.Postnr.ToString());
+                    medarbejdere.SubItems.Add(medarbejder.By);
+                    medarbejdere.SubItems.Add(medarbejder.Tlf.ToString());
+                    medarbejdere.SubItems.Add(medarbejder.Afdelingsid.ToString());
+
+                    //lstMedarbKato.Items.Add(medarbejdere);
+                    //lstFravær.Items.Add(medarbejdere);
+                    //lstRediger.Items.Add(medarbejdere);
+                }
               
 
                 // referencer: Interfaces
@@ -228,6 +240,50 @@ namespace GUI
                         
                     
                 }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ListViewItem lvitm = lstKartotek.SelectedItems[0];
+                long cprnummer = long.Parse(lvitm.Text.ToString());
+
+                FrmFravær fravær = new FrmFravær(personalesystem, cprnummer);
+                fravær.Show(this);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("vælg venligst en  medarbejder");
+            }
+        }
+
+        private void btnRediger_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnRedigerMedarbejder_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ListViewItem lvitm = lstKartotek.SelectedItems[0];
+                long cprnummer = long.Parse(lvitm.Text.ToString());
+                Medarbejder medarbejder = personalesystem.FindMedarbejder(cprnummer);
+
+                FrmRedigerMedarbejder redigermedarbejder = new FrmRedigerMedarbejder(personalesystem, medarbejder);
+                redigermedarbejder.Show(this);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Vælg venligst en medarbejder");
+            }
+        }
+
+        private void btnOpretMedarbejder_Click(object sender, EventArgs e)
+        {
+            FrmOpretMedarbejder opretmedarbejder = new FrmOpretMedarbejder(personalesystem);
+            opretmedarbejder.Show(this);
         }
 
 

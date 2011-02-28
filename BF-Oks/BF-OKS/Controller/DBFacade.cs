@@ -207,6 +207,61 @@ namespace Controller
 
         #region nonquery
 
+        public string RedigerMedarbejder(long cpr, string navn, string adresse, int postnr, long tlf, int afd)
+        {
+            string sqlfejl = null;
+            cmd.CommandText = "EditMedarbejder";
+            cmd.Parameters.Clear();
+
+            SqlParameter par = new SqlParameter("cpr", SqlDbType.BigInt);
+            par.Value = cpr;
+            cmd.Parameters.Add(par);
+
+            par = new SqlParameter("@navn", SqlDbType.NVarChar);
+            par.Value = navn;
+            cmd.Parameters.Add(par);
+
+            par = new SqlParameter("@adresse", SqlDbType.NVarChar);
+            par.Value = adresse;
+            cmd.Parameters.Add(par);
+
+            par = new SqlParameter("@Postnr", SqlDbType.Int);
+            par.Value = postnr;
+            cmd.Parameters.Add(par);
+
+            par = new SqlParameter("@tlf", SqlDbType.BigInt);
+            par.Value = tlf;
+            cmd.Parameters.Add(par);
+
+            par = new SqlParameter("@afd", SqlDbType.Int);
+            par.Value = afd;
+            cmd.Parameters.Add(par);
+
+            try
+            {
+                conn.Open();
+                cmd.ExecuteNonQuery();
+                conn.Close();
+            }
+            catch (SqlException e)
+            {
+                if (e.Number == 2627)
+                {
+                    sqlfejl = "Medarbejderen kunne ikke oprettes";
+                }
+                else
+                {
+                    sqlfejl = "Medarbejderen kunne ikke oprettes " + e.Number;
+                }
+                if (conn.State == ConnectionState.Open)
+                {
+                    conn.Close();
+                }
+            }
+
+            return sqlfejl;
+        }
+
         public string OpretNyhed(string nyhed)
         {
             string sqlfejl = null;
@@ -361,6 +416,24 @@ namespace Controller
 
         }
 
+
+        public string SletMedarbejder(long cpr_nummer)
+        {
+            string sqlfejl = null;
+
+
+
+            return sqlfejl;
+        }
+
+
+        public string SletNyhed()
+        {
+            string sqlfejl = null;
+
+
+            return sqlfejl;
+        }
         #region comment
 
         //public string OpretAfdeling(string afdeling, int afd)
@@ -527,6 +600,7 @@ namespace Controller
                     personalesystem.TilføjMedarbejder(navn, cpr_nummer, adresse, postnr, tlf, afdelingsid);
 
                 }
+                //TODO: lav stored query så vi kan få by med også
 
                 conn.Close();
                 LoadFravær();
