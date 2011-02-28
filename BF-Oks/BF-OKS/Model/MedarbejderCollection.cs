@@ -48,5 +48,14 @@ namespace Model
         {
             return ListMedarbejdere.GetEnumerator();
         }
+
+        public IEnumerator GetFraværIterator(long cpr_nummer)
+        {
+            Medarbejder medarbejder = FindMedarbejder(cpr_nummer);
+
+            return medarbejder.GetFravær();
+        }
+
+        
     }
 }

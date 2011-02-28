@@ -200,47 +200,47 @@ namespace GUI
             }
         }
 
-        private void txtSøgRegistrerFravær_TextChanged(object sender, EventArgs e)
-        {
+        //private void txtSøgRegistrerFravær_TextChanged(object sender, EventArgs e)
+        //{
             
-                IMedarbejderData medarbejderdata;
-                IEnumerator medarbiterator = personalesystem.GetMedarbejderIterator();
-                if (txtSøg.Text =="")
-                {
-                }
+        //        IMedarbejderData medarbejderdata;
+        //        IEnumerator medarbiterator = personalesystem.GetMedarbejderIterator();
+        //        if (txtSøg.Text =="")
+        //        {
+        //        }
 
-                medarbiterator.Reset();
-                lstRediger.Items.Clear();
+        //        medarbiterator.Reset();
+        //        lstRediger.Items.Clear();
 
-                while (medarbiterator.MoveNext())
-                {
-                    medarbejderdata = (IMedarbejderData)medarbiterator.Current;
-                    string info;
-                    info = Convert.ToString(txtSøg.Text);
+        //        while (medarbiterator.MoveNext())
+        //        {
+        //            medarbejderdata = (IMedarbejderData)medarbiterator.Current;
+        //            string info;
+        //            info = Convert.ToString(txtSøg.Text);
 
-                    if (medarbejderdata.Navn == info || medarbejderdata.Adresse == info || Convert.ToString(medarbejderdata.Postnr) == info || medarbejderdata.Adresse == info 
-                        || medarbejderdata.By == info || Convert.ToString(medarbejderdata.Cpr_nummer) == info || Convert.ToString(medarbejderdata.Tlf) == info);
+        //            if (medarbejderdata.Navn == info || medarbejderdata.Adresse == info || Convert.ToString(medarbejderdata.Postnr) == info || medarbejderdata.Adresse == info 
+        //                || medarbejderdata.By == info || Convert.ToString(medarbejderdata.Cpr_nummer) == info || Convert.ToString(medarbejderdata.Tlf) == info);
                     
-                    {
-                        ListViewItem medarbejdere = new ListViewItem();
-                        medarbejdere.Text = medarbejderdata.Cpr_nummer.ToString();
-                        medarbejdere.SubItems.Add(medarbejderdata.Navn);
-                        medarbejdere.SubItems.Add(medarbejderdata.Adresse);
-                        medarbejdere.SubItems.Add(medarbejderdata.Postnr.ToString());
-                        medarbejdere.SubItems.Add(medarbejderdata.By);
-                        medarbejdere.SubItems.Add(medarbejderdata.Tlf.ToString());
-                        medarbejdere.SubItems.Add(medarbejderdata.Afdelingsid.ToString());
+        //            {
+        //                ListViewItem medarbejdere = new ListViewItem();
+        //                medarbejdere.Text = medarbejderdata.Cpr_nummer.ToString();
+        //                medarbejdere.SubItems.Add(medarbejderdata.Navn);
+        //                medarbejdere.SubItems.Add(medarbejderdata.Adresse);
+        //                medarbejdere.SubItems.Add(medarbejderdata.Postnr.ToString());
+        //                medarbejdere.SubItems.Add(medarbejderdata.By);
+        //                medarbejdere.SubItems.Add(medarbejderdata.Tlf.ToString());
+        //                medarbejdere.SubItems.Add(medarbejderdata.Afdelingsid.ToString());
                                                 
-                        lstRediger.Items.Add(medarbejdere);
+        //                lstRediger.Items.Add(medarbejdere);
 
-                    }
+        //            }
 
 
 
                         
                     
-                }
-        }
+        //        }
+        //}
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -284,6 +284,18 @@ namespace GUI
         {
             FrmOpretMedarbejder opretmedarbejder = new FrmOpretMedarbejder(personalesystem);
             opretmedarbejder.Show(this);
+        }
+
+        private void lstKartotek_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //ListViewItem lvitm = lstKartotek.SelectedItems[0];
+            //long cprnummer = long.Parse(lvitm.Text.ToString());
+
+            //IFraværData ifraværdata;
+            //IEnumerator fraværiterator = personalesystem.GetFraværIterator(cprnummer);
+
+            //fraværiterator.Reset();
+            //lstKartotek.Items.Clear();
         }
 
 

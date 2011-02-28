@@ -102,5 +102,10 @@ namespace Controller
         {
             return medarbejdercollection.GetMedarbejderIterator();
         }
+
+        public IEnumerator GetFraværIterator(long cpr_nummer)
+        {
+            return medarbejdercollection.GetFraværIterator(cpr_nummer);
+        }
     }
 }
