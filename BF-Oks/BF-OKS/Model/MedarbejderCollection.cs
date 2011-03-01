@@ -13,10 +13,9 @@ namespace Model
             ListMedarbejdere = new List<Medarbejder>();
         }
 
-        public void OpretMedarbejder(long cpr_nummer, string navn, string adresse, int postnr, long tlf,
-                                            int afdelingsid)
+        public void OpretMedarbejder(long cpr_nummer, string navn, string adresse, int postnr, string by, long tlf, int afdelingsid)
         {
-            Medarbejder medarbejder = new Medarbejder(cpr_nummer, navn, adresse, postnr, tlf, afdelingsid); // skab medarbejder
+            Medarbejder medarbejder = new Medarbejder(cpr_nummer, navn, adresse, postnr, by, tlf, afdelingsid); // skab medarbejder
             ListMedarbejdere.Add(medarbejder); // smid medarbejder  i liste
         }
 

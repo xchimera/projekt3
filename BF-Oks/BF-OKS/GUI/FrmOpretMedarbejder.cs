@@ -55,7 +55,7 @@ namespace GUI
 
 
 
-                if (personalesystem.OpretMedarbejder(navn, cprnr, adresse, postnr, telefon, afdeling))
+                if (personalesystem.OpretMedarbejder(navn, cprnr, adresse, postnr, by, telefon, afdeling))
                 {
                     MessageBox.Show("Medarbejder oprettet");
                     this.Close();

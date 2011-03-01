@@ -28,23 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.label14 = new System.Windows.Forms.Label();
-            this.listView4 = new System.Windows.Forms.ListView();
-            this.columnHeader28 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.label15 = new System.Windows.Forms.Label();
-            this.listView5 = new System.Windows.Forms.ListView();
-            this.columnHeader29 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.label16 = new System.Windows.Forms.Label();
-            this.listView6 = new System.Windows.Forms.ListView();
-            this.columnHeader30 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabKalender = new System.Windows.Forms.TabPage();
             this.tabRegistrer_Fravær = new System.Windows.Forms.TabPage();
             this.lstFravær = new System.Windows.Forms.ListView();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.btnVisFravær = new System.Windows.Forms.Button();
+            this.dato_fra = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.dato_til = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.type = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnOpretMedarbejder = new System.Windows.Forms.Button();
             this.btnRedigerMedarbejder = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
@@ -59,105 +48,10 @@
             this.Tlf = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Afdeling = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.tabPage3.SuspendLayout();
+            this.note = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabRegistrer_Fravær.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // tabPage3
-            // 
-            this.tabPage3.BackColor = System.Drawing.Color.Gainsboro;
-            this.tabPage3.Controls.Add(this.label14);
-            this.tabPage3.Controls.Add(this.listView4);
-            this.tabPage3.Controls.Add(this.label15);
-            this.tabPage3.Controls.Add(this.listView5);
-            this.tabPage3.Controls.Add(this.label16);
-            this.tabPage3.Controls.Add(this.listView6);
-            this.tabPage3.Location = new System.Drawing.Point(4, 22);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(1073, 555);
-            this.tabPage3.TabIndex = 4;
-            this.tabPage3.Text = "Vis Fravær for medarbejder";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(628, 56);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(54, 24);
-            this.label14.TabIndex = 11;
-            this.label14.Text = "Ferie";
-            // 
-            // listView4
-            // 
-            this.listView4.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader28});
-            this.listView4.Location = new System.Drawing.Point(632, 94);
-            this.listView4.Name = "listView4";
-            this.listView4.Size = new System.Drawing.Size(209, 333);
-            this.listView4.TabIndex = 10;
-            this.listView4.UseCompatibleStateImageBehavior = false;
-            this.listView4.View = System.Windows.Forms.View.Details;
-            // 
-            // columnHeader28
-            // 
-            this.columnHeader28.Text = "Dato";
-            this.columnHeader28.Width = 204;
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(368, 56);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(80, 24);
-            this.label15.TabIndex = 9;
-            this.label15.Text = "Fri dage";
-            // 
-            // listView5
-            // 
-            this.listView5.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader29});
-            this.listView5.Location = new System.Drawing.Point(372, 94);
-            this.listView5.Name = "listView5";
-            this.listView5.Size = new System.Drawing.Size(209, 333);
-            this.listView5.TabIndex = 8;
-            this.listView5.UseCompatibleStateImageBehavior = false;
-            this.listView5.View = System.Windows.Forms.View.Details;
-            // 
-            // columnHeader29
-            // 
-            this.columnHeader29.Text = "Dato";
-            this.columnHeader29.Width = 204;
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(105, 56);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(90, 24);
-            this.label16.TabIndex = 7;
-            this.label16.Text = "Syg dage";
-            // 
-            // listView6
-            // 
-            this.listView6.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader30});
-            this.listView6.Location = new System.Drawing.Point(109, 94);
-            this.listView6.Name = "listView6";
-            this.listView6.Size = new System.Drawing.Size(209, 333);
-            this.listView6.TabIndex = 6;
-            this.listView6.UseCompatibleStateImageBehavior = false;
-            this.listView6.View = System.Windows.Forms.View.Details;
-            // 
-            // columnHeader30
-            // 
-            this.columnHeader30.Text = "Dato";
-            this.columnHeader30.Width = 204;
             // 
             // tabKalender
             // 
@@ -171,9 +65,8 @@
             // 
             // tabRegistrer_Fravær
             // 
-            this.tabRegistrer_Fravær.BackColor = System.Drawing.Color.Gainsboro;
+            this.tabRegistrer_Fravær.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(122)))), ((int)(((byte)(173)))));
             this.tabRegistrer_Fravær.Controls.Add(this.lstFravær);
-            this.tabRegistrer_Fravær.Controls.Add(this.btnVisFravær);
             this.tabRegistrer_Fravær.Controls.Add(this.btnOpretMedarbejder);
             this.tabRegistrer_Fravær.Controls.Add(this.btnRedigerMedarbejder);
             this.tabRegistrer_Fravær.Controls.Add(this.button1);
@@ -190,10 +83,10 @@
             // lstFravær
             // 
             this.lstFravær.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1,
-            this.columnHeader2,
-            this.columnHeader3,
-            this.columnHeader4});
+            this.dato_fra,
+            this.dato_til,
+            this.type,
+            this.note});
             this.lstFravær.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.lstFravær.Location = new System.Drawing.Point(3, 416);
             this.lstFravær.Name = "lstFravær";
@@ -202,26 +95,20 @@
             this.lstFravær.UseCompatibleStateImageBehavior = false;
             this.lstFravær.View = System.Windows.Forms.View.Details;
             // 
-            // columnHeader1
+            // dato_fra
             // 
-            this.columnHeader1.Width = 146;
+            this.dato_fra.Text = "Dato fra";
+            this.dato_fra.Width = 146;
             // 
-            // columnHeader2
+            // dato_til
             // 
-            this.columnHeader2.Width = 146;
+            this.dato_til.Text = "Dato til";
+            this.dato_til.Width = 146;
             // 
-            // columnHeader3
+            // type
             // 
-            this.columnHeader3.Width = 146;
-            // 
-            // btnVisFravær
-            // 
-            this.btnVisFravær.Location = new System.Drawing.Point(278, 376);
-            this.btnVisFravær.Name = "btnVisFravær";
-            this.btnVisFravær.Size = new System.Drawing.Size(75, 23);
-            this.btnVisFravær.TabIndex = 63;
-            this.btnVisFravær.Text = "Vis fravær";
-            this.btnVisFravær.UseVisualStyleBackColor = true;
+            this.type.Text = "Type";
+            this.type.Width = 146;
             // 
             // btnOpretMedarbejder
             // 
@@ -331,12 +218,15 @@
             // 
             this.tabControl1.Controls.Add(this.tabRegistrer_Fravær);
             this.tabControl1.Controls.Add(this.tabKalender);
-            this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Location = new System.Drawing.Point(1, 3);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(1081, 581);
             this.tabControl1.TabIndex = 9;
+            // 
+            // note
+            // 
+            this.note.Text = "Note";
             // 
             // Form1
             // 
@@ -347,8 +237,6 @@
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
-            this.tabPage3.ResumeLayout(false);
-            this.tabPage3.PerformLayout();
             this.tabRegistrer_Fravær.ResumeLayout(false);
             this.tabRegistrer_Fravær.PerformLayout();
             this.tabControl1.ResumeLayout(false);
@@ -358,16 +246,6 @@
 
         #endregion
 
-        private System.Windows.Forms.TabPage tabPage3;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.ListView listView4;
-        private System.Windows.Forms.ColumnHeader columnHeader28;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.ListView listView5;
-        private System.Windows.Forms.ColumnHeader columnHeader29;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.ListView listView6;
-        private System.Windows.Forms.ColumnHeader columnHeader30;
         private System.Windows.Forms.TabPage tabKalender;
         private System.Windows.Forms.TabPage tabRegistrer_Fravær;
         private System.Windows.Forms.ListView lstKartotek;
@@ -385,11 +263,10 @@
         private System.Windows.Forms.Button btnRedigerMedarbejder;
         private System.Windows.Forms.Button btnOpretMedarbejder;
         private System.Windows.Forms.ListView lstFravær;
-        private System.Windows.Forms.ColumnHeader columnHeader1;
-        private System.Windows.Forms.ColumnHeader columnHeader2;
-        private System.Windows.Forms.ColumnHeader columnHeader3;
-        private System.Windows.Forms.Button btnVisFravær;
-        private System.Windows.Forms.ColumnHeader columnHeader4;
+        private System.Windows.Forms.ColumnHeader dato_fra;
+        private System.Windows.Forms.ColumnHeader dato_til;
+        private System.Windows.Forms.ColumnHeader type;
+        private System.Windows.Forms.ColumnHeader note;
     }
 }
 

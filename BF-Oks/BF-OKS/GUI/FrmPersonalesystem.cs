@@ -299,7 +299,7 @@ namespace GUI
 
         private void lstKartotek_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (lstFravær.SelectedItems.Count > 0)
+            if (lstKartotek.SelectedItems.Count > 0) 
             {
                 ListViewItem lvitm = lstKartotek.SelectedItems[0];
                 long cprnummer = long.Parse(lvitm.Text.ToString());

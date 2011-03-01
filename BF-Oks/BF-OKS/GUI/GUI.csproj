@@ -62,6 +62,12 @@
     <Compile Include="FrmOpretMedarbejder.Designer.cs">
       <DependentUpon>FrmOpretMedarbejder.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmOpretNyhed.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmOpretNyhed.Designer.cs">
+      <DependentUpon>FrmOpretNyhed.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmPersonalesystem.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -81,6 +87,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmOpretMedarbejder.resx">
       <DependentUpon>FrmOpretMedarbejder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmOpretNyhed.resx">
+      <DependentUpon>FrmOpretNyhed.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmPersonalesystem.resx">
       <DependentUpon>FrmPersonalesystem.cs</DependentUpon>
