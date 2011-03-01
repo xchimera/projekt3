@@ -29,6 +29,13 @@ namespace Model
             medarbejder.Afdelingsid = afdelingsid;
         }
 
+        public void SletMedarbejder(long cpr_nummer)
+        {
+            Medarbejder medarbejder = FindMedarbejder(cpr_nummer);
+            ListMedarbejdere.Remove(medarbejder);
+        }
+
+
         public void OpretFravær(long cpr_nummer, DateTime dato_fra, DateTime dato_til, string note, string type)
         {
             foreach (Medarbejder MedArb in ListMedarbejdere)
