@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.tabKalender = new System.Windows.Forms.TabPage();
-            this.evCalendar1 = new CalendarControl.EVCalendar();
             this.tabRegistrer_Fravær = new System.Windows.Forms.TabPage();
             this.lstKartotek = new System.Windows.Forms.ListView();
             this.CPR = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -54,7 +53,6 @@
             this.type = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.note = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabKalender.SuspendLayout();
             this.tabRegistrer_Fravær.SuspendLayout();
             this.panel1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
@@ -64,23 +62,12 @@
             // tabKalender
             // 
             this.tabKalender.BackColor = System.Drawing.Color.Gainsboro;
-            this.tabKalender.Controls.Add(this.evCalendar1);
             this.tabKalender.Location = new System.Drawing.Point(4, 22);
             this.tabKalender.Name = "tabKalender";
             this.tabKalender.Padding = new System.Windows.Forms.Padding(3);
             this.tabKalender.Size = new System.Drawing.Size(1001, 475);
             this.tabKalender.TabIndex = 1;
             this.tabKalender.Text = "Kalender";
-            // 
-            // evCalendar1
-            // 
-            this.evCalendar1.DayContextMenu = null;
-            this.evCalendar1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.evCalendar1.Location = new System.Drawing.Point(3, 3);
-            this.evCalendar1.MinimumSize = new System.Drawing.Size(260, 260);
-            this.evCalendar1.Name = "evCalendar1";
-            this.evCalendar1.Size = new System.Drawing.Size(995, 469);
-            this.evCalendar1.TabIndex = 0;
             // 
             // tabRegistrer_Fravær
             // 
@@ -286,7 +273,6 @@
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
-            this.tabKalender.ResumeLayout(false);
             this.tabRegistrer_Fravær.ResumeLayout(false);
             this.tabRegistrer_Fravær.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -318,7 +304,6 @@
         private System.Windows.Forms.ColumnHeader dato_til;
         private System.Windows.Forms.ColumnHeader type;
         private System.Windows.Forms.ColumnHeader note;
-        private CalendarControl.EVCalendar evCalendar1;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripLabel toolStripLabel1;
         private System.Windows.Forms.ToolStripTextBox tstxt_soeg;
