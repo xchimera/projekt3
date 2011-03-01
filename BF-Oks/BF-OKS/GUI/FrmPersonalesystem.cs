@@ -57,11 +57,6 @@ namespace GUI
             medarbejderiterator.Reset();
         }
 
-        private void button7_Click(object sender, EventArgs e)
-        {
-            //TODO: Fjern knap
-        }
-
         private void btnVisFraværMedarbejder_Click(object sender, EventArgs e)
         {
             tabControl1.SelectTab(4);
@@ -216,6 +211,17 @@ namespace GUI
         private void LoadNyheder()
         {
 
+            INyhedData inyheddata;
+            IEnumerator nyhedsiterator = personalesystem.GetNyhed();
+
+            nyhedsiterator.Reset();
+
+            while (nyhedsiterator.MoveNext())
+            {
+                inyheddata = (INyhedData)nyhedsiterator.Current;
+                OpretNyhed(inyheddata.NyhedText, inyheddata.NyhedText, inyheddata.Dato, Color.YellowGreen);
+            }
+            nyhedsiterator.Reset();
 
 
         }
@@ -292,7 +298,8 @@ namespace GUI
                 Medarbejder medarbejder = personalesystem.FindMedarbejder(cprnummer);
 
                 FrmRedigerMedarbejder redigermedarbejder = new FrmRedigerMedarbejder(personalesystem, medarbejder);
-                redigermedarbejder.Show(this);
+                redigermedarbejder.ShowDialog(this);
+                OpdaterListView();
             }
             catch (Exception)
             {
@@ -324,8 +331,8 @@ namespace GUI
                 {
                     ifraværdata = (IFraværData)fraværiterator.Current;
                     ListViewItem fravære = new ListViewItem();
-                    fravære.Text = ifraværdata.Dato_fra.ToString();
-                    fravære.SubItems.Add(ifraværdata.Dato_til.ToString());
+                    fravære.Text = ifraværdata.Dato_fra.Day + "-" + ifraværdata.Dato_fra.Month + "-" + ifraværdata.Dato_fra.Year;
+                    fravære.SubItems.Add(ifraværdata.Dato_til.Day + "-"+ ifraværdata.Dato_til.Month + "-" + ifraværdata.Dato_til.Year);
                     fravære.SubItems.Add(ifraværdata.Type.ToString());
                     fravære.SubItems.Add(ifraværdata.Note.ToString());
 
@@ -389,16 +396,13 @@ namespace GUI
         {
             FrmOpretNyhed opretnyhed = new FrmOpretNyhed(personalesystem, evCalendar1);
             opretnyhed.ShowDialog(this);
-           
-            
-            
         }
 
         public void OpretNyhed(string header, string body, DateTime dato, Color color)
         {
             CalEvent events = new CalEvent(header, body, dato, color);
-            calender.Events.Add(events);
-            calender.UpdateCalendar();
+            evCalendar1.Events.Add(events);
+            evCalendar1.UpdateCalendar();
         }
 
 

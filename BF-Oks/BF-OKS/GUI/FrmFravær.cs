@@ -34,8 +34,8 @@ namespace GUI
             string type = null;
             try
             {
-                start_dato = DateTime.Parse(txtStartDato.Text);
-                slut_dato = DateTime.Parse(txtSlutDato.Text);
+                start_dato = dateTimePicker1.Value;
+                slut_dato = dateTimePicker2.Value;
                 
                 if (rdbSyg.Checked)
                 {

@@ -46,6 +46,7 @@
   <ItemGroup>
     <Compile Include="IFraværData.cs" />
     <Compile Include="IMedarbejderData.cs" />
+    <Compile Include="INyhedData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

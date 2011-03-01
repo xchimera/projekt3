@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.tabKalender = new System.Windows.Forms.TabPage();
             this.evCalendar1 = new CalendarControl.EVCalendar();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
@@ -55,7 +54,6 @@
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.tstxt_soeg = new System.Windows.Forms.ToolStripTextBox();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabKalender.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
@@ -92,12 +90,12 @@
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.indsætNyhedToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(153, 48);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(147, 26);
             // 
             // indsætNyhedToolStripMenuItem
             // 
             this.indsætNyhedToolStripMenuItem.Name = "indsætNyhedToolStripMenuItem";
-            this.indsætNyhedToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.indsætNyhedToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
             this.indsætNyhedToolStripMenuItem.Text = "Indsæt nyhed";
             this.indsætNyhedToolStripMenuItem.Click += new System.EventHandler(this.indsætNyhedToolStripMenuItem_Click);
             // 
@@ -231,12 +229,12 @@
             // dato_fra
             // 
             this.dato_fra.Text = "Dato fra";
-            this.dato_fra.Width = 146;
+            this.dato_fra.Width = 100;
             // 
             // dato_til
             // 
             this.dato_til.Text = "Dato til";
-            this.dato_til.Width = 146;
+            this.dato_til.Width = 100;
             // 
             // type
             // 
@@ -246,13 +244,13 @@
             // note
             // 
             this.note.Text = "Note";
+            this.note.Width = 300;
             // 
             // toolStrip1
             // 
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripLabel1,
-            this.tstxt_soeg,
-            this.toolStripButton1});
+            this.tstxt_soeg});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Padding = new System.Windows.Forms.Padding(0);
@@ -273,16 +271,6 @@
             this.tstxt_soeg.Name = "tstxt_soeg";
             this.tstxt_soeg.Size = new System.Drawing.Size(150, 25);
             this.tstxt_soeg.TextChanged += new System.EventHandler(this.txtSøg_TextChanged);
-            // 
-            // toolStripButton1
-            // 
-            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(104, 22);
-            this.toolStripButton1.Text = "Opret Nyhed Test";
-            this.toolStripButton1.Click += new System.EventHandler(this.button2_Click);
             // 
             // tabControl1
             // 
@@ -341,7 +329,6 @@
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripLabel toolStripLabel1;
         private System.Windows.Forms.ToolStripTextBox tstxt_soeg;
-        private System.Windows.Forms.ToolStripButton toolStripButton1;
         private CalendarControl.EVCalendar evCalendar1;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem indsætNyhedToolStripMenuItem;

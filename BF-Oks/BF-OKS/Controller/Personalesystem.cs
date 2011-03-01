@@ -28,7 +28,7 @@ namespace Controller
         {
             if (dbfacade.RedigerMedarbejder(cpr, navn, adresse, postnr, by, tlf, afd) == null)
             {
-                //TODO kald til rediger medarbejder
+                medarbejdercollection.RedigerMedarbejder(cpr, navn, adresse, postnr, tlf, afd);
 
                 return true;
             }
@@ -113,9 +113,7 @@ namespace Controller
            
         }
 
-        public void IndsætNyhed(long id, string nyhedtext, DateTime dato)
-        {
-        }
+
 
 
         public IEnumerator GetMedarbejderIterator()
@@ -128,9 +126,11 @@ namespace Controller
             return medarbejdercollection.GetFraværIterator(cpr_nummer);
         }
 
-
-        //TODO: lav en load for nyhed
-        //TODO: lav samme måde at loade nyhed som medarbejder
+        public IEnumerator GetNyhed()
+        {
+            return nyhedcollection.GetNyhed();
+        }
+        //TODO: lav fravær i kalenderen
         
     }
 }

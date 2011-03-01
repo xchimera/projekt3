@@ -208,7 +208,7 @@ namespace Controller
         #region nonquery
 
         public string RedigerMedarbejder(long cpr, string navn, string adresse, int postnr, string by, long tlf, int afd)
-        {
+         {
             string sqlfejl = null;
             cmd.CommandText = "EditMedarbejder";
             cmd.Parameters.Clear();
@@ -227,10 +227,6 @@ namespace Controller
 
             par = new SqlParameter("@Postnr", SqlDbType.Int);
             par.Value = postnr;
-            cmd.Parameters.Add(par);
-
-            par = new SqlParameter("@distrikt", SqlDbType.NVarChar);
-            par.Value = by;
             cmd.Parameters.Add(par);
 
             par = new SqlParameter("@tlf", SqlDbType.BigInt);

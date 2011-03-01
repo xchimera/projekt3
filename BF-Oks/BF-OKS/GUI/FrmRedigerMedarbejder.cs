@@ -63,6 +63,7 @@ namespace GUI
                 {
                     MessageBox.Show("Kunne ikke rette medarbejder, tjek om medarbejderen findes");
                 }
+                
 
             }
             catch (Exception)
