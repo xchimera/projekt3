@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtNyhed = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.btnOpretNyhed = new System.Windows.Forms.Button();
@@ -43,13 +43,13 @@
             this.textBox1.Size = new System.Drawing.Size(100, 20);
             this.textBox1.TabIndex = 0;
             // 
-            // textBox2
+            // txtNyhed
             // 
-            this.textBox2.Location = new System.Drawing.Point(113, 39);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(159, 139);
-            this.textBox2.TabIndex = 1;
+            this.txtNyhed.Location = new System.Drawing.Point(113, 39);
+            this.txtNyhed.Multiline = true;
+            this.txtNyhed.Name = "txtNyhed";
+            this.txtNyhed.Size = new System.Drawing.Size(159, 139);
+            this.txtNyhed.TabIndex = 1;
             // 
             // label1
             // 
@@ -80,6 +80,7 @@
             this.btnOpretNyhed.TabIndex = 4;
             this.btnOpretNyhed.Text = "Opret nyhed";
             this.btnOpretNyhed.UseVisualStyleBackColor = true;
+            this.btnOpretNyhed.Click += new System.EventHandler(this.btnOpretNyhed_Click);
             // 
             // btnAnnuler
             // 
@@ -101,7 +102,7 @@
             this.Controls.Add(this.btnOpretNyhed);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.txtNyhed);
             this.Controls.Add(this.textBox1);
             this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -115,7 +116,7 @@
         #endregion
 
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtNyhed;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnOpretNyhed;

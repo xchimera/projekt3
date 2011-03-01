@@ -34,6 +34,7 @@
             this.dato_fra = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.dato_til = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.type = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.note = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnOpretMedarbejder = new System.Windows.Forms.Button();
             this.btnRedigerMedarbejder = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
@@ -48,7 +49,7 @@
             this.Tlf = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Afdeling = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.note = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.button2 = new System.Windows.Forms.Button();
             this.tabRegistrer_Fravær.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.SuspendLayout();
@@ -66,6 +67,7 @@
             // tabRegistrer_Fravær
             // 
             this.tabRegistrer_Fravær.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(122)))), ((int)(((byte)(173)))));
+            this.tabRegistrer_Fravær.Controls.Add(this.button2);
             this.tabRegistrer_Fravær.Controls.Add(this.lstFravær);
             this.tabRegistrer_Fravær.Controls.Add(this.btnOpretMedarbejder);
             this.tabRegistrer_Fravær.Controls.Add(this.btnRedigerMedarbejder);
@@ -109,6 +111,10 @@
             // 
             this.type.Text = "Type";
             this.type.Width = 146;
+            // 
+            // note
+            // 
+            this.note.Text = "Note";
             // 
             // btnOpretMedarbejder
             // 
@@ -224,9 +230,15 @@
             this.tabControl1.Size = new System.Drawing.Size(1081, 581);
             this.tabControl1.TabIndex = 9;
             // 
-            // note
+            // button2
             // 
-            this.note.Text = "Note";
+            this.button2.Location = new System.Drawing.Point(352, 7);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 65;
+            this.button2.Text = "button2";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // Form1
             // 
@@ -267,6 +279,7 @@
         private System.Windows.Forms.ColumnHeader dato_til;
         private System.Windows.Forms.ColumnHeader type;
         private System.Windows.Forms.ColumnHeader note;
+        private System.Windows.Forms.Button button2;
     }
 }
 

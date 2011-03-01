@@ -88,9 +88,9 @@ namespace Controller
             return false;
         }
 
-        public bool SletNyhed()
+        public bool RetNyhed(long id, string nyhed, DateTime dato)
         {
-            if (dbfacade.SletNyhed() != null)
+            if (dbfacade.RetNyhed(id, nyhed, dato) != null)
             {
                 return true;
             }
