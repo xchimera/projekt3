@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections;
 using System.Linq;
 using System.Text;
 
+
 namespace Model
 {
-    public class Nyhed
+    public class Nyhed : Interfaces.INyhedData
     {
 
         private long Id;
@@ -14,8 +16,12 @@ namespace Model
 
         public Nyhed(long ID, string nyhed, DateTime dato)
         {
-
+            this.Id = ID;
+            this.nyhed = nyhed;
+            this.dato = dato;
         }
+
+
 
 
         

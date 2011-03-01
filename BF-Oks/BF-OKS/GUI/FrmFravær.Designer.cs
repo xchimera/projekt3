@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             this.btnFraværNote = new System.Windows.Forms.Label();
-            this.txtSlutDato = new System.Windows.Forms.TextBox();
-            this.txtStartDato = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -40,6 +38,8 @@
             this.btnSubmitFravær = new System.Windows.Forms.Button();
             this.txtFraværNote = new System.Windows.Forms.TextBox();
             this.btnCancelFravær = new System.Windows.Forms.Button();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -52,22 +52,6 @@
             this.btnFraværNote.Size = new System.Drawing.Size(30, 13);
             this.btnFraværNote.TabIndex = 44;
             this.btnFraværNote.Text = "Note";
-            // 
-            // txtSlutDato
-            // 
-            this.txtSlutDato.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSlutDato.Location = new System.Drawing.Point(120, 44);
-            this.txtSlutDato.Name = "txtSlutDato";
-            this.txtSlutDato.Size = new System.Drawing.Size(152, 20);
-            this.txtSlutDato.TabIndex = 41;
-            // 
-            // txtStartDato
-            // 
-            this.txtStartDato.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtStartDato.Location = new System.Drawing.Point(120, 12);
-            this.txtStartDato.Name = "txtStartDato";
-            this.txtStartDato.Size = new System.Drawing.Size(152, 20);
-            this.txtStartDato.TabIndex = 40;
             // 
             // label3
             // 
@@ -149,7 +133,7 @@
             // txtFraværNote
             // 
             this.txtFraværNote.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFraværNote.Location = new System.Drawing.Point(120, 71);
+            this.txtFraværNote.Location = new System.Drawing.Point(85, 72);
             this.txtFraværNote.Multiline = true;
             this.txtFraværNote.Name = "txtFraværNote";
             this.txtFraværNote.Size = new System.Drawing.Size(152, 99);
@@ -165,21 +149,35 @@
             this.btnCancelFravær.UseVisualStyleBackColor = true;
             this.btnCancelFravær.Click += new System.EventHandler(this.btnCancelFravær_Click);
             // 
-            // Fravær
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(85, 8);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(152, 20);
+            this.dateTimePicker1.TabIndex = 47;
+            // 
+            // dateTimePicker2
+            // 
+            this.dateTimePicker2.Location = new System.Drawing.Point(85, 34);
+            this.dateTimePicker2.Name = "dateTimePicker2";
+            this.dateTimePicker2.Size = new System.Drawing.Size(152, 20);
+            this.dateTimePicker2.TabIndex = 48;
+            // 
+            // FrmFravær
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 262);
+            this.ClientSize = new System.Drawing.Size(252, 227);
+            this.Controls.Add(this.dateTimePicker2);
+            this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.btnCancelFravær);
             this.Controls.Add(this.btnSubmitFravær);
             this.Controls.Add(this.btnFraværNote);
             this.Controls.Add(this.txtFraværNote);
-            this.Controls.Add(this.txtSlutDato);
-            this.Controls.Add(this.txtStartDato);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.groupBox1);
-            this.Name = "Fravær";
+            this.Name = "FrmFravær";
             this.Text = "Fravær";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -191,8 +189,6 @@
         #endregion
 
         private System.Windows.Forms.Label btnFraværNote;
-        private System.Windows.Forms.TextBox txtSlutDato;
-        private System.Windows.Forms.TextBox txtStartDato;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox groupBox1;
@@ -202,5 +198,7 @@
         private System.Windows.Forms.Button btnSubmitFravær;
         private System.Windows.Forms.TextBox txtFraværNote;
         private System.Windows.Forms.Button btnCancelFravær;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dateTimePicker2;
     }
 }
