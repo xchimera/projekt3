@@ -369,6 +369,12 @@ namespace GUI
             medarbejderiterator.Reset();
         }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+            FrmOpretNyhed nyhed = new FrmOpretNyhed(personalesystem);
+            nyhed.ShowDialog(this);
+        }
+
         
 
 

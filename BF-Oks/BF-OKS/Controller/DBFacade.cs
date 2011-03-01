@@ -268,6 +268,7 @@ namespace Controller
 
         public string OpretNyhed(string nyhed)
         {
+            long ID;
             string sqlfejl = null;
             cmd.CommandText = "OpretNyhed";
             cmd.Parameters.Clear();
@@ -284,7 +285,7 @@ namespace Controller
             try
             {
                 conn.Open();
-                cmd.ExecuteNonQuery();
+                ID = long.Parse(cmd.ExecuteScalar().ToString());
                 conn.Close();
             }
             catch (SqlException e)
