@@ -13,6 +13,7 @@ namespace Model
             ListMedarbejdere = new List<Medarbejder>();
         }
 
+        #region Opret, Rediger & Slet medarbejder
         public void OpretMedarbejder(long cpr_nummer, string navn, string adresse, int postnr, string by, long tlf, int afdelingsid)
         {
             Medarbejder medarbejder = new Medarbejder(cpr_nummer, navn, adresse, postnr, by, tlf, afdelingsid); // skab medarbejder
@@ -34,7 +35,7 @@ namespace Model
             Medarbejder medarbejder = FindMedarbejder(cpr_nummer);
             ListMedarbejdere.Remove(medarbejder);
         }
-
+        #endregion
 
         public void OpretFravær(long cpr_nummer, DateTime dato_fra, DateTime dato_til, string note, string type)
         {
