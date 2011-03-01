@@ -17,6 +17,11 @@ namespace CalendarControl
 
         // Simple variables
         DateTime today = DateTime.Now;
+        DateTime lastclickedday = DateTime.Now;
+        public DateTime LastClickedDay
+        {
+            get { return lastclickedday; }
+        }
 
         /////////////////////// Properties //////////////////////////
         // TODO: Properties
@@ -80,6 +85,10 @@ namespace CalendarControl
         // Shows the contextmenu when a day panel is right clicked
         private void MouseClick_Panel(object sender, MouseEventArgs e)
         {
+            string daytemp = ((Panel)sender).Tag.ToString();
+            int day = int.Parse(daytemp) - daysbefore;
+            lastclickedday = new DateTime(currentyear, currentmonth, day);
+
             if (e.Button == System.Windows.Forms.MouseButtons.Right && daymenu != null)
             {
                 daymenu.Show(Cursor.Position);
