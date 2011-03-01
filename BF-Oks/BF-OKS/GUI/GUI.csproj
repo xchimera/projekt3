@@ -38,9 +38,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="CalendarControl">
-      <HintPath>..\..\CalendarControl\CalendarControl\bin\Debug\CalendarControl.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -121,6 +118,10 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\CalendarControl\CalendarControl.csproj">
+      <Project>{40842155-5E5A-4224-A630-C126B1043B02}</Project>
+      <Name>CalendarControl</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Controller\Controller.csproj">
       <Project>{5BB8621D-35A6-4900-9C8B-15DD10B3E91B}</Project>
       <Name>Controller</Name>

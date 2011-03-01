@@ -73,7 +73,7 @@ namespace Controller
             return false;
         }
 
-        public string OpretNyhed(string nyhed)
+        public long OpretNyhed(string nyhed)
         {
             return dbfacade.OpretNyhed(nyhed);
         }
