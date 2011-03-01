@@ -19,6 +19,7 @@ namespace Controller
         {
             dbfacade = new DBFacade(this);
             medarbejdercollection = new MedarbejderCollection();
+            nyhedcollection = new NyhedCollection();
             dbfacade.LoadMedarbejdere();
 
         }
@@ -73,10 +74,10 @@ namespace Controller
             return false;
         }
 
-        public long OpretNyhed(string nyhed)
-        {
-            return dbfacade.OpretNyhed(nyhed);
-        }
+        //public long OpretNyhed(string nyhed)
+        //{
+        //    return dbfacade.OpretNyhed(nyhed);
+        //}
 
 
         public bool SletMedarbejder(long cpr_nummer)
@@ -106,10 +107,14 @@ namespace Controller
 
         public void OpretNyhed(string nyhedtext, DateTime dato)
         {
-            long id = dbfacade.OpretNyhed(nyhedtext);
+            long id = dbfacade.OpretNyhed(nyhedtext, dato);
 
             nyhedcollection.OpretNyhed(id, nyhedtext, dato);
            
+        }
+
+        public void IndsætNyhed(long id, string nyhedtext, DateTime dato)
+        {
         }
 
 

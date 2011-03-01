@@ -266,21 +266,21 @@ namespace Controller
             return sqlfejl;
         }
 
-        public long OpretNyhed(string nyhed)
+        public long OpretNyhed(string nyhed, DateTime dato)
         {
             string IDtemp;
             long ID = 0;
             //string sqlfejl = null;
             cmd.CommandText = "OpretNyhed";
             cmd.Parameters.Clear();
-            DateTime dagsdato = DateTime.Now;
+            
 
             SqlParameter par = new SqlParameter("@nyhed", SqlDbType.NVarChar);
             par.Value = nyhed;
             cmd.Parameters.Add(par);
 
             par = new SqlParameter("@dato", SqlDbType.Date);
-            par.Value = dagsdato;
+            par.Value = dato;
             cmd.Parameters.Add(par);
 
             try
@@ -698,6 +698,7 @@ namespace Controller
                     personalesystem.TilføjFravær(cpr_nummer, dato_fra, dato_til, note, type);
                 }
                 conn.Close();
+                LoadNyhed();
             }
             catch(SqlException e)
             {
