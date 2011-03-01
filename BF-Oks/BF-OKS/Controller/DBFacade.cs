@@ -207,7 +207,7 @@ namespace Controller
 
         #region nonquery
 
-        public string RedigerMedarbejder(long cpr, string navn, string adresse, int postnr, long tlf, int afd)
+        public string RedigerMedarbejder(long cpr, string navn, string adresse, int postnr, string by, long tlf, int afd)
         {
             string sqlfejl = null;
             cmd.CommandText = "EditMedarbejder";
@@ -227,6 +227,10 @@ namespace Controller
 
             par = new SqlParameter("@Postnr", SqlDbType.Int);
             par.Value = postnr;
+            cmd.Parameters.Add(par);
+
+            par = new SqlParameter("@distrikt", SqlDbType.NVarChar);
+            par.Value = by;
             cmd.Parameters.Add(par);
 
             par = new SqlParameter("@tlf", SqlDbType.BigInt);
@@ -420,17 +424,68 @@ namespace Controller
         public string SletMedarbejder(long cpr_nummer)
         {
             string sqlfejl = null;
+            cmd.CommandText = "SletMedarbejder";
+            cmd.Parameters.Clear();
 
+            SqlParameter par = new SqlParameter("@cpr", SqlDbType.BigInt);
+            par.Value = cpr_nummer;
+            cmd.Parameters.Add(par);
+
+            try
+            {
+                conn.Open();
+                cmd.ExecuteNonQuery();
+                conn.Close();
+            }
+            catch (SqlException e)
+            {
+                sqlfejl = "Medarbejderen kunne ikke slettes";
+
+                if (conn.State == ConnectionState.Open)
+                {
+                    conn.Close();
+                }
+            }
 
 
             return sqlfejl;
         }
 
 
-        public string SletNyhed()
+        public string RetNyhed(long id, string nyhed, DateTime dato)
         {
             string sqlfejl = null;
 
+            cmd.CommandText = "EditNyhed";
+            cmd.Parameters.Clear();
+
+
+            SqlParameter par = new SqlParameter("@n_ID", SqlDbType.BigInt);
+            par.Value = id;
+            cmd.Parameters.Add(par);
+
+            par = new SqlParameter("@nyhed", SqlDbType.NVarChar);
+            par.Value = nyhed;
+            cmd.Parameters.Add(par);
+
+            par = new SqlParameter("@dato", SqlDbType.Date);
+            par.Value = dato;
+            cmd.Parameters.Add(par);
+
+            try
+            {
+                conn.Open();
+                cmd.ExecuteNonQuery();
+                conn.Close();
+            }
+            catch
+            {
+                sqlfejl = "Kunne ikke oprette nyhed";
+                if (conn.State == ConnectionState.Open)
+                {
+                    conn.Close();
+                }
+            }
 
             return sqlfejl;
         }
@@ -575,6 +630,7 @@ namespace Controller
             long cpr_nummer;
             string adresse;
             int postnr;
+            string by; 
             long tlf;
             int afdelingsid;
 
@@ -594,13 +650,14 @@ namespace Controller
                     cpr_nummer = (long)reader["cpr_ID"];
                     adresse = (string)reader["adresse"];
                     postnr = (int)reader["Postnr_FID"];
+                    by = (string)reader["distrikt"];
                     tlf = (long)reader["tlf"];
                     afdelingsid = (int)reader["afd_FID"];
 
-                    personalesystem.TilføjMedarbejder(navn, cpr_nummer, adresse, postnr, tlf, afdelingsid);
+                    personalesystem.TilføjMedarbejder(navn, cpr_nummer, adresse, postnr, by, tlf, afdelingsid);
 
                 }
-                //TODO: lav stored query så vi kan få by med også
+                
 
                 conn.Close();
                 LoadFravær();

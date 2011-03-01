@@ -55,7 +55,7 @@ namespace GUI
                 afdeling = int.Parse(txtAfdeling.Text);
 
 
-                if (personalesystem.RedigerMedarbejder(medarbejder.Cpr_nummer, navn, adresse, postnr, telefon, afdeling))
+                if (personalesystem.RedigerMedarbejder(medarbejder.Cpr_nummer, navn, adresse, postnr,by, telefon, afdeling))
                 {
                     this.Close();
                 }

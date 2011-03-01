@@ -47,6 +47,7 @@
     <Compile Include="Fravær.cs" />
     <Compile Include="Medarbejder.cs" />
     <Compile Include="MedarbejderCollection.cs" />
+    <Compile Include="Nyhed.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

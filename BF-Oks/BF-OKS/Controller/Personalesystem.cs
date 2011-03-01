@@ -23,9 +23,9 @@ namespace Controller
 
         }
 
-        public bool RedigerMedarbejder(long cpr, string navn, string adresse, int postnr, long tlf, int afd)
+        public bool RedigerMedarbejder(long cpr, string navn, string adresse, int postnr, string by, long tlf, int afd)
         {
-            if (dbfacade.RedigerMedarbejder(cpr, navn, adresse, postnr, tlf, afd) == null)
+            if (dbfacade.RedigerMedarbejder(cpr, navn, adresse, postnr, by, tlf, afd) == null)
             {
                 //TODO kald til rediger medarbejder
 
@@ -40,19 +40,19 @@ namespace Controller
         }
 
         // Tilføjer medarbejder til systemet
-        public bool OpretMedarbejder(string navn, long cpr_nummer, string adresse, int postnr, long tlf, int afdelingsid)
+        public bool OpretMedarbejder(string navn, long cpr_nummer, string adresse, int postnr, string by, long tlf, int afdelingsid)
         {
             if (dbfacade.OpretMedarbejder(cpr_nummer, navn, adresse, postnr, tlf, afdelingsid) == null)
             {
-                medarbejdercollection.OpretMedarbejder(cpr_nummer, navn, adresse, postnr, tlf, afdelingsid);
+                medarbejdercollection.OpretMedarbejder(cpr_nummer, navn, adresse, postnr, by, tlf, afdelingsid);
                 return true;
             }
             return false;
         }
 
-        public void TilføjMedarbejder(string navn, long cpr_nummer, string adresse, int postnr, long tlf, int afdelingsid)
+        public void TilføjMedarbejder(string navn, long cpr_nummer, string adresse, int postnr, string by, long tlf, int afdelingsid)
         {
-            medarbejdercollection.OpretMedarbejder(cpr_nummer, navn, adresse, postnr, tlf, afdelingsid);
+            medarbejdercollection.OpretMedarbejder(cpr_nummer, navn, adresse, postnr, by, tlf, afdelingsid);
         }
         
 
