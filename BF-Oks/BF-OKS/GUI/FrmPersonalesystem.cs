@@ -294,7 +294,8 @@ namespace GUI
         private void btnOpretMedarbejder_Click(object sender, EventArgs e)
         {
             FrmOpretMedarbejder opretmedarbejder = new FrmOpretMedarbejder(personalesystem);
-            opretmedarbejder.Show(this);
+            opretmedarbejder.ShowDialog();
+            OpdaterListView();
         }
 
         private void lstKartotek_SelectedIndexChanged(object sender, EventArgs e)
@@ -334,7 +335,7 @@ namespace GUI
         {
             IMedarbejderData medarbejderdata;
             IEnumerator medarbejderiterator = personalesystem.GetMedarbejderIterator();
-            if (txtSøg.Text == "")
+            if (tstxt_soeg.Text == "")
             {
                 OpdaterListView();
                 return;
@@ -347,9 +348,9 @@ namespace GUI
             {                
                 medarbejderdata = (IMedarbejderData)medarbejderiterator.Current;
                 string info;
-                info = Convert.ToString(txtSøg.Text);
+                info = Convert.ToString(tstxt_soeg.Text);
 
-                if (medarbejderdata.Navn == info || Convert.ToString(medarbejderdata.Cpr_nummer) == info || Convert.ToString(medarbejderdata.Postnr) == info 
+                if ((medarbejderdata.Navn).ToUpper().IndexOf(info.ToUpper()) != -1 || Convert.ToString(medarbejderdata.Cpr_nummer) == info || Convert.ToString(medarbejderdata.Postnr) == info 
                         || Convert.ToString(medarbejderdata.By) == info || Convert.ToString(medarbejderdata.Tlf) == info || Convert.ToString(medarbejderdata.Afdelingsid) == info)
                 {
                 
@@ -374,9 +375,5 @@ namespace GUI
             FrmOpretNyhed nyhed = new FrmOpretNyhed(personalesystem);
             nyhed.ShowDialog(this);
         }
-
-        
-
-
     }
 }
