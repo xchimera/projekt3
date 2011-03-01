@@ -13,7 +13,7 @@ namespace Controller
     {
         DBFacade dbfacade;
         MedarbejderCollection medarbejdercollection;
-        
+        NyhedCollection nyhedcollection;
 
         public Personalesystem()
         {
@@ -98,6 +98,21 @@ namespace Controller
         }
 
 
+        public void TilføjNyhed(long id, string nyhedtext, DateTime dato)
+        {
+            nyhedcollection.OpretNyhed(id, nyhedtext, dato);
+
+        }
+
+        public void OpretNyhed(string nyhedtext, DateTime dato)
+        {
+            long id = dbfacade.OpretNyhed(nyhedtext);
+
+            nyhedcollection.OpretNyhed(id, nyhedtext, dato);
+           
+        }
+
+
         public IEnumerator GetMedarbejderIterator()
         {
             return medarbejdercollection.GetMedarbejderIterator();
@@ -107,5 +122,10 @@ namespace Controller
         {
             return medarbejdercollection.GetFraværIterator(cpr_nummer);
         }
+
+
+        //TODO: lav en load for nyhed
+        //TODO: lav samme måde at loade nyhed som medarbejder
+        
     }
 }

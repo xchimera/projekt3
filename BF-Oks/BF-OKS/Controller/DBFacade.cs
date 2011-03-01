@@ -266,10 +266,11 @@ namespace Controller
             return sqlfejl;
         }
 
-        public string OpretNyhed(string nyhed)
+        public long OpretNyhed(string nyhed)
         {
-            long ID;
-            string sqlfejl = null;
+            string IDtemp;
+            long ID = 0;
+            //string sqlfejl = null;
             cmd.CommandText = "OpretNyhed";
             cmd.Parameters.Clear();
             DateTime dagsdato = DateTime.Now;
@@ -285,26 +286,19 @@ namespace Controller
             try
             {
                 conn.Open();
-                ID = long.Parse(cmd.ExecuteScalar().ToString());
+                IDtemp = cmd.ExecuteScalar().ToString();
                 conn.Close();
+                ID = long.Parse(IDtemp);
             }
             catch (SqlException e)
             {
-                if (e.Number == 2627)
-                {
-                    sqlfejl = "nyheden findes allerede";
-                }
-                else
-                {
-                    sqlfejl = "nyheden kunne ikke oprettes " + e.Number;
-                }
                 if (conn.State == ConnectionState.Open)
                 {
                     conn.Close();
                 }
             }
 
-            return sqlfejl;
+            return ID;
         }
         public string OpretMedarbejder(long cpr, string navn, string adresse, int postnr, long tlf, int afd)
         {
@@ -440,7 +434,7 @@ namespace Controller
             }
             catch (SqlException e)
             {
-                sqlfejl = "Medarbejderen kunne ikke slettes";
+                sqlfejl = "Medarbejderen kunne ikke slettes " + e.ToString();
 
                 if (conn.State == ConnectionState.Open)
                 {
@@ -712,6 +706,40 @@ namespace Controller
                     conn.Close();
                 }
                 throw(e);
+            }
+        }
+
+        public void LoadNyhed()
+        {
+            long id;
+            string nyhedtext;
+            DateTime dato;
+
+            SqlDataReader reader;
+
+            cmd.Parameters.Clear();
+            cmd.CommandText = "AlleNyheder";
+
+            try
+            {
+                conn.Open();
+                reader = cmd.ExecuteReader();
+
+                while(reader.Read())
+                {
+                    id = (long)reader["nyhed_ID"];
+                    nyhedtext = (string)reader["nyhed"];
+                    dato = (DateTime)reader["dato"];
+                    personalesystem.TilføjNyhed(id, nyhedtext, dato);
+                }
+                conn.Close();
+            }
+            catch(SqlException)
+            {
+                if(conn.State == ConnectionState.Open)
+                {
+                    conn.Close();
+                }
             }
         }
 

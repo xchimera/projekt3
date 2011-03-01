@@ -48,6 +48,7 @@
     <Compile Include="Medarbejder.cs" />
     <Compile Include="MedarbejderCollection.cs" />
     <Compile Include="Nyhed.cs" />
+    <Compile Include="NyhedCollection.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
