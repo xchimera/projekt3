@@ -29,6 +29,7 @@ namespace GUI
             nyhed = txtNyhed.Text;
 
             personalesystem.OpretNyhed(nyhed);
+            this.Close();
         }
     }
 }
