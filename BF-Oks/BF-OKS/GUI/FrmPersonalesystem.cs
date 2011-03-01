@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using Controller;
 using Model;
 using Interfaces;
+using CalendarControl;
 
 namespace GUI
 {
@@ -209,6 +210,14 @@ namespace GUI
             {
                 MessageBox.Show(ex.ToString());
             }
+            LoadNyheder();
+        }
+
+        private void LoadNyheder()
+        {
+
+
+
         }
 
         //private void txtSøgRegistrerFravær_TextChanged(object sender, EventArgs e)
@@ -372,8 +381,26 @@ namespace GUI
 
         private void button2_Click(object sender, EventArgs e)
         {
-            FrmOpretNyhed nyhed = new FrmOpretNyhed(personalesystem);
-            nyhed.ShowDialog(this);
+            //FrmOpretNyhed nyhed = new FrmOpretNyhed(personalesystem, evCalendar1);
+            //nyhed.ShowDialog(this);
         }
+
+        private void indsætNyhedToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmOpretNyhed opretnyhed = new FrmOpretNyhed(personalesystem, evCalendar1);
+            opretnyhed.ShowDialog(this);
+           
+            
+            
+        }
+
+        public void OpretNyhed(string header, string body, DateTime dato, Color color)
+        {
+            CalEvent events = new CalEvent(header, body, dato, color);
+            calender.Events.Add(events);
+            calender.UpdateCalendar();
+        }
+
+
     }
 }

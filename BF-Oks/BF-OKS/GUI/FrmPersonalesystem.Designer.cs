@@ -28,8 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.tabKalender = new System.Windows.Forms.TabPage();
+            this.evCalendar1 = new CalendarControl.EVCalendar();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.indsætNyhedToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabRegistrer_Fravær = new System.Windows.Forms.TabPage();
             this.lstKartotek = new System.Windows.Forms.ListView();
             this.CPR = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -48,17 +52,17 @@
             this.dato_til = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.type = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.note = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.tstxt_soeg = new System.Windows.Forms.ToolStripTextBox();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.evCalendar1 = new CalendarControl.EVCalendar();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabKalender.SuspendLayout();
+            this.contextMenuStrip1.SuspendLayout();
             this.tabRegistrer_Fravær.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.tabControl1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
+            this.tabControl1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabKalender
@@ -71,6 +75,31 @@
             this.tabKalender.Size = new System.Drawing.Size(1001, 475);
             this.tabKalender.TabIndex = 1;
             this.tabKalender.Text = "Kalender";
+            // 
+            // evCalendar1
+            // 
+            this.evCalendar1.ContextMenuStrip = this.contextMenuStrip1;
+            this.evCalendar1.DayContextMenu = null;
+            this.evCalendar1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.evCalendar1.Location = new System.Drawing.Point(3, 3);
+            this.evCalendar1.MinimumSize = new System.Drawing.Size(260, 260);
+            this.evCalendar1.Name = "evCalendar1";
+            this.evCalendar1.Size = new System.Drawing.Size(995, 469);
+            this.evCalendar1.TabIndex = 0;
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.indsætNyhedToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(153, 48);
+            // 
+            // indsætNyhedToolStripMenuItem
+            // 
+            this.indsætNyhedToolStripMenuItem.Name = "indsætNyhedToolStripMenuItem";
+            this.indsætNyhedToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.indsætNyhedToolStripMenuItem.Text = "Indsæt nyhed";
+            this.indsætNyhedToolStripMenuItem.Click += new System.EventHandler(this.indsætNyhedToolStripMenuItem_Click);
             // 
             // tabRegistrer_Fravær
             // 
@@ -218,16 +247,18 @@
             // 
             this.note.Text = "Note";
             // 
-            // tabControl1
+            // toolStrip1
             // 
-            this.tabControl1.Controls.Add(this.tabRegistrer_Fravær);
-            this.tabControl1.Controls.Add(this.tabKalender);
-            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl1.Location = new System.Drawing.Point(0, 0);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1009, 501);
-            this.tabControl1.TabIndex = 9;
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripLabel1,
+            this.tstxt_soeg,
+            this.toolStripButton1});
+            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Padding = new System.Windows.Forms.Padding(0);
+            this.toolStrip1.Size = new System.Drawing.Size(997, 25);
+            this.toolStrip1.TabIndex = 66;
+            this.toolStrip1.Text = "toolStrip1";
             // 
             // toolStripLabel1
             // 
@@ -253,28 +284,16 @@
             this.toolStripButton1.Text = "Opret Nyhed Test";
             this.toolStripButton1.Click += new System.EventHandler(this.button2_Click);
             // 
-            // toolStrip1
+            // tabControl1
             // 
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripLabel1,
-            this.tstxt_soeg,
-            this.toolStripButton1});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Padding = new System.Windows.Forms.Padding(0);
-            this.toolStrip1.Size = new System.Drawing.Size(997, 25);
-            this.toolStrip1.TabIndex = 66;
-            this.toolStrip1.Text = "toolStrip1";
-            // 
-            // evCalendar1
-            // 
-            this.evCalendar1.DayContextMenu = null;
-            this.evCalendar1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.evCalendar1.Location = new System.Drawing.Point(3, 3);
-            this.evCalendar1.MinimumSize = new System.Drawing.Size(260, 260);
-            this.evCalendar1.Name = "evCalendar1";
-            this.evCalendar1.Size = new System.Drawing.Size(995, 469);
-            this.evCalendar1.TabIndex = 0;
+            this.tabControl1.Controls.Add(this.tabRegistrer_Fravær);
+            this.tabControl1.Controls.Add(this.tabKalender);
+            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControl1.Location = new System.Drawing.Point(0, 0);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(1009, 501);
+            this.tabControl1.TabIndex = 9;
             // 
             // Form1
             // 
@@ -286,12 +305,13 @@
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.tabKalender.ResumeLayout(false);
+            this.contextMenuStrip1.ResumeLayout(false);
             this.tabRegistrer_Fravær.ResumeLayout(false);
             this.tabRegistrer_Fravær.PerformLayout();
             this.panel1.ResumeLayout(false);
-            this.tabControl1.ResumeLayout(false);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
+            this.tabControl1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -323,6 +343,8 @@
         private System.Windows.Forms.ToolStripTextBox tstxt_soeg;
         private System.Windows.Forms.ToolStripButton toolStripButton1;
         private CalendarControl.EVCalendar evCalendar1;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem indsætNyhedToolStripMenuItem;
     }
 }
 
