@@ -61,6 +61,7 @@ namespace Model
             return ListMedarbejdere[i];
         }
 
+
         public IEnumerator GetMedarbejderIterator()
         {
             return ListMedarbejdere.GetEnumerator();
