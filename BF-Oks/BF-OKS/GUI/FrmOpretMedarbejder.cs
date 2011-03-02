@@ -68,7 +68,7 @@ namespace GUI
             }
             catch (Exception)
             {
-                MessageBox.Show("Indtast venligst alle værdier, og venligst rigtigt");
+                MessageBox.Show("Indtast venligst alle værdier rigtigt");
             }
         }
     }
