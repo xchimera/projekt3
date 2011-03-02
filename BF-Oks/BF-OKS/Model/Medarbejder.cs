@@ -91,5 +91,16 @@ namespace Model
             get { return by; }
             set { by = value; }
         }
+
+        public NyhedCollection NyhedCollection
+        {
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+            set
+            {
+            }
+        }
     }
 }
