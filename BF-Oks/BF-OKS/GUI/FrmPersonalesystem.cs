@@ -115,7 +115,7 @@ namespace GUI
             //    MessageBox.Show(ex.ToString());
             //}
             OpdaterListView();
-            LoadNyheder();
+            //LoadNyheder();
         }
 
         public void IndsætKalenderFravær(long cprnummer)
