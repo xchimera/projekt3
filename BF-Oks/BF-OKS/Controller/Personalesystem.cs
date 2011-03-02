@@ -24,6 +24,39 @@ namespace Controller
 
         }
 
+        public Model.MedarbejderCollection MedarbejderCollection
+        {
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+            set
+            {
+            }
+        }
+
+        public Model.NyhedCollection NyhedCollection
+        {
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+            set
+            {
+            }
+        }
+
+        internal DBFacade DBFacade
+        {
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+            set
+            {
+            }
+        }
+
         public bool RedigerMedarbejder(long cpr, string navn, string adresse, int postnr, string by, long tlf, int afd)
         {
             if (dbfacade.RedigerMedarbejder(cpr, navn, adresse, postnr, by, tlf, afd) == null)
