@@ -213,7 +213,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "FrmRedigerMedarbejder";
-            this.Text = "FrmRedigerMedarbejder";
+            this.Text = "Rediger Medarbejder";
             this.ResumeLayout(false);
             this.PerformLayout();
 
