@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.tabKalender = new System.Windows.Forms.TabPage();
             this.evCalendar1 = new CalendarControl.EVCalendar();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
@@ -111,7 +112,7 @@
             this.tabRegistrer_Fravær.Name = "tabRegistrer_Fravær";
             this.tabRegistrer_Fravær.Size = new System.Drawing.Size(1001, 475);
             this.tabRegistrer_Fravær.TabIndex = 0;
-            this.tabRegistrer_Fravær.Text = "Registrer Fravær";
+            this.tabRegistrer_Fravær.Text = "Kartotek";
             // 
             // lstKartotek
             // 
@@ -289,8 +290,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1009, 501);
             this.Controls.Add(this.tabControl1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Muu Manager";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.tabKalender.ResumeLayout(false);
             this.contextMenuStrip1.ResumeLayout(false);
