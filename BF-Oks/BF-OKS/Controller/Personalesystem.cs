@@ -107,11 +107,6 @@ namespace Controller
             return false;
         }
 
-        //public long OpretNyhed(string nyhed)
-        //{
-        //    return dbfacade.OpretNyhed(nyhed);
-        //}
-
 
         public bool SletMedarbejder(long cpr_nummer)
         {
@@ -163,7 +158,7 @@ namespace Controller
         {
             return nyhedcollection.GetNyhed();
         }
-        //TODO: lav fravær i kalenderen
+      
         
     }
 }
