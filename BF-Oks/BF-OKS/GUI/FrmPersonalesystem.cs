@@ -31,6 +31,8 @@ namespace GUI
             IMedarbejderData medarbejderdata;
             IEnumerator medarbejderiterator = personalesystem.GetMedarbejderIterator();
             evCalendar1.Events.Clear();
+            LoadNyheder();
+            
             if (medarbejderiterator == null)
             {
                 MessageBox.Show("Medarbejderlisten kunne desværre ikke vises", "Systemfejl", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -54,8 +56,10 @@ namespace GUI
                 
                 lstKartotek.Items.Add(medarbejdere);
                 IndsætKalenderFravær(medarbejderdata.Cpr_nummer);
+                
             }
             medarbejderiterator.Reset();
+            evCalendar1.UpdateCalendar();
         }
 
    
@@ -203,7 +207,8 @@ namespace GUI
                 long cprnummer = long.Parse(lvitm.Text.ToString());
 
                 FrmFravær fravær = new FrmFravær(personalesystem, cprnummer);
-                fravær.Show(this);
+                fravær.ShowDialog(this);
+                OpdaterListView();
             }
             catch (Exception)
             {
@@ -329,7 +334,7 @@ namespace GUI
         {
             CalEvent events = new CalEvent(header, body, dato, color);
             evCalendar1.Events.Add(events);
-            evCalendar1.UpdateCalendar();
+            //evCalendar1.UpdateCalendar();
         }
 
 
