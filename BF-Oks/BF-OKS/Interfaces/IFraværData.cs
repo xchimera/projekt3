@@ -11,5 +11,6 @@ namespace Interfaces
         string Note { get;}
         DateTime Dato_fra { get; }
         DateTime Dato_til { get; }
+        string Navn { get; }
     }
 }
