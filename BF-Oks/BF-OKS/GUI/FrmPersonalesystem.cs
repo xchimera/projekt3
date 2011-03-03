@@ -337,16 +337,17 @@ namespace GUI
             //evCalendar1.UpdateCalendar();
         }
 
-        //TODO: Denny: i toget!! 
+        //TODO: FrmPersonaleSystem -> RedigérFravær! 
 
       private void lstFravær_MouseDown(object sender, MouseEventArgs e)
       {
           if ((e.Button == MouseButtons.Right) && (lstFravær.GetItemAt(e.X, e.Y) != null)) //If it's the right button.
           {
 
-              contextMenuStrip1.Show(this.lstFravær, e.Location);
+              RedigerFraværMenu.Show(this.lstFravær, e.Location);
 
           }
       }
+
     }
 }

@@ -106,6 +106,14 @@ namespace Controller
             }
             return false;
         }
+        public void RedigerFravær(long cprnummer, DateTime dato_fra, DateTime dato_til, string note, string type)
+        {
+            if (dbfacade.RedigerFravær(cprnummer, dato_fra, dato_til, note, type) != null)
+            {
+                // TODO: Controller -> RedigerFravær()
+            }
+        }
+
 
 
         public bool SletMedarbejder(long cpr_nummer)
