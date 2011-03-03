@@ -337,10 +337,17 @@ namespace GUI
             //evCalendar1.UpdateCalendar();
         }
 
-        private void tstxt_soeg_Click(object sender, EventArgs e)
-        {
+        //TODO: kig her Denny ^^!! 
 
-        }
+        //private void lstFravær_MouseDown(object sender, System.Windows.Forms.MouseEventArgs e)
+        //{
+        //    int indexover = lstFravær.ind(e.X, e.Y);
+        //    if (e.Button == System.Windows.Forms.MouseButtons.Right)
+        //    {
+        //        MessageBox.Show("HEJ");
+        //    }
+        //}
+
 
 
     }
