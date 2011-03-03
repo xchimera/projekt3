@@ -271,6 +271,7 @@
             this.tstxt_soeg.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tstxt_soeg.Name = "tstxt_soeg";
             this.tstxt_soeg.Size = new System.Drawing.Size(150, 25);
+            this.tstxt_soeg.Click += new System.EventHandler(this.tstxt_soeg_Click);
             this.tstxt_soeg.TextChanged += new System.EventHandler(this.txtSøg_TextChanged);
             // 
             // tabControl1
