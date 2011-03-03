@@ -411,6 +411,57 @@ namespace Controller
 
         }
 
+        public string RedigerFravær(long cpr, DateTime dato_fra, DateTime dato_til, string note, string type)
+        {
+            string sqlfejl = null;
+            cmd.CommandText = "RedigerFravær";
+            cmd.Parameters.Clear();
+
+            SqlParameter par = new SqlParameter("cpr", SqlDbType.BigInt);
+            par.Value = cpr;
+            cmd.Parameters.Add(par);
+
+            par = new SqlParameter("@dato_fra", SqlDbType.DateTime);
+            par.Value = dato_fra;
+            cmd.Parameters.Add(par);
+
+            par = new SqlParameter("@dato_til", SqlDbType.DateTime);
+            par.Value = dato_til;
+            cmd.Parameters.Add(par);
+
+            par = new SqlParameter("@note", SqlDbType.NVarChar);
+            par.Value = note;
+            cmd.Parameters.Add(par);
+
+            par = new SqlParameter("@type", SqlDbType.NVarChar);
+            par.Value = type;
+            cmd.Parameters.Add(par);
+
+            try
+            {
+                conn.Open();
+                cmd.ExecuteNonQuery();
+                conn.Close();
+            }
+            catch (SqlException e)
+            {
+                //TODO: RET MEDDELSE!!!!
+                if (e.Number == 2627)
+                {
+                    sqlfejl = "HAHAHA";
+                }
+                else
+                {
+                    sqlfejl = "LOL" + e.Number;
+                }
+                if (conn.State == ConnectionState.Open)
+                {
+                    conn.Close();
+                }
+            }
+
+            return sqlfejl;
+        }
 
         public string SletMedarbejder(long cpr_nummer)
         {
