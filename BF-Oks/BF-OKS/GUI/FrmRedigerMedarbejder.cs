@@ -57,6 +57,7 @@ namespace GUI
 
                 if (personalesystem.RedigerMedarbejder(medarbejder.Cpr_nummer, navn, adresse, postnr,by, telefon, afdeling))
                 {
+                    MessageBox.Show("Oplysningerne er blevet redigeret!");
                     this.Close();
                 }
                 else
