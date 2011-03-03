@@ -298,8 +298,8 @@ namespace GUI
                 string info;
                 info = Convert.ToString(tstxt_soeg.Text);
 
-                if ((medarbejderdata.Navn).ToUpper().IndexOf(info.ToUpper()) != -1 || Convert.ToString(medarbejderdata.Cpr_nummer) == info || Convert.ToString(medarbejderdata.Postnr) == info 
-                        || Convert.ToString(medarbejderdata.By) == info || Convert.ToString(medarbejderdata.Tlf) == info || Convert.ToString(medarbejderdata.Afdelingsid) == info)
+                if ((medarbejderdata.Navn).ToUpper().IndexOf(info.ToUpper()) != -1 || Convert.ToString(medarbejderdata.Cpr_nummer).IndexOf(info) != -1 || Convert.ToString(medarbejderdata.Postnr) == info 
+                        || Convert.ToString(medarbejderdata.By) == info || Convert.ToString(medarbejderdata.Tlf).IndexOf(info) != -1 || Convert.ToString(medarbejderdata.Afdelingsid) == info)
                 {
                 
                 ListViewItem medarbejdere = new ListViewItem();
@@ -335,6 +335,11 @@ namespace GUI
             CalEvent events = new CalEvent(header, body, dato, color);
             evCalendar1.Events.Add(events);
             //evCalendar1.UpdateCalendar();
+        }
+
+        private void tstxt_soeg_Click(object sender, EventArgs e)
+        {
+
         }
 
 
