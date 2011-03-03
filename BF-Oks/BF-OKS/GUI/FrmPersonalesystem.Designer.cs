@@ -56,12 +56,15 @@
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.tstxt_soeg = new System.Windows.Forms.ToolStripTextBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.RedigerFraværMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.redigérFraværToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabKalender.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
             this.tabRegistrer_Fravær.SuspendLayout();
             this.panel1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
+            this.RedigerFraværMenu.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabKalender
@@ -219,13 +222,16 @@
             this.dato_til,
             this.type,
             this.note});
+            this.lstFravær.ContextMenuStrip = this.RedigerFraværMenu;
             this.lstFravær.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.lstFravær.FullRowSelect = true;
             this.lstFravær.Location = new System.Drawing.Point(0, 294);
             this.lstFravær.Name = "lstFravær";
             this.lstFravær.Size = new System.Drawing.Size(997, 177);
             this.lstFravær.TabIndex = 64;
             this.lstFravær.UseCompatibleStateImageBehavior = false;
             this.lstFravær.View = System.Windows.Forms.View.Details;
+            this.lstFravær.MouseDown += new System.Windows.Forms.MouseEventHandler(this.lstFravær_MouseDown);
             // 
             // dato_fra
             // 
@@ -271,7 +277,6 @@
             this.tstxt_soeg.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tstxt_soeg.Name = "tstxt_soeg";
             this.tstxt_soeg.Size = new System.Drawing.Size(150, 25);
-            this.tstxt_soeg.Click += new System.EventHandler(this.tstxt_soeg_Click);
             this.tstxt_soeg.TextChanged += new System.EventHandler(this.txtSøg_TextChanged);
             // 
             // tabControl1
@@ -284,6 +289,19 @@
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(1009, 501);
             this.tabControl1.TabIndex = 9;
+            // 
+            // RedigerFraværMenu
+            // 
+            this.RedigerFraværMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.redigérFraværToolStripMenuItem});
+            this.RedigerFraværMenu.Name = "RedigerFraværMenu";
+            this.RedigerFraværMenu.Size = new System.Drawing.Size(154, 26);
+            // 
+            // redigérFraværToolStripMenuItem
+            // 
+            this.redigérFraværToolStripMenuItem.Name = "redigérFraværToolStripMenuItem";
+            this.redigérFraværToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
+            this.redigérFraværToolStripMenuItem.Text = "Redigér Fravær";
             // 
             // Form1
             // 
@@ -303,6 +321,7 @@
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.tabControl1.ResumeLayout(false);
+            this.RedigerFraværMenu.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -335,6 +354,8 @@
         private CalendarControl.EVCalendar evCalendar1;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem indsætNyhedToolStripMenuItem;
+        private System.Windows.Forms.ContextMenuStrip RedigerFraværMenu;
+        private System.Windows.Forms.ToolStripMenuItem redigérFraværToolStripMenuItem;
     }
 }
 
