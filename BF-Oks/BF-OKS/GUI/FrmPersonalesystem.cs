@@ -337,18 +337,16 @@ namespace GUI
             //evCalendar1.UpdateCalendar();
         }
 
-        //TODO: kig her Denny ^^!! 
+        //TODO: Denny: i toget!! 
 
-        //private void lstFravær_MouseDown(object sender, System.Windows.Forms.MouseEventArgs e)
-        //{
-        //    int indexover = lstFravær.ind(e.X, e.Y);
-        //    if (e.Button == System.Windows.Forms.MouseButtons.Right)
-        //    {
-        //        MessageBox.Show("HEJ");
-        //    }
-        //}
+      private void lstFravær_MouseDown(object sender, MouseEventArgs e)
+      {
+          if ((e.Button == MouseButtons.Right) && (lstFravær.GetItemAt(e.X, e.Y) != null)) //If it's the right button.
+          {
 
+              contextMenuStrip1.Show(this.lstFravær, e.Location);
 
-
+          }
+      }
     }
 }
