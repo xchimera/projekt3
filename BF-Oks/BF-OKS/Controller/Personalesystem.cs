@@ -107,12 +107,16 @@ namespace Controller
             
         }
         
-        public void RedigerFravær(long cprnummer, DateTime dato_fra, DateTime dato_til, string note, string type)
+        public bool RedigerFravær(long cprnummer,int id, DateTime dato_fra, DateTime dato_til, string note, string type)
         {
-            if (dbfacade.RedigerFravær(cprnummer, dato_fra, dato_til, note, type) != null)
+            if (dbfacade.RedigerFravær(cprnummer, id, dato_fra, dato_til, note, type) == true)
             {
-                // TODO: Controller -> RedigerFravær()
+                if (medarbejdercollection.RedigerFravær(cprnummer, id, dato_fra, dato_til, note, type))
+                {
+                    return true;
+                }
             }
+            return false;
         }
 
 

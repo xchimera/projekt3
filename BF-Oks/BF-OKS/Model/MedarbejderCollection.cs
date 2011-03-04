@@ -48,13 +48,17 @@ namespace Model
 	            }
 	        }
         }
-        public void RedigerFravær(long cpr_nummer, DateTime dato_fra, DateTime dato_til, string note, string type)
-        { //TODO: RedigérFravær!!!!!
+        public bool RedigerFravær(long cpr_nummer,int id, DateTime dato_fra, DateTime dato_til, string note, string type)
+        { 
             Medarbejder medarbejder = FindMedarbejder(cpr_nummer);
             if (medarbejder.Cpr_nummer == cpr_nummer)
             {
-                
+                if(medarbejder.RedigerFravær(id, dato_fra, dato_til, note, type))
+                {
+                    return true;
+                }
             }
+            return false;
         }
 
 

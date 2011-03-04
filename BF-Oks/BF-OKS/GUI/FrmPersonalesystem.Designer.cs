@@ -59,6 +59,7 @@
             this.RedigerFraværMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.redigérFraværToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.id = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabKalender.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
             this.tabRegistrer_Fravær.SuspendLayout();
@@ -225,6 +226,7 @@
             // lstFravær
             // 
             this.lstFravær.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.id,
             this.dato_fra,
             this.dato_til,
             this.type,
@@ -290,7 +292,7 @@
             this.RedigerFraværMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.redigérFraværToolStripMenuItem});
             this.RedigerFraværMenu.Name = "RedigerFraværMenu";
-            this.RedigerFraværMenu.Size = new System.Drawing.Size(154, 48);
+            this.RedigerFraværMenu.Size = new System.Drawing.Size(154, 26);
             // 
             // redigérFraværToolStripMenuItem
             // 
@@ -309,6 +311,10 @@
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(1009, 501);
             this.tabControl1.TabIndex = 9;
+            // 
+            // id
+            // 
+            this.id.Text = "ID";
             // 
             // Form1
             // 
@@ -364,6 +370,7 @@
         private System.Windows.Forms.ContextMenuStrip RedigerFraværMenu;
         private System.Windows.Forms.ToolStripMenuItem redigérFraværToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sletNyhedToolStripMenuItem;
+        private System.Windows.Forms.ColumnHeader id;
     }
 }
 

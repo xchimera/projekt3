@@ -57,6 +57,7 @@ namespace GUI
                 lstKartotek.Items.Add(medarbejdere);
                 IndsætKalenderFravær(medarbejderdata.Cpr_nummer);
                 
+                
             }
             medarbejderiterator.Reset();
             evCalendar1.UpdateCalendar();
@@ -157,47 +158,6 @@ namespace GUI
         }
 
 
-        //private void txtSøgRegistrerFravær_TextChanged(object sender, EventArgs e)
-        //{
-            
-        //        IMedarbejderData medarbejderdata;
-        //        IEnumerator medarbiterator = personalesystem.GetMedarbejderIterator();
-        //        if (txtSøg.Text =="")
-        //        {
-        //        }
-
-        //        medarbiterator.Reset();
-        //        lstRediger.Items.Clear();
-
-        //        while (medarbiterator.MoveNext())
-        //        {
-        //            medarbejderdata = (IMedarbejderData)medarbiterator.Current;
-        //            string info;
-        //            info = Convert.ToString(txtSøg.Text);
-
-        //            if (medarbejderdata.Navn == info || medarbejderdata.Adresse == info || Convert.ToString(medarbejderdata.Postnr) == info || medarbejderdata.Adresse == info 
-        //                || medarbejderdata.By == info || Convert.ToString(medarbejderdata.Cpr_nummer) == info || Convert.ToString(medarbejderdata.Tlf) == info);
-                    
-        //            {
-        //                ListViewItem medarbejdere = new ListViewItem();
-        //                medarbejdere.Text = medarbejderdata.Cpr_nummer.ToString();
-        //                medarbejdere.SubItems.Add(medarbejderdata.Navn);
-        //                medarbejdere.SubItems.Add(medarbejderdata.Adresse);
-        //                medarbejdere.SubItems.Add(medarbejderdata.Postnr.ToString());
-        //                medarbejdere.SubItems.Add(medarbejderdata.By);
-        //                medarbejdere.SubItems.Add(medarbejderdata.Tlf.ToString());
-        //                medarbejdere.SubItems.Add(medarbejderdata.Afdelingsid.ToString());
-                                                
-        //                lstRediger.Items.Add(medarbejdere);
-
-        //            }
-
-
-
-                        
-                    
-        //        }
-        //}
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -263,8 +223,9 @@ namespace GUI
                 {
                     ifraværdata = (IFraværData)fraværiterator.Current;
                     ListViewItem fravære = new ListViewItem();
-                    fravære.Text = ifraværdata.Dato_fra.Day + "-" + ifraværdata.Dato_fra.Month + "-" + ifraværdata.Dato_fra.Year;
-                    fravære.SubItems.Add(ifraværdata.Dato_til.Day + "-"+ ifraværdata.Dato_til.Month + "-" + ifraværdata.Dato_til.Year);
+                    fravære.Text = ifraværdata.ID.ToString();
+                    fravære.SubItems.Add(ifraværdata.Dato_fra.Day + "-" + ifraværdata.Dato_fra.Month + "-" + ifraværdata.Dato_fra.Year);
+                    fravære.SubItems.Add(ifraværdata.Dato_til.Day + "-" + ifraværdata.Dato_til.Month + "-" + ifraværdata.Dato_til.Year);
                     fravære.SubItems.Add(ifraværdata.Type.ToString());
                     fravære.SubItems.Add(ifraværdata.Note.ToString());
 
@@ -337,7 +298,7 @@ namespace GUI
             //evCalendar1.UpdateCalendar();
         }
 
-        //TODO: FrmPersonaleSystem -> RedigérFravær! 
+         
 
       private void lstFravær_MouseDown(object sender, MouseEventArgs e)
       {
@@ -358,14 +319,15 @@ namespace GUI
           ListViewItem item = lstFravær.Items[index];
           
           long cpr = long.Parse(lstKartotek.SelectedItems[0].Text);
-          DateTime datofra = DateTime.Parse(item.SubItems[0].Text);
-          DateTime datotil = DateTime.Parse(item.SubItems[1].Text);
-          type = item.SubItems[2].Text;
-          string note = item.SubItems[3].Text;
+          int id = int.Parse(item.SubItems[0].Text);
+          DateTime datofra = DateTime.Parse(item.SubItems[1].Text);
+          DateTime datotil = DateTime.Parse(item.SubItems[2].Text);
+          type = item.SubItems[3].Text;
+          string note = item.SubItems[4].Text;
 
-          FrmRedigerFravær redigerfravær = new FrmRedigerFravær(personalesystem, cpr, datofra, datotil, type, note);
+          FrmRedigerFravær redigerfravær = new FrmRedigerFravær(personalesystem, cpr, id, datofra, datotil, type, note);
           redigerfravær.ShowDialog(this);
-          //MessageBox.Show(datofra.ToString());
+          
           OpdaterListView();
       }
 
