@@ -10,12 +10,12 @@ using Model;
 using Controller;
 namespace GUI
 {
-    public partial class FrmFravær : Form
+    public partial class FrmOpretFravær : Form
     {
         long cprnummer;
         Personalesystem personalesystem;
 
-        public FrmFravær(Personalesystem personalesystem, long cprnummer)
+        public FrmOpretFravær(Personalesystem personalesystem, long cprnummer)
         {
             InitializeComponent();
             this.cprnummer = cprnummer;

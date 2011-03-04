@@ -65,7 +65,7 @@
             this.rdbFerie.AutoSize = true;
             this.rdbFerie.Location = new System.Drawing.Point(23, 85);
             this.rdbFerie.Name = "rdbFerie";
-            this.rdbFerie.Size = new System.Drawing.Size(63, 24);
+            this.rdbFerie.Size = new System.Drawing.Size(48, 17);
             this.rdbFerie.TabIndex = 11;
             this.rdbFerie.TabStop = true;
             this.rdbFerie.Text = "Ferie";
@@ -133,7 +133,7 @@
             this.rdbSyg.Checked = true;
             this.rdbSyg.Location = new System.Drawing.Point(23, 26);
             this.rdbSyg.Name = "rdbSyg";
-            this.rdbSyg.Size = new System.Drawing.Size(54, 24);
+            this.rdbSyg.Size = new System.Drawing.Size(43, 17);
             this.rdbSyg.TabIndex = 9;
             this.rdbSyg.TabStop = true;
             this.rdbSyg.Text = "Syg";
@@ -144,7 +144,7 @@
             this.rdbFri.AutoSize = true;
             this.rdbFri.Location = new System.Drawing.Point(23, 56);
             this.rdbFri.Name = "rdbFri";
-            this.rdbFri.Size = new System.Drawing.Size(45, 24);
+            this.rdbFri.Size = new System.Drawing.Size(36, 17);
             this.rdbFri.TabIndex = 10;
             this.rdbFri.TabStop = true;
             this.rdbFri.Text = "Fri";
@@ -155,7 +155,7 @@
             this.groupBox1.Controls.Add(this.rdbFerie);
             this.groupBox1.Controls.Add(this.rdbFri);
             this.groupBox1.Controls.Add(this.rdbSyg);
-            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(3, 2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(92, 125);
