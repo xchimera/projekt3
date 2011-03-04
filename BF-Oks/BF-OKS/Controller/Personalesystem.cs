@@ -91,21 +91,22 @@ namespace Controller
         
 
         // Tilføjer et objekt af fravær til en valgt medarbejder
-        public void TilføjFravær(long cpr_nummer, DateTime dato_fra, DateTime dato_til, string note, string type)
+        public void TilføjFravær(long cpr_nummer, DateTime dato_fra, DateTime dato_til, string note, string type, int id)
         {
-            medarbejdercollection.OpretFravær(cpr_nummer, dato_fra, dato_til, note, type);
+            medarbejdercollection.OpretFravær(cpr_nummer, dato_fra, dato_til, note, type, id);
             
         }
 
         public bool OpretFravær(long cpr_nummer, DateTime dato_fra, DateTime dato_til, string note, string type)
         {
-            if (dbfacade.OpretFravær(cpr_nummer, note, type, dato_fra, dato_til) == null)
-            {
-                medarbejdercollection.OpretFravær(cpr_nummer, dato_fra, dato_til, note, type);
-                return true;
-            }
-            return false;
+            int id = dbfacade.OpretFravær(cpr_nummer, note, type, dato_fra, dato_til);
+           
+            medarbejdercollection.OpretFravær(cpr_nummer, dato_fra, dato_til, note, type, id);
+            return true;
+
+            
         }
+        
         public void RedigerFravær(long cprnummer, DateTime dato_fra, DateTime dato_til, string note, string type)
         {
             if (dbfacade.RedigerFravær(cprnummer, dato_fra, dato_til, note, type) != null)

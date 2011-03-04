@@ -354,10 +354,11 @@ namespace Controller
         }
 
 
-        public string OpretFravær(long cpr_nummer, string note, string type, DateTime dato_fra, DateTime dato_til)
+        public int OpretFravær(long cpr_nummer, string note, string type, DateTime dato_fra, DateTime dato_til)
         {
             string sqlfejl = null;
-
+            string tempid;
+            int id = 0;
             cmd.CommandText = "OpretFravær";
 
             cmd.Parameters.Clear();
@@ -387,8 +388,9 @@ namespace Controller
             try
             {
                 conn.Open();
-                cmd.ExecuteNonQuery();
+                tempid = cmd.ExecuteScalar().ToString();
                 conn.Close();
+                id = int.Parse(tempid);
             }
 
             catch (SqlException e)
@@ -407,7 +409,7 @@ namespace Controller
                 }
             }
 
-            return sqlfejl;
+            return id;
 
         }
 
@@ -722,6 +724,7 @@ namespace Controller
             DateTime dato_til;
             string note;
             string type;
+            int id;
 
             SqlDataReader reader;
 
@@ -741,8 +744,9 @@ namespace Controller
                     dato_til = (DateTime)reader["dato_til"];
                     note = (string)reader["note"];
                     type = (string)reader["type"];
+                    id = (int)reader["ID"];
 
-                    personalesystem.TilføjFravær(cpr_nummer, dato_fra, dato_til, note, type);
+                    personalesystem.TilføjFravær(cpr_nummer, dato_fra, dato_til, note, type, id);
                 }
                 conn.Close();
                 LoadNyhed();

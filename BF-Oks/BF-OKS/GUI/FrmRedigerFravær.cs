@@ -13,12 +13,18 @@ namespace GUI
     public partial class FrmRedigerFravær : Form
     {
         long cprnummer;
-         Personalesystem personalesystem;
-         public FrmRedigerFravær(Personalesystem personalesystem, long cprnummer)
+        Personalesystem personalesystem;
+               
+        
+        public FrmRedigerFravær(Personalesystem personalesystem, long cprnummer, DateTime dato_fra, DateTime dato_til, string type, string note)
         {
             InitializeComponent();
             this.cprnummer = cprnummer;
             this.personalesystem = personalesystem;
+            dtpFra.Value = dato_fra;
+            dtpTil.Value = dato_til;
+            txtFraværNote.Text = note;
+
         }
 
 
@@ -31,6 +37,7 @@ namespace GUI
                 DateTime start_dato = dtpFra.Value;
                 DateTime slut_dato = dtpTil.Value;
                 string type = null;
+                string note = txtFraværNote.Text;
                 if (rdbSyg.Checked)
                 {
                     type = "syg";
@@ -43,6 +50,7 @@ namespace GUI
                 {
                     type = "ferie";
                 }
+                personalesystem.RedigerFravær(cprnummer, start_dato, slut_dato, note, type);
 
             }
             catch (Exception)

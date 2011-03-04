@@ -30,9 +30,9 @@ namespace Model
             listFravær = new List<Fravær>();
         }
 
-        public void OpretFravær(string type, string note, DateTime dato_fra, DateTime dato_til)
+        public void OpretFravær(string type, string note, DateTime dato_fra, DateTime dato_til, int id)
         {
-            Fravær fravær = new Fravær(type, note, dato_fra, dato_til, navn);
+            Fravær fravær = new Fravær(type, note, dato_fra, dato_til, navn, id);
             listFravær.Add(fravær);
         }
 

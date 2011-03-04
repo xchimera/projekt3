@@ -55,7 +55,7 @@
             this.note = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
-            this.tstxt_soeg = new System.Windows.Forms.ToolStripTextBox();
+            this.txt_soeg = new System.Windows.Forms.ToolStripTextBox();
             this.RedigerFraværMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.redigérFraværToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControl1 = new System.Windows.Forms.TabControl();
@@ -96,19 +96,19 @@
             this.indsætNyhedToolStripMenuItem,
             this.sletNyhedToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(153, 70);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(147, 48);
             // 
             // indsætNyhedToolStripMenuItem
             // 
             this.indsætNyhedToolStripMenuItem.Name = "indsætNyhedToolStripMenuItem";
-            this.indsætNyhedToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.indsætNyhedToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
             this.indsætNyhedToolStripMenuItem.Text = "Indsæt nyhed";
             this.indsætNyhedToolStripMenuItem.Click += new System.EventHandler(this.indsætNyhedToolStripMenuItem_Click);
             // 
             // sletNyhedToolStripMenuItem
             // 
             this.sletNyhedToolStripMenuItem.Name = "sletNyhedToolStripMenuItem";
-            this.sletNyhedToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.sletNyhedToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
             this.sletNyhedToolStripMenuItem.Text = "Slet Nyhed";
             // 
             // tabRegistrer_Fravær
@@ -135,7 +135,6 @@
             this.By,
             this.Tlf,
             this.Afdeling});
-            this.lstKartotek.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lstKartotek.FullRowSelect = true;
             this.lstKartotek.GridLines = true;
             this.lstKartotek.Location = new System.Drawing.Point(0, 25);
@@ -264,7 +263,7 @@
             // 
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripLabel1,
-            this.tstxt_soeg});
+            this.txt_soeg});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Padding = new System.Windows.Forms.Padding(0);
@@ -278,26 +277,27 @@
             this.toolStripLabel1.Size = new System.Drawing.Size(27, 22);
             this.toolStripLabel1.Text = "Søg";
             // 
-            // tstxt_soeg
+            // txt_soeg
             // 
-            this.tstxt_soeg.BackColor = System.Drawing.Color.White;
-            this.tstxt_soeg.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.tstxt_soeg.Name = "tstxt_soeg";
-            this.tstxt_soeg.Size = new System.Drawing.Size(150, 25);
-            this.tstxt_soeg.TextChanged += new System.EventHandler(this.txtSøg_TextChanged);
+            this.txt_soeg.BackColor = System.Drawing.Color.White;
+            this.txt_soeg.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txt_soeg.Name = "txt_soeg";
+            this.txt_soeg.Size = new System.Drawing.Size(150, 25);
+            this.txt_soeg.TextChanged += new System.EventHandler(this.txtSøg_TextChanged);
             // 
             // RedigerFraværMenu
             // 
             this.RedigerFraværMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.redigérFraværToolStripMenuItem});
             this.RedigerFraværMenu.Name = "RedigerFraværMenu";
-            this.RedigerFraværMenu.Size = new System.Drawing.Size(154, 26);
+            this.RedigerFraværMenu.Size = new System.Drawing.Size(154, 48);
             // 
             // redigérFraværToolStripMenuItem
             // 
             this.redigérFraværToolStripMenuItem.Name = "redigérFraværToolStripMenuItem";
             this.redigérFraværToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
             this.redigérFraværToolStripMenuItem.Text = "Redigér Fravær";
+            this.redigérFraværToolStripMenuItem.Click += new System.EventHandler(this.redigérFraværToolStripMenuItem_Click);
             // 
             // tabControl1
             // 
@@ -357,7 +357,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripLabel toolStripLabel1;
-        private System.Windows.Forms.ToolStripTextBox tstxt_soeg;
+        private System.Windows.Forms.ToolStripTextBox txt_soeg;
         private CalendarControl.EVCalendar evCalendar1;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem indsætNyhedToolStripMenuItem;
