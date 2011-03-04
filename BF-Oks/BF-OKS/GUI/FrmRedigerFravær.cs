@@ -24,7 +24,6 @@ namespace GUI
             dtpFra.Value = dato_fra;
             dtpTil.Value = dato_til;
             txtFraværNote.Text = note;
-
         }
 
 
@@ -59,6 +58,22 @@ namespace GUI
                 throw;
             }
 
+        }
+
+        private void SetType(string type)
+        {
+            if (type == "fri")
+            {
+                rdbFri.Checked = true;
+            }
+            else if (type == "syg")
+            {
+                rdbSyg.Checked = true;
+            }
+            else if (type == "fer" || type == "ferie")
+            {
+                rdbFerie.Checked = true;
+            }
         }
 
         private void btnCancelFravær_Click_1(object sender, EventArgs e)

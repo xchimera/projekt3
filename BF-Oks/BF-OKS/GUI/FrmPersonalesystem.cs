@@ -206,7 +206,7 @@ namespace GUI
                 ListViewItem lvitm = lstKartotek.SelectedItems[0];
                 long cprnummer = long.Parse(lvitm.Text.ToString());
 
-                FrmFravær fravær = new FrmFravær(personalesystem, cprnummer);
+                FrmOpretFravær fravær = new FrmOpretFravær(personalesystem, cprnummer);
                 fravær.ShowDialog(this);
                 OpdaterListView();
             }
@@ -351,18 +351,25 @@ namespace GUI
 
       private void redigérFraværToolStripMenuItem_Click(object sender, EventArgs e)
       {
-         
+          //csharpsux();
+          string type = null;
+          int items = lstFravær.SelectedItems.Count;
+          int index = lstFravær.SelectedIndices[0];
+          ListViewItem item = lstFravær.Items[index];
+          
           long cpr = long.Parse(lstKartotek.SelectedItems[0].Text);
-          DateTime datofra = DateTime.Parse(lstFravær.SelectedItems[0].Text);
-          DateTime datotil = DateTime.Parse(lstFravær.SelectedItems[1].Text);
-          string type = lstFravær.SelectedItems[2].Text;
-          string note = lstFravær.SelectedItems[3].Text;
+          DateTime datofra = DateTime.Parse(item.SubItems[0].Text);
+          DateTime datotil = DateTime.Parse(item.SubItems[1].Text);
+          type = item.SubItems[2].Text;
+          string note = item.SubItems[3].Text;
 
           FrmRedigerFravær redigerfravær = new FrmRedigerFravær(personalesystem, cpr, datofra, datotil, type, note);
           redigerfravær.ShowDialog(this);
           //MessageBox.Show(datofra.ToString());
           OpdaterListView();
       }
+
+
 
     }
 }

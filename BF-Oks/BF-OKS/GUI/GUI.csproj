@@ -53,11 +53,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FrmFravær.cs">
+    <Compile Include="FrmOpretFravær.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmFravær.Designer.cs">
-      <DependentUpon>FrmFravær.cs</DependentUpon>
+    <Compile Include="FrmOpretFravær.Designer.cs">
+      <DependentUpon>FrmOpretFravær.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmOpretMedarbejder.cs">
       <SubType>Form</SubType>
@@ -91,8 +91,8 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="FrmFravær.resx">
-      <DependentUpon>FrmFravær.cs</DependentUpon>
+    <EmbeddedResource Include="FrmOpretFravær.resx">
+      <DependentUpon>FrmOpretFravær.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmOpretMedarbejder.resx">
       <DependentUpon>FrmOpretMedarbejder.cs</DependentUpon>
