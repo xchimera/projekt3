@@ -14,15 +14,17 @@ namespace Model
         public DateTime Dato_fra { get; set; }
         public DateTime Dato_til { get; set; }
         public string Navn { get; set; }
+        public int ID { get; set; }
 
 
-        public Fravær(string type, string note, DateTime dato_fra, DateTime dato_til, string navn)
+        public Fravær(string type, string note, DateTime dato_fra, DateTime dato_til, string navn, int id)
         {
             this.Type = type;
             this.Note = note;
             this.Dato_fra = dato_fra;
             this.Dato_til = dato_til;
             this.Navn = navn;
+            this.ID = id;
         }
     }
 }

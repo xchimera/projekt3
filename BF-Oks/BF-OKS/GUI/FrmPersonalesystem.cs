@@ -283,7 +283,7 @@ namespace GUI
         {
             IMedarbejderData medarbejderdata;
             IEnumerator medarbejderiterator = personalesystem.GetMedarbejderIterator();
-            if (tstxt_soeg.Text == "")
+            if (txt_soeg.Text == "")
             {
                 OpdaterListView();
                 return;
@@ -296,7 +296,7 @@ namespace GUI
             {                
                 medarbejderdata = (IMedarbejderData)medarbejderiterator.Current;
                 string info;
-                info = Convert.ToString(tstxt_soeg.Text);
+                info = Convert.ToString(txt_soeg.Text);
 
                 if ((medarbejderdata.Navn).ToUpper().IndexOf(info.ToUpper()) != -1 || Convert.ToString(medarbejderdata.Cpr_nummer).IndexOf(info) != -1 || Convert.ToString(medarbejderdata.Postnr) == info 
                         || Convert.ToString(medarbejderdata.By) == info || Convert.ToString(medarbejderdata.Tlf).IndexOf(info) != -1 || Convert.ToString(medarbejderdata.Afdelingsid) == info)
@@ -345,8 +345,23 @@ namespace GUI
           {
 
               RedigerFraværMenu.Show(this.lstFravær, e.Location);
-
+              
           }
+      }
+
+      private void redigérFraværToolStripMenuItem_Click(object sender, EventArgs e)
+      {
+         
+          long cpr = long.Parse(lstKartotek.SelectedItems[0].Text);
+          DateTime datofra = DateTime.Parse(lstFravær.SelectedItems[0].Text);
+          DateTime datotil = DateTime.Parse(lstFravær.SelectedItems[1].Text);
+          string type = lstFravær.SelectedItems[2].Text;
+          string note = lstFravær.SelectedItems[3].Text;
+
+          FrmRedigerFravær redigerfravær = new FrmRedigerFravær(personalesystem, cpr, datofra, datotil, type, note);
+          redigerfravær.ShowDialog(this);
+          //MessageBox.Show(datofra.ToString());
+          OpdaterListView();
       }
 
     }

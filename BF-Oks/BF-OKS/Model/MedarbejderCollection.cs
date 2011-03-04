@@ -37,13 +37,13 @@ namespace Model
         }
         #endregion
 
-        public void OpretFravær(long cpr_nummer, DateTime dato_fra, DateTime dato_til, string note, string type)
+        public void OpretFravær(long cpr_nummer, DateTime dato_fra, DateTime dato_til, string note, string type, int id)
         {
             foreach (Medarbejder MedArb in ListMedarbejdere)
 	        {
                 if (MedArb.Cpr_nummer == cpr_nummer)
 	            {
-                    MedArb.OpretFravær(type, note, dato_fra, dato_til);
+                    MedArb.OpretFravær(type, note, dato_fra, dato_til, id);
                     break;
 	            }
 	        }
