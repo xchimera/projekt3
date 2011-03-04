@@ -36,6 +36,32 @@ namespace Model
             listFravær.Add(fravær);
         }
 
+        public bool RedigerFravær(int id, DateTime dato_fra, DateTime dato_til, string note, string type)
+        {
+            Fravær fravær = FindFravær(id);
+            if (fravær != null)
+            {
+                fravær.Dato_fra = dato_fra;
+                fravær.Dato_til = dato_til;
+                fravær.Note = note;
+                fravær.Type = type;
+                return true;
+            }
+            return false;
+        }
+
+        private Fravær FindFravær(int id)
+        {
+            foreach (Fravær fravær in listFravær)
+            {
+                if (id == fravær.ID)
+                {
+                    return fravær;
+                }
+            }
+            return null;
+        }
+
         public IEnumerator GetFravær()
         {
             return listFravær.GetEnumerator();

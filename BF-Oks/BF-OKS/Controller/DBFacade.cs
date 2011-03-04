@@ -413,14 +413,18 @@ namespace Controller
 
         }
 
-        public string RedigerFravær(long cpr, DateTime dato_fra, DateTime dato_til, string note, string type)
+        public bool RedigerFravær(long cpr, int id, DateTime dato_fra, DateTime dato_til, string note, string type)
         {
-            string sqlfejl = null;
+            
             cmd.CommandText = "RedigerFravær";
             cmd.Parameters.Clear();
 
             SqlParameter par = new SqlParameter("cpr", SqlDbType.BigInt);
             par.Value = cpr;
+            cmd.Parameters.Add(par);
+
+            par = new SqlParameter("@ID", SqlDbType.Int);
+            par.Value = id;
             cmd.Parameters.Add(par);
 
             par = new SqlParameter("@dato_fra", SqlDbType.DateTime);
@@ -444,25 +448,17 @@ namespace Controller
                 conn.Open();
                 cmd.ExecuteNonQuery();
                 conn.Close();
+                return true;
             }
             catch (SqlException e)
             {
-                //TODO: RET MEDDELSE!!!!
-                if (e.Number == 2627)
-                {
-                    sqlfejl = "HAHAHA";
-                }
-                else
-                {
-                    sqlfejl = "LOL" + e.Number;
-                }
-                if (conn.State == ConnectionState.Open)
+                 if (conn.State == ConnectionState.Open)
                 {
                     conn.Close();
                 }
             }
 
-            return sqlfejl;
+            return false;
         }
 
         public string SletMedarbejder(long cpr_nummer)

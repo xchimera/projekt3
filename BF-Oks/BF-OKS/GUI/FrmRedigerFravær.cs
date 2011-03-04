@@ -14,16 +14,18 @@ namespace GUI
     {
         long cprnummer;
         Personalesystem personalesystem;
-               
+        int id;
         
-        public FrmRedigerFravær(Personalesystem personalesystem, long cprnummer, DateTime dato_fra, DateTime dato_til, string type, string note)
+        public FrmRedigerFravær(Personalesystem personalesystem, long cprnummer,int id, DateTime dato_fra, DateTime dato_til, string type, string note)
         {
             InitializeComponent();
             this.cprnummer = cprnummer;
             this.personalesystem = personalesystem;
+            this.id = id;
             dtpFra.Value = dato_fra;
             dtpTil.Value = dato_til;
             txtFraværNote.Text = note;
+            SetType(type);
         }
 
 
@@ -49,7 +51,15 @@ namespace GUI
                 {
                     type = "ferie";
                 }
-                personalesystem.RedigerFravær(cprnummer, start_dato, slut_dato, note, type);
+                if (personalesystem.RedigerFravær(cprnummer, id, start_dato, slut_dato, note, type))
+                {
+                    MessageBox.Show("Fravær ændret");
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Der skete en fejl");
+                }
 
             }
             catch (Exception)
