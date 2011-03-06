@@ -49,6 +49,7 @@
             this.btnRedigerMedarbejder = new System.Windows.Forms.Button();
             this.btnOpretMedarbejder = new System.Windows.Forms.Button();
             this.lstFravær = new System.Windows.Forms.ListView();
+            this.id = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.dato_fra = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.dato_til = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.type = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -59,7 +60,6 @@
             this.RedigerFraværMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.redigérFraværToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.id = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabKalender.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
             this.tabRegistrer_Fravær.SuspendLayout();
@@ -136,6 +136,7 @@
             this.By,
             this.Tlf,
             this.Afdeling});
+            this.lstKartotek.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lstKartotek.FullRowSelect = true;
             this.lstKartotek.GridLines = true;
             this.lstKartotek.Location = new System.Drawing.Point(0, 25);
@@ -241,6 +242,10 @@
             this.lstFravær.View = System.Windows.Forms.View.Details;
             this.lstFravær.MouseDown += new System.Windows.Forms.MouseEventHandler(this.lstFravær_MouseDown);
             // 
+            // id
+            // 
+            this.id.Text = "ID";
+            // 
             // dato_fra
             // 
             this.dato_fra.Text = "Dato fra";
@@ -311,10 +316,6 @@
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(1009, 501);
             this.tabControl1.TabIndex = 9;
-            // 
-            // id
-            // 
-            this.id.Text = "ID";
             // 
             // Form1
             // 
