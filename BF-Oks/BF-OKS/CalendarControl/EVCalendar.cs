@@ -106,6 +106,7 @@ namespace CalendarControl
         {
             if (eventmenu != null)
             {
+                eventmenu.Tag = ((Label)sender).Tag;
                 eventmenu.Show(Cursor.Position);
             }
         }
