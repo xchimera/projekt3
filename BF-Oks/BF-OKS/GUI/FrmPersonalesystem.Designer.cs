@@ -92,6 +92,7 @@
             this.evCalendar1.ContextMenuStrip = this.contextMenuStrip1;
             this.evCalendar1.DayContextMenu = null;
             this.evCalendar1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.evCalendar1.EventContextMenu = null;
             this.evCalendar1.Location = new System.Drawing.Point(3, 3);
             this.evCalendar1.MinimumSize = new System.Drawing.Size(260, 260);
             this.evCalendar1.Name = "evCalendar1";
