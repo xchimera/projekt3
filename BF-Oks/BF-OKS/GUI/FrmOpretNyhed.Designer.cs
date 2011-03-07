@@ -69,7 +69,7 @@
             // btnOpretNyhed
             // 
             this.btnOpretNyhed.ForeColor = System.Drawing.Color.Black;
-            this.btnOpretNyhed.Location = new System.Drawing.Point(15, 227);
+            this.btnOpretNyhed.Location = new System.Drawing.Point(47, 227);
             this.btnOpretNyhed.Name = "btnOpretNyhed";
             this.btnOpretNyhed.Size = new System.Drawing.Size(75, 23);
             this.btnOpretNyhed.TabIndex = 4;
@@ -80,11 +80,11 @@
             // btnAnnuler
             // 
             this.btnAnnuler.ForeColor = System.Drawing.Color.Black;
-            this.btnAnnuler.Location = new System.Drawing.Point(186, 227);
+            this.btnAnnuler.Location = new System.Drawing.Point(164, 227);
             this.btnAnnuler.Name = "btnAnnuler";
             this.btnAnnuler.Size = new System.Drawing.Size(75, 23);
             this.btnAnnuler.TabIndex = 5;
-            this.btnAnnuler.Text = "Annuler";
+            this.btnAnnuler.Text = "Annuller";
             this.btnAnnuler.UseVisualStyleBackColor = true;
             this.btnAnnuler.Click += new System.EventHandler(this.btnAnnuler_Click);
             // 
@@ -115,7 +115,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(122)))), ((int)(((byte)(173)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(123)))), ((int)(((byte)(173)))));
             this.ClientSize = new System.Drawing.Size(284, 262);
             this.Controls.Add(this.btnColorPicker);
             this.Controls.Add(this.dateTimePicker1);

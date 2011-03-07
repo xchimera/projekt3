@@ -50,121 +50,123 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 39);
+            this.label1.Location = new System.Drawing.Point(14, 39);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(33, 13);
+            this.label1.Size = new System.Drawing.Size(37, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Navn";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 65);
+            this.label2.Location = new System.Drawing.Point(14, 65);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(45, 13);
+            this.label2.Size = new System.Drawing.Size(52, 13);
             this.label2.TabIndex = 1;
             this.label2.Text = "Adresse";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 92);
+            this.label3.Location = new System.Drawing.Point(14, 92);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(43, 13);
+            this.label3.Size = new System.Drawing.Size(51, 13);
             this.label3.TabIndex = 2;
             this.label3.Text = "Post nr.";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(12, 119);
+            this.label4.Location = new System.Drawing.Point(14, 119);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(19, 13);
+            this.label4.Size = new System.Drawing.Size(21, 13);
             this.label4.TabIndex = 3;
             this.label4.Text = "By";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(12, 13);
+            this.label5.Location = new System.Drawing.Point(14, 13);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(65, 13);
+            this.label5.Size = new System.Drawing.Size(75, 13);
             this.label5.TabIndex = 4;
             this.label5.Text = "Cpr Nummer";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(12, 146);
+            this.label6.Location = new System.Drawing.Point(14, 146);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(43, 13);
+            this.label6.Size = new System.Drawing.Size(50, 13);
             this.label6.TabIndex = 5;
             this.label6.Text = "Telefon";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(12, 173);
+            this.label7.Location = new System.Drawing.Point(14, 173);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(45, 13);
+            this.label7.Size = new System.Drawing.Size(53, 13);
             this.label7.TabIndex = 6;
             this.label7.Text = "Afdeling";
             // 
             // txtCpr
             // 
-            this.txtCpr.Location = new System.Drawing.Point(117, 10);
+            this.txtCpr.Location = new System.Drawing.Point(136, 10);
             this.txtCpr.Name = "txtCpr";
             this.txtCpr.ReadOnly = true;
-            this.txtCpr.Size = new System.Drawing.Size(100, 20);
+            this.txtCpr.Size = new System.Drawing.Size(116, 20);
             this.txtCpr.TabIndex = 7;
             // 
             // txtNavn
             // 
-            this.txtNavn.Location = new System.Drawing.Point(117, 36);
+            this.txtNavn.Location = new System.Drawing.Point(136, 36);
             this.txtNavn.Name = "txtNavn";
-            this.txtNavn.Size = new System.Drawing.Size(100, 20);
+            this.txtNavn.Size = new System.Drawing.Size(116, 20);
             this.txtNavn.TabIndex = 8;
             // 
             // txtAdresse
             // 
-            this.txtAdresse.Location = new System.Drawing.Point(117, 62);
+            this.txtAdresse.Location = new System.Drawing.Point(136, 62);
             this.txtAdresse.Name = "txtAdresse";
-            this.txtAdresse.Size = new System.Drawing.Size(100, 20);
+            this.txtAdresse.Size = new System.Drawing.Size(116, 20);
             this.txtAdresse.TabIndex = 9;
             // 
             // txtPostnr
             // 
-            this.txtPostnr.Location = new System.Drawing.Point(117, 89);
+            this.txtPostnr.Location = new System.Drawing.Point(136, 89);
             this.txtPostnr.Name = "txtPostnr";
-            this.txtPostnr.Size = new System.Drawing.Size(100, 20);
+            this.txtPostnr.Size = new System.Drawing.Size(116, 20);
             this.txtPostnr.TabIndex = 10;
             // 
             // txtBy
             // 
-            this.txtBy.Location = new System.Drawing.Point(117, 116);
+            this.txtBy.Location = new System.Drawing.Point(136, 116);
             this.txtBy.Name = "txtBy";
-            this.txtBy.Size = new System.Drawing.Size(100, 20);
+            this.txtBy.Size = new System.Drawing.Size(116, 20);
             this.txtBy.TabIndex = 11;
             // 
             // txtTlf
             // 
-            this.txtTlf.Location = new System.Drawing.Point(117, 143);
+            this.txtTlf.Location = new System.Drawing.Point(136, 143);
             this.txtTlf.Name = "txtTlf";
-            this.txtTlf.Size = new System.Drawing.Size(100, 20);
+            this.txtTlf.Size = new System.Drawing.Size(116, 20);
             this.txtTlf.TabIndex = 12;
             // 
             // txtAfdeling
             // 
-            this.txtAfdeling.Location = new System.Drawing.Point(117, 170);
+            this.txtAfdeling.Location = new System.Drawing.Point(136, 170);
             this.txtAfdeling.Name = "txtAfdeling";
-            this.txtAfdeling.Size = new System.Drawing.Size(100, 20);
+            this.txtAfdeling.Size = new System.Drawing.Size(116, 20);
             this.txtAfdeling.TabIndex = 13;
             // 
             // btnRedigerMedarbejder
             // 
-            this.btnRedigerMedarbejder.Location = new System.Drawing.Point(24, 227);
+            this.btnRedigerMedarbejder.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRedigerMedarbejder.ForeColor = System.Drawing.Color.Black;
+            this.btnRedigerMedarbejder.Location = new System.Drawing.Point(28, 227);
             this.btnRedigerMedarbejder.Name = "btnRedigerMedarbejder";
-            this.btnRedigerMedarbejder.Size = new System.Drawing.Size(75, 23);
+            this.btnRedigerMedarbejder.Size = new System.Drawing.Size(87, 23);
             this.btnRedigerMedarbejder.TabIndex = 14;
             this.btnRedigerMedarbejder.Text = "Rediger";
             this.btnRedigerMedarbejder.UseVisualStyleBackColor = true;
@@ -172,19 +174,23 @@
             // 
             // btnAnnuler
             // 
-            this.btnAnnuler.Location = new System.Drawing.Point(105, 227);
+            this.btnAnnuler.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAnnuler.ForeColor = System.Drawing.Color.Black;
+            this.btnAnnuler.Location = new System.Drawing.Point(122, 227);
             this.btnAnnuler.Name = "btnAnnuler";
-            this.btnAnnuler.Size = new System.Drawing.Size(75, 23);
+            this.btnAnnuler.Size = new System.Drawing.Size(87, 23);
             this.btnAnnuler.TabIndex = 15;
-            this.btnAnnuler.Text = "Annuler";
+            this.btnAnnuler.Text = "Annuller";
             this.btnAnnuler.UseVisualStyleBackColor = true;
             this.btnAnnuler.Click += new System.EventHandler(this.btnAnnuler_Click);
             // 
             // btnSletMedarbejder
             // 
-            this.btnSletMedarbejder.Location = new System.Drawing.Point(186, 227);
+            this.btnSletMedarbejder.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSletMedarbejder.ForeColor = System.Drawing.Color.Black;
+            this.btnSletMedarbejder.Location = new System.Drawing.Point(217, 227);
             this.btnSletMedarbejder.Name = "btnSletMedarbejder";
-            this.btnSletMedarbejder.Size = new System.Drawing.Size(75, 23);
+            this.btnSletMedarbejder.Size = new System.Drawing.Size(87, 23);
             this.btnSletMedarbejder.TabIndex = 16;
             this.btnSletMedarbejder.Text = "Slet";
             this.btnSletMedarbejder.UseVisualStyleBackColor = true;
@@ -192,9 +198,10 @@
             // 
             // FrmRedigerMedarbejder
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 262);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(123)))), ((int)(((byte)(173)))));
+            this.ClientSize = new System.Drawing.Size(331, 262);
             this.Controls.Add(this.btnSletMedarbejder);
             this.Controls.Add(this.btnAnnuler);
             this.Controls.Add(this.btnRedigerMedarbejder);
@@ -212,6 +219,9 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ForeColor = System.Drawing.Color.White;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmRedigerMedarbejder";
             this.Text = "Rediger Medarbejder";
             this.ResumeLayout(false);

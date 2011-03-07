@@ -46,30 +46,30 @@
             // btnFraværNote
             // 
             this.btnFraværNote.AutoSize = true;
-            this.btnFraværNote.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFraværNote.Location = new System.Drawing.Point(104, 71);
+            this.btnFraværNote.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFraværNote.Location = new System.Drawing.Point(108, 77);
             this.btnFraværNote.Name = "btnFraværNote";
-            this.btnFraværNote.Size = new System.Drawing.Size(30, 13);
+            this.btnFraværNote.Size = new System.Drawing.Size(34, 13);
             this.btnFraværNote.TabIndex = 44;
             this.btnFraværNote.Text = "Note";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(104, 44);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(108, 50);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(51, 13);
+            this.label3.Size = new System.Drawing.Size(60, 13);
             this.label3.TabIndex = 39;
             this.label3.Text = "Slut Dato";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(104, 12);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(108, 18);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(55, 13);
+            this.label2.Size = new System.Drawing.Size(65, 13);
             this.label2.TabIndex = 38;
             this.label2.Text = "Start Dato";
             // 
@@ -78,8 +78,9 @@
             this.groupBox1.Controls.Add(this.rdbFerie);
             this.groupBox1.Controls.Add(this.rdbFri);
             this.groupBox1.Controls.Add(this.rdbSyg);
-            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(12, 6);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.ForeColor = System.Drawing.Color.Cornsilk;
+            this.groupBox1.Location = new System.Drawing.Point(16, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(86, 113);
             this.groupBox1.TabIndex = 37;
@@ -89,9 +90,10 @@
             // rdbFerie
             // 
             this.rdbFerie.AutoSize = true;
+            this.rdbFerie.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rdbFerie.Location = new System.Drawing.Point(23, 85);
             this.rdbFerie.Name = "rdbFerie";
-            this.rdbFerie.Size = new System.Drawing.Size(48, 17);
+            this.rdbFerie.Size = new System.Drawing.Size(53, 17);
             this.rdbFerie.TabIndex = 11;
             this.rdbFerie.TabStop = true;
             this.rdbFerie.Text = "Ferie";
@@ -100,9 +102,10 @@
             // rdbFri
             // 
             this.rdbFri.AutoSize = true;
+            this.rdbFri.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rdbFri.Location = new System.Drawing.Point(23, 56);
             this.rdbFri.Name = "rdbFri";
-            this.rdbFri.Size = new System.Drawing.Size(36, 17);
+            this.rdbFri.Size = new System.Drawing.Size(39, 17);
             this.rdbFri.TabIndex = 10;
             this.rdbFri.TabStop = true;
             this.rdbFri.Text = "Fri";
@@ -112,9 +115,10 @@
             // 
             this.rdbSyg.AutoSize = true;
             this.rdbSyg.Checked = true;
+            this.rdbSyg.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rdbSyg.Location = new System.Drawing.Point(23, 26);
             this.rdbSyg.Name = "rdbSyg";
-            this.rdbSyg.Size = new System.Drawing.Size(43, 17);
+            this.rdbSyg.Size = new System.Drawing.Size(46, 17);
             this.rdbSyg.TabIndex = 9;
             this.rdbSyg.TabStop = true;
             this.rdbSyg.Text = "Syg";
@@ -122,7 +126,7 @@
             // 
             // btnSubmitFravær
             // 
-            this.btnSubmitFravær.Location = new System.Drawing.Point(142, 188);
+            this.btnSubmitFravær.Location = new System.Drawing.Point(146, 194);
             this.btnSubmitFravær.Name = "btnSubmitFravær";
             this.btnSubmitFravær.Size = new System.Drawing.Size(75, 23);
             this.btnSubmitFravær.TabIndex = 45;
@@ -133,7 +137,7 @@
             // txtFraværNote
             // 
             this.txtFraværNote.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFraværNote.Location = new System.Drawing.Point(184, 69);
+            this.txtFraværNote.Location = new System.Drawing.Point(188, 75);
             this.txtFraværNote.Multiline = true;
             this.txtFraværNote.Name = "txtFraværNote";
             this.txtFraværNote.Size = new System.Drawing.Size(152, 99);
@@ -141,7 +145,7 @@
             // 
             // btnCancelFravær
             // 
-            this.btnCancelFravær.Location = new System.Drawing.Point(224, 188);
+            this.btnCancelFravær.Location = new System.Drawing.Point(228, 194);
             this.btnCancelFravær.Name = "btnCancelFravær";
             this.btnCancelFravær.Size = new System.Drawing.Size(75, 23);
             this.btnCancelFravær.TabIndex = 46;
@@ -151,14 +155,14 @@
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(184, 6);
+            this.dateTimePicker1.Location = new System.Drawing.Point(188, 12);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(152, 20);
             this.dateTimePicker1.TabIndex = 47;
             // 
             // dateTimePicker2
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(184, 31);
+            this.dateTimePicker2.Location = new System.Drawing.Point(188, 37);
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(152, 20);
             this.dateTimePicker2.TabIndex = 48;
@@ -167,7 +171,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(344, 214);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(123)))), ((int)(((byte)(173)))));
+            this.ClientSize = new System.Drawing.Size(353, 230);
             this.Controls.Add(this.dateTimePicker2);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.btnCancelFravær);
@@ -177,6 +182,8 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.groupBox1);
+            this.ForeColor = System.Drawing.Color.Cornsilk;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmOpretFravær";
             this.Text = "Fravær";
             this.groupBox1.ResumeLayout(false);
