@@ -7,6 +7,8 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using GoogleChartSharp;
+using ZedGraph;
 using Controller;
 using Model;
 using Interfaces;
@@ -69,55 +71,13 @@ namespace GUI
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            //try
-            //{
-            //    IMedarbejderData medarbejderData;
-            //    IEnumerator medarbiterator = personalesystem.GetMedarbejderIterator();
-            //    if (medarbiterator == null)
-            //    {
-            //        MessageBox.Show("Medarbejderlisten kunne desværre ikke vises", "Systemfejl", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //        return;
-            //    }
-            //    medarbiterator.Reset();   // Sæt iterator til at pege før første element
 
-            //    while (medarbiterator.MoveNext())   // så længe der er medarbejderer
-            //    {
-            //        //medarbejderData = (IMedarbejderData)medarbiterator.Current;   // læs aktuel/current medarbejder
-            //        Medarbejder medarbejder = (Medarbejder)medarbiterator.Current;
-                    
-            //        ListViewItem medarbejdere = new ListViewItem();
-            //        medarbejdere.Text = medarbejder.Cpr_nummer.ToString();
-            //        medarbejdere.SubItems.Add(medarbejder.Navn);
-
-            //        medarbejdere.SubItems.Add(medarbejder.Adresse);
-            //        medarbejdere.SubItems.Add(medarbejder.Postnr.ToString());
-            //        medarbejdere.SubItems.Add(medarbejder.By);
-            //        medarbejdere.SubItems.Add(medarbejder.Tlf.ToString());
-            //        medarbejdere.SubItems.Add(medarbejder.Afdelingsid.ToString());
-                   
-            //        //lstMedarbKato.Items.Add(medarbejdere);
-                    
-                    
-            //        lstKartotek.Items.Add(medarbejdere);
-            //        //lstRediger.Items.Add(medarbejdere);
-            //    }
-
-            //    medarbiterator.Reset();   // Sæt iterator til at pege før første element       
-
-            //    // referencer: Interfaces
-            //    // oprettet ienumerator i conrtroller og medarbejdercollection
-            //    // tilføjet BY i medarbeder og BY i IMedarbejderData
-            //    // gjort IMmedarbejderData til Public
-            //    // omdøbt lstView1 til lstFravær skulle nok ikke v
-
-            //}
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show(ex.ToString());
-            //}
             OpdaterListView();
-            //LoadNyheder();
+
+             //LoadNyheder();
         }
+
+
 
         public void IndsætKalenderFravær(long cprnummer)
         {
@@ -329,6 +289,17 @@ namespace GUI
           redigerfravær.ShowDialog(this);
           
           OpdaterListView();
+      }
+
+      private void lstFravær_SelectedIndexChanged(object sender, EventArgs e)
+      {
+          
+          
+      }
+
+      private void toolStripMenuItem1_Click(object sender, EventArgs e)
+      {
+          
       }
 
 
