@@ -529,6 +529,35 @@ namespace Controller
 
             return sqlfejl;
         }
+
+        public bool SletNyhed(long id)
+        {
+            
+            cmd.Parameters.Clear();
+            cmd.CommandText = "SletNyhed";
+
+            SqlParameter par = new SqlParameter("@n_ID", SqlDbType.BigInt);
+            par.Value = id;
+            cmd.Parameters.Add(par);
+
+            try
+            {
+                conn.Open();
+                cmd.ExecuteNonQuery();
+                conn.Close();
+                return true;
+            }
+            catch (SqlException e)
+            {
+                if (conn.State == ConnectionState.Open)
+                {
+                    conn.Close();                    
+                }
+                return false;
+            }
+            
+        }
+
         #region comment
 
         //public string OpretAfdeling(string afdeling, int afd)
