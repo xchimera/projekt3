@@ -32,6 +32,13 @@ namespace CalendarControl
             set { daymenu = value; }
         }
 
+        ContextMenuStrip eventmenu;
+        public ContextMenuStrip EventContextMenu
+        {
+            get { return eventmenu; }
+            set { eventmenu = value; }
+        }
+
         // Selected month and year
         int currentmonth = DateTime.Now.Month;
         int currentyear = DateTime.Now.Year;
@@ -92,6 +99,14 @@ namespace CalendarControl
             if (e.Button == System.Windows.Forms.MouseButtons.Right && daymenu != null)
             {
                 daymenu.Show(Cursor.Position);
+            }
+        }
+
+        private void MouseClick_Event(object sender, MouseEventArgs e)
+        {
+            if (eventmenu != null)
+            {
+                eventmenu.Show(Cursor.Position);
             }
         }
 
@@ -191,6 +206,7 @@ namespace CalendarControl
                             eventlabel.AutoSize = false;
                             eventlabel.BackColor = item.eventcolor;
                             eventlabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+                            eventlabel.MouseDown += new MouseEventHandler(MouseClick_Event);
                             con.Controls.Add(eventlabel);
                             eventlabel.BringToFront();
                         }
