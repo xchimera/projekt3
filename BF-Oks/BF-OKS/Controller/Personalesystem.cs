@@ -146,12 +146,13 @@ namespace Controller
 
         }
 
-        public void OpretNyhed(string nyhedtext, DateTime dato)
+        public long OpretNyhed(string nyhedtext, DateTime dato)
         {
             long id = dbfacade.OpretNyhed(nyhedtext, dato);
 
             nyhedcollection.OpretNyhed(id, nyhedtext, dato);
-           
+
+            return id;
         }
 
 

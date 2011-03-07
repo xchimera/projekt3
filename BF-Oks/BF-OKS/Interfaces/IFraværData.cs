@@ -7,7 +7,7 @@ namespace Interfaces
 {
     public interface IFraværData
     {
-        int ID { get; }
+        long ID { get; }
         string Type { get; }
         string Note { get;}
         DateTime Dato_fra { get; }

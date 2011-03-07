@@ -32,9 +32,9 @@ namespace GUI
             DateTime dato;
             dato = dateTimePicker1.Value;
             nyhed = txtNyhed.Text;
-            personalesystem.OpretNyhed(nyhed, dato);
+            long id = personalesystem.OpretNyhed(nyhed, dato);
  
-            OpretNyhed(nyhed, nyhed, dato, colorDialog1.Color);
+            OpretNyhed(nyhed, nyhed, dato, colorDialog1.Color, id);
 
             this.Close();
         }
@@ -44,9 +44,9 @@ namespace GUI
             this.Close();
         }
 
-        public void OpretNyhed(string header, string body, DateTime dato, Color color)
+        public void OpretNyhed(string header, string body, DateTime dato, Color color, long id)
         {
-            CalEvent events = new CalEvent(header, body, dato, color);
+            CalEvent events = new CalEvent(header, body, dato, color, id);
             calender.Events.Add(events);
             calender.UpdateCalendar();
         }

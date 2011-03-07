@@ -60,10 +60,10 @@ namespace CalendarControl
             UpdateCalendar();
         }
 
-        public void AddEvent(string Header, string Body, DateTime Date, Color EventColor)
+        public void AddEvent(string Header, string Body, DateTime Date, Color EventColor, long id)
         {
             // Adds a new object of event to our Events list
-            CalEvent calEvent = new CalEvent(Header, Body, Date, EventColor);
+            CalEvent calEvent = new CalEvent(Header, Body, Date, EventColor, id);
             Events.Add(calEvent);
             UpdateCalendar();
         }
@@ -207,6 +207,7 @@ namespace CalendarControl
                             eventlabel.BackColor = item.eventcolor;
                             eventlabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
                             eventlabel.MouseDown += new MouseEventHandler(MouseClick_Event);
+                            eventlabel.Tag = item.ID;
                             con.Controls.Add(eventlabel);
                             eventlabel.BringToFront();
                         }
