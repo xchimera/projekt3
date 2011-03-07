@@ -134,7 +134,7 @@ namespace GUI
             while (fraværiterator.MoveNext())
             {
                 ifraværdata = (IFraværData)fraværiterator.Current;
-                OpretNyhed(ifraværdata.Dato_fra.Day + "-" + ifraværdata.Dato_fra.Month + "--" + ifraværdata.Dato_til.Day + "-" + ifraværdata.Dato_til.Month+ "  " + ifraværdata.Navn,"", ifraværdata.Dato_fra, Color.Red);
+                OpretNyhed(ifraværdata.Dato_fra.Day + "-" + ifraværdata.Dato_fra.Month + "--" + ifraværdata.Dato_til.Day + "-" + ifraværdata.Dato_til.Month+ "  " + ifraværdata.Navn,"", ifraværdata.Dato_fra, Color.Red, ifraværdata.ID);
             }
 
         }
@@ -150,7 +150,7 @@ namespace GUI
             while (nyhedsiterator.MoveNext())
             {
                 inyheddata = (INyhedData)nyhedsiterator.Current;
-                OpretNyhed(inyheddata.NyhedText, inyheddata.NyhedText, inyheddata.Dato, Color.YellowGreen);
+                OpretNyhed(inyheddata.NyhedText, inyheddata.NyhedText, inyheddata.Dato, Color.YellowGreen, inyheddata.ID);
             }
             nyhedsiterator.Reset();
 
@@ -291,9 +291,9 @@ namespace GUI
             opretnyhed.ShowDialog(this);
         }
 
-        public void OpretNyhed(string header, string body, DateTime dato, Color color)
+        public void OpretNyhed(string header, string body, DateTime dato, Color color, long id)
         {
-            CalEvent events = new CalEvent(header, body, dato, color);
+            CalEvent events = new CalEvent(header, body, dato, color, id);
             evCalendar1.Events.Add(events);
             //evCalendar1.UpdateCalendar();
         }
