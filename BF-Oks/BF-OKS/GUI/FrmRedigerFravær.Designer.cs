@@ -186,6 +186,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.groupBox1);
             this.ForeColor = System.Drawing.Color.White;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmRedigerFravær";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
