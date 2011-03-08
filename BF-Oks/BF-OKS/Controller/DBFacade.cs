@@ -739,7 +739,6 @@ namespace Controller
                 }
                 throw (e);
             }
-
         }
 
         public void LoadFravær()

@@ -7,8 +7,6 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using GoogleChartSharp;
-using ZedGraph;
 using Controller;
 using Model;
 using Interfaces;
