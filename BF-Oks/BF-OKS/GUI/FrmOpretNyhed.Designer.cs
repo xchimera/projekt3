@@ -128,7 +128,8 @@
             this.ForeColor = System.Drawing.Color.White;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmOpretNyhed";
-            this.Text = "FrmOpretNyhed";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Opret Nyhed";
             this.ResumeLayout(false);
             this.PerformLayout();
 

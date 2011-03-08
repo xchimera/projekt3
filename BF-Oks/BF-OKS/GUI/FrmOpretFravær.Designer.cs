@@ -188,6 +188,7 @@
             this.ForeColor = System.Drawing.Color.Cornsilk;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmOpretFravær";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Opret Fravær";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

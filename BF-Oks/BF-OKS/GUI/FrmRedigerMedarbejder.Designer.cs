@@ -224,6 +224,7 @@
             this.ForeColor = System.Drawing.Color.White;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmRedigerMedarbejder";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Rediger Medarbejder";
             this.ResumeLayout(false);
             this.PerformLayout();
