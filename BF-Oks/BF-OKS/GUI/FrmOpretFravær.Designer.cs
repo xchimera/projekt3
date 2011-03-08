@@ -186,6 +186,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.groupBox1);
             this.ForeColor = System.Drawing.Color.Cornsilk;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmOpretFravær";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
