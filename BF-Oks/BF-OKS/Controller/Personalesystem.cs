@@ -125,6 +125,7 @@ namespace Controller
         {
             if (dbfacade.SletMedarbejder(cpr_nummer) == null)
             {
+                medarbejdercollection.SletMedarbejder(cpr_nummer);
                 return true;
             }
             return false;

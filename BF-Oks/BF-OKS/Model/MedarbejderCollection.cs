@@ -48,6 +48,8 @@ namespace Model
 	            }
 	        }
         }
+
+
         public bool RedigerFravær(long cpr_nummer,int id, DateTime dato_fra, DateTime dato_til, string note, string type)
         { 
             Medarbejder medarbejder = FindMedarbejder(cpr_nummer);
