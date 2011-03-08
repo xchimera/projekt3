@@ -408,7 +408,7 @@
             this.Controls.Add(this.tabControl1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
-            this.Text = "Muu Manager";
+            this.Text = "Moo Manager";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.tabKalender.ResumeLayout(false);
             this.contextMenuStrip1.ResumeLayout(false);
