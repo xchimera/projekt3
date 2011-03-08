@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmOpretFravær));
             this.btnFraværNote = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -126,6 +127,7 @@
             // 
             // btnSubmitFravær
             // 
+            this.btnSubmitFravær.ForeColor = System.Drawing.Color.Black;
             this.btnSubmitFravær.Location = new System.Drawing.Point(146, 194);
             this.btnSubmitFravær.Name = "btnSubmitFravær";
             this.btnSubmitFravær.Size = new System.Drawing.Size(75, 23);
@@ -145,6 +147,7 @@
             // 
             // btnCancelFravær
             // 
+            this.btnCancelFravær.ForeColor = System.Drawing.Color.Black;
             this.btnCancelFravær.Location = new System.Drawing.Point(228, 194);
             this.btnCancelFravær.Name = "btnCancelFravær";
             this.btnCancelFravær.Size = new System.Drawing.Size(75, 23);
@@ -183,9 +186,9 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.groupBox1);
             this.ForeColor = System.Drawing.Color.Cornsilk;
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmOpretFravær";
-            this.Text = "Fravær";
+            this.Text = "Opret Fravær";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);

@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Muu Manager")]
+[assembly: AssemblyTitle("Moo Manager")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Epic")]
-[assembly: AssemblyProduct("Muu Manager")]
+[assembly: AssemblyProduct("Moo Manager")]
 [assembly: AssemblyCopyright("Copyright © Epic 2011")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
