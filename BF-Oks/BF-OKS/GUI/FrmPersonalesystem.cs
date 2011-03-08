@@ -269,8 +269,7 @@ namespace GUI
       }
 
       private void redigérFraværToolStripMenuItem_Click(object sender, EventArgs e)
-      {
-          //csharpsux();
+      {         
           string type = null;
           int items = lstFravær.SelectedItems.Count;
           int index = lstFravær.SelectedIndices[0];
