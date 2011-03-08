@@ -102,15 +102,6 @@ namespace CalendarControl
             }
         }
 
-        private void MouseClick_Event(object sender, MouseEventArgs e)
-        {
-            if (eventmenu != null)
-            {
-                eventmenu.Tag = ((Label)sender).Tag;
-                eventmenu.Show(Cursor.Position);
-            }
-        }
-
         public void UpdateCalendar()
         {
             // Hides the Calendar while updating to avoid flickering
@@ -207,8 +198,6 @@ namespace CalendarControl
                             eventlabel.AutoSize = false;
                             eventlabel.BackColor = item.eventcolor;
                             eventlabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-                            eventlabel.MouseDown += new MouseEventHandler(MouseClick_Event);
-                            eventlabel.Tag = item.ID;
                             con.Controls.Add(eventlabel);
                             eventlabel.BringToFront();
                         }
