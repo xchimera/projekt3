@@ -408,6 +408,10 @@ namespace Controller
                     conn.Close();
                 }
             }
+            catch (Exception)
+            {
+
+            }
 
             return id;
 
